@@ -24,4 +24,10 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home',function () {
     return view('layouts/index');
+})->middleware('auth');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('instructores', 'InstructorController');
+    Route::resource('estudiantes', 'EstudianteController');
 });
+

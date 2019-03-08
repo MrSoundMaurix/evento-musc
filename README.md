@@ -64,3 +64,19 @@ Subir al repositorio virtual 'evento-musc'
 ```
 git push origin master
 ```
+# Librerías
+```
+composer require zizaco/entrust
+```
+
+
+Cada vez que se instala una nueva librería aplicar el comando
+```
+composer dump-autoload
+```
+#comandos
+
+```
+composer update
+```
+
