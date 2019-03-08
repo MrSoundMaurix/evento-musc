@@ -27,6 +27,7 @@ Route::get('/home',function () {
 })->middleware('auth');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::resource('instructores', 'InstructorController')->middleware('auth');
+    Route::resource('instructores', 'InstructorController');
+    Route::resource('estudiantes', 'EstudianteController');
 });
 
