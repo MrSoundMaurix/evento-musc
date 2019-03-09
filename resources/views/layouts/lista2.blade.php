@@ -16,7 +16,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <ul class="breadcome-menu">
-                                    <li><a href="#">Estudiantes</a> <span class="bread-slash">/</span>
+                                    <li><a href="#">Usuarios</a> <span class="bread-slash">/</span>
                                     </li>
                                     <li><span class="bread-blod">Listado</span>
                                     </li>

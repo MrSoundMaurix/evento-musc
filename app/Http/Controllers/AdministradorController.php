@@ -3,17 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\Auth;
 
-
-class EstudianteController extends Controller
+class AdministradorController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -21,12 +13,13 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-
-        $estudiante = User::find(Auth::user()->id);
-
-        return view('Estudiante.index', ["estudiante" => $estudiante]);
+        //
     }
 
+    public function calendario()
+    {
+        return view('Administrador.calendario');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -34,7 +27,7 @@ class EstudianteController extends Controller
      */
     public function create()
     {
-        return view('Estudiante.create');
+        //
     }
 
     /**

@@ -23,7 +23,7 @@ class InstructorController extends Controller
      */
     public function create()
     {
-        //
+        return view('Instructor.create');
     }
 
     /**
