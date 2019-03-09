@@ -4,7 +4,7 @@
     @include('layouts.nav')
 @stop
 @section('content')
-  @include('layouts.content')
+  @include('layouts.lista')
 @stop
 
 
