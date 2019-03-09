@@ -96,6 +96,6 @@ class RegisterController extends Controller
                     ->subject('Welcome!');
             $message->from('s.sajid@artisansweb.net','MUSC');
         });
- 
+ return redirect('/home');;
          }
 }

@@ -54,7 +54,7 @@ class MailResetPasswordNotification extends Notification
                     ->action('Recuperar contraseña', url('password/reset', $this->token))
                     ->line('Si no realizaste esta solicitud, no se requiere realizar ninguna otra acción.')
                     ->from('s.sajid@artisansweb.net','MUSC');
-     }
+                }
 
     /**
      * Get the array representation of the notification.
