@@ -84,7 +84,7 @@
 								   <span class="mini-click-non">MUSC</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Portal</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{url('/')}}"><span class="mini-sub-pro">Portal</span></a></li>
                                {{--   <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
                                 <li><a title="Dashboard v.3" href="index-2.html"><span class="mini-sub-pro">Dashboard v.3</span></a></li>
                                 <li><a title="Analytics" href="analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
@@ -92,45 +92,45 @@
                             </ul>
                         </li>
                         <li>
-                            <a title="Landing Page" href="#" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Event</span></a>
+                            <a title="Landing Page" href="{{url('calendario')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Calendario</span></a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Instructores</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Professors" href="{{ url('instructores') }}"><span class="mini-sub-pro">Listado</span></a></li>
-                                <li><a title="Add Professor" href="#"><span class="mini-sub-pro">Agregar Instructor</span></a></li>
-                                <li><a title="Edit Professor" href="#"><span class="mini-sub-pro">Editar Instructor</span></a></li>
-                                <li><a title="Professor Profile" href="{{route('instructores.show',1)}}"><span class="mini-sub-pro">Instructor Perfil</span></a></li>
+                                <li><a title="Add Professor" href="{{ url('agregar-instructor') }}"><span class="mini-sub-pro">Agregar</span></a></li>
+                                {{-- <li><a title="Edit Professor" href="#"><span class="mini-sub-pro">Editar</span></a></li> --}}
+                                <li><a title="Professor Profile" href="{{url('instructores/1')}}"><span class="mini-sub-pro">Perfil</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Estudiantes</span></a>
+                            <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Usuarios</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Students" href="{{url('estudiantes')}}"><span class="mini-sub-pro">Listado</span></a></li>
-                                <li><a title="Add Students" href="#"><span class="mini-sub-pro">Add Student</span></a></li>
-                                <li><a title="Edit Students" href="#"><span class="mini-sub-pro">Edit Student</span></a></li>
-                                <li><a title="Students Profile" href="#"><span class="mini-sub-pro">Student Profile</span></a></li>
+                                <li><a title="All Students" href="{{url('usuarios')}}"><span class="mini-sub-pro">Listado</span></a></li>
+                                <li><a title="Add Students" href="{{url('agregar-usuario')}}"><span class="mini-sub-pro">Agregar</span></a></li>
+                                {{-- <li><a title="Edit Students" href="#"><span class="mini-sub-pro">Edit Student</span></a></li>
+                                <li><a title="Students Profile" href="#"><span class="mini-sub-pro">Student Profile</span></a></li> --}}
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Courses</span></a>
+                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Talleres</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">All Courses</span></a></li>
-                                <li><a title="Add Courses" href="add-course.html"><span class="mini-sub-pro">Add Course</span></a></li>
-                                <li><a title="Edit Courses" href="edit-course.html"><span class="mini-sub-pro">Edit Course</span></a></li>
-                                <li><a title="Courses Profile" href="course-info.html"><span class="mini-sub-pro">Courses Info</span></a></li>
-                                <li><a title="course Payment" href="course-payment.html"><span class="mini-sub-pro">Courses Payment</span></a></li>
+                                <li><a title="All Courses" href="{{url('talleres')}}"><span class="mini-sub-pro">Listado</span></a></li>
+                                <li><a title="Add Courses" href="{{url('agregar-taller')}}"><span class="mini-sub-pro">Agregar</span></a></li>
+                               {{--  <li><a title="Edit Courses" href="#"><span class="mini-sub-pro">Edit Course</span></a></li>
+                                <li><a title="Courses Profile" href="#"><span class="mini-sub-pro">Courses Info</span></a></li>
+                                <li><a title="course Payment" href="#"><span class="mini-sub-pro">Courses Payment</span></a></li> --}}
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Library</span></a>
+                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Conferencias</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Library" href="library-assets.html"><span class="mini-sub-pro">Library Assets</span></a></li>
-                                <li><a title="Add Library" href="add-library-assets.html"><span class="mini-sub-pro">Add Library Asset</span></a></li>
-                                <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li>
+                                <li><a title="All Library" href="{{url('conferencias')}}"><span class="mini-sub-pro">Listado</span></a></li>
+                                <li><a title="Add Library" href="{{url('agregar-conferencia')}}"><span class="mini-sub-pro">Agregar</span></a></li>
+                               {{--  <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li> --}}
                             </ul>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Departments</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Departments List" href="departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
@@ -210,7 +210,7 @@
                                 <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
                                 <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
             </div>
