@@ -4,7 +4,5 @@
     @include('layouts.nav')
 @stop
 @section('content')
-  @include('layouts.lista2')
+    @include('layouts.estudiante')
 @stop
-
-
