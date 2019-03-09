@@ -78,24 +78,19 @@ class RegisterController extends Controller
     }
     public function register(Request $request)
     {
-        $this->validator($request->all())->validate();
- 
-        //add activation_key to the $request array
-      //  $activation_key = $this->getToken();
-       // $request->request->add(['activation_key' => $activation_key]);
- 
-        $user = $this->create($request->all());
- 
-        //$this->guard()->login($user);
- 
-      
+        $this->validator($request->all())->validate();        
+        event(new Registered($user = $this->create($request->all())));
+        $this->guard()->login($user);
+
         $data = array('name' => $request['name'], 'email' => $request['email']);
- 
         Mail::send('emails.email', $data, function($message) use ($data) {
             $message->to($data['email'])
                     ->subject('Welcome!');
             $message->from('s.sajid@artisansweb.net','MUSC');
         });
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
  
-         }
+    }
 }
