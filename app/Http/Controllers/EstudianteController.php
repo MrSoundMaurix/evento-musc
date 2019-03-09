@@ -23,7 +23,6 @@ class EstudianteController extends Controller
     {
 
         $estudiante = User::find(Auth::user()->id);
-
         return view('Estudiante.index', ["estudiante" => $estudiante]);
     }
 
