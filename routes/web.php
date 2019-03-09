@@ -15,9 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sistemas', function () {
-    return view('sistemas');
-});
+Route::view('sistemas-conferencias', 'sistemasc');
+Route::view('sistemas-talleres', 'sistemast');
+Route::view('publicidad-conferencias', 'publicidad');
+Route::view('contabilidad-conferencias', 'contabilidad');
+Route::view('biotecnologia-conferencias', 'biotecnologia');
 
 Auth::routes();
 
