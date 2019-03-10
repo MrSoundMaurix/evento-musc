@@ -39,7 +39,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/usuario-home';
 
     /**
      * Create a new controller instance.
@@ -109,13 +109,5 @@ class RegisterController extends Controller
                         ?: redirect($this->redirectPath());
  
     }
-    public function redirectTo()
-    {
-        if(\Auth::user()->rol == 'administrador')
-        {
-            return '/admin-home';
-        } else {
-            return '/usuario-home';
-        }
-    }
+    
 }
