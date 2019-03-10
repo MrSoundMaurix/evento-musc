@@ -24,12 +24,21 @@ Route::view('biotecnologia-conferencias', 'biotecnologia');
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home',function () {
+/* Route::get('/admin-dashboard',function () {
     return view('layouts/index');
-})->middleware('auth');
+})->middleware('auth'); */
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::view('admin-home', 'Administrador.home');
+    Route::get('calendario', 'AdministradorController@calendario');
     Route::resource('instructores', 'InstructorController');
-    Route::resource('estudiantes', 'EstudianteController');
+    Route::get('agregar-instructor', 'InstructorController@create');
+    Route::resource('usuarios', 'EstudianteController');
+    Route::get('agregar-usuario', 'EstudianteController@create');
+    Route::resource('talleres', 'TallerController');
+    Route::get('agregar-taller', 'TallerController@create');
+    Route::resource('conferencias', 'ConferenciaController');
+    Route::get('agregar-conferencia', 'ConferenciaController@create');
+
 });
 
