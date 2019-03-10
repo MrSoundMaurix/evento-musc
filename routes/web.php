@@ -43,8 +43,9 @@ Route::group(['middleware' => ['auth']], function ()
         Route::resource('conferencias', 'ConferenciaController');
         Route::get('agregar-conferencia', 'ConferenciaController@create');
     });
-    Route::group(['middleware' => ['usuario']], function () 
-    {    
+    Route::group(['middleware' => 'role:usuario'], function () 
+    {   
+       // Route::view('usuario-home', 'Usuario.home'); 
     });
 });
 
