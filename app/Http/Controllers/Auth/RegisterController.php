@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Mail;
+use Illuminate\Database\Eloquent\Collection;
+use Auth;
+USE DB;
+use App\Http\Requests\UserRequest;
+use App\Role;
+use Illuminate\Database\QueryException;
 
 use Illuminate\Auth\Events\Registered;
  
@@ -33,7 +39,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/usuario-home';
 
     /**
      * Create a new controller instance.
@@ -70,20 +76,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+    $usuario= User::create
+        ([
             'cedula' => $data['cedula'],
             'name' => $data['name'],
             'apellido' => $data['apellido'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
+        ]); 
+        $usuario
+        ->roles()
+        ->attach(Role::where('name', 'usuario')->first());
+    
+      return $usuario;
     }
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();        
         event(new Registered($user = $this->create($request->all())));
         $this->guard()->login($user);
-
+      
+    
+    
         $data = array('name' => $request['name'], 'email' => $request['email']);
         Mail::send('emails.email', $data, function($message) use ($data) {
             $message->to($data['email'])
@@ -95,4 +109,5 @@ class RegisterController extends Controller
                         ?: redirect($this->redirectPath());
  
     }
+    
 }

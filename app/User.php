@@ -8,10 +8,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\MailResetPasswordNotification;
 
-
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable,EntrustUserTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -40,7 +40,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function sendPasswordResetNotification($token)
-{
+    {
     $this->notify(new MailResetPasswordNotification($token));
-}
+    }   
+
+    public function roles()
+    {
+        return $this
+            ->belongsToMany('App\Role');
+    }
+       
+
 }
