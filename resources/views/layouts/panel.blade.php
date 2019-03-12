@@ -9,59 +9,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="kiaalap-master/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('kiaalap-master/img/favicon.ico')}}">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/bootstrap.min.css')}}">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/font-awesome.min.css')}}">
     <!-- owl.carousel CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/owl.carousel.css">
-    <link rel="stylesheet" href="kiaalap-master/css/owl.theme.css">
-    <link rel="stylesheet" href="kiaalap-master/css/owl.transitions.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.transitions.css')}}">
     <!-- animate CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/animate.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/animate.css')}}">
     <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/normalize.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/normalize.css')}}">
     <!-- meanmenu icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/meanmenu.min.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/meanmenu.min.css')}}">
     <!-- main CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/main.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/main.css')}}">
     <!-- educate icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/educate-custon-icon.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/educate-custon-icon.css')}}">
     <!-- morrisjs CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/morrisjs/morris.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/morrisjs/morris.css')}}">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
     <!-- metisMenu CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="kiaalap-master/css/metisMenu/metisMenu-vertical.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/metisMenu/metisMenu.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/metisMenu/metisMenu-vertical.css')}}">
     <!-- calendar CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="kiaalap-master/css/calendar/fullcalendar.print.min.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.print.min.css')}}">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/style.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/style.css')}}">
     <!-- responsive CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/responsive.css')}}">
     <!-- modernizr JS
 		============================================ -->
-    <script src="kiaalap-master/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
 
 <body>
@@ -437,55 +437,55 @@
     </div>
     <!-- jquery
 		============================================ -->
-    <script src="kiaalap-master/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/vendor/jquery-1.12.4.min.js')}}"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="kiaalap-master/js/bootstrap.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/bootstrap.min.js')}}"></script>
     <!-- wow JS
 		============================================ -->
-    <script src="kiaalap-master/js/wow.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/wow.min.js')}}"></script>
     <!-- price-slider JS
 		============================================ -->
-    <script src="kiaalap-master/js/jquery-price-slider.js"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery-price-slider.js')}}"></script>
     <!-- meanmenu JS
 		============================================ -->
-    <script src="kiaalap-master/js/jquery.meanmenu.js"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.meanmenu.js')}}"></script>
     <!-- owl.carousel JS
 		============================================ -->
-    <script src="kiaalap-master/js/owl.carousel.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/owl.carousel.min.js')}}"></script>
     <!-- sticky JS
 		============================================ -->
-    <script src="kiaalap-master/js/jquery.sticky.js"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.sticky.js')}}"></script>
     <!-- scrollUp JS
 		============================================ -->
-    <script src="kiaalap-master/js/jquery.scrollUp.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.scrollUp.min.js')}}"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
-    <script src="kiaalap-master/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="kiaalap-master/js/scrollbar/mCustomScrollbar-active.js"></script>
+    <script src="{{ asset('kiaalap-master/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/scrollbar/mCustomScrollbar-active.js')}}"></script>
     <!-- metisMenu JS
 		============================================ -->
-    <script src="kiaalap-master/js/metisMenu/metisMenu.min.js"></script>
-    <script src="kiaalap-master/js/metisMenu/metisMenu-active.js"></script>
+    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu-active.js')}}"></script>
     <!-- morrisjs JS
 		============================================ -->
-    <script src="kiaalap-master/js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="kiaalap-master/js/sparkline/jquery.charts-sparkline.js"></script>
-    <script src="kiaalap-master/js/sparkline/sparkline-active.js"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.sparkline.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.charts-sparkline.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/sparkline-active.js')}}"></script>
     <!-- calendar JS
 		============================================ -->
-    <script src="kiaalap-master/js/calendar/moment.min.js"></script>
-    <script src="kiaalap-master/js/calendar/fullcalendar.min.js"></script>
-    <script src="kiaalap-master/js/calendar/fullcalendar-active.js"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/moment.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar-active.js')}}"></script>
     <!-- plugins JS
 		============================================ -->
-    <script src="kiaalap-master/js/plugins.js"></script>
+    <script src="{{ asset('kiaalap-master/js/plugins.js')}}"></script>
     <!-- main JS
 		============================================ -->
-    <script src="kiaalap-master/js/main.js"></script>
+    <script src="{{ asset('kiaalap-master/js/main.js')}}"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="kiaalap-master/js/tawk-chat.js"></script>
+    <script src="{{ asset('kiaalap-master/js/tawk-chat.js')}}"></script>
 </body>
 
 </html>
