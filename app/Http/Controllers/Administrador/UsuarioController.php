@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Administrador;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class TallerController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class TallerController extends Controller
      */
     public function index()
     {
-        return view('Talleres.index');
+        return view('Administrador.Usuario.index');
     }
 
     /**
@@ -23,7 +24,7 @@ class TallerController extends Controller
      */
     public function create()
     {
-        return view('Talleres.create');
+        return view('Administrador.Usuario.create');
     }
 
     /**
@@ -45,7 +46,7 @@ class TallerController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Administrador.Usuario.show');
     }
 
     /**

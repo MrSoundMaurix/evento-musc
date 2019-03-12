@@ -2,89 +2,90 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
 <!-- Bootstrap CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/bootstrap.min.css')}}">
 <!-- Bootstrap CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/font-awesome.min.css')}}">
 <!-- owl.carousel CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/owl.carousel.css">
-<link rel="stylesheet" href="kiaalap-master/css/owl.theme.css">
-<link rel="stylesheet" href="kiaalap-master/css/owl.transitions.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.carousel.css')}}">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.theme.css')}}">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.transitions.css')}}">
 <!-- animate CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/animate.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/animate.css')}}">
 <!-- normalize CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/normalize.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/normalize.css')}}">
 <!-- meanmenu icon CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/meanmenu.min.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/meanmenu.min.css')}}">
 <!-- main CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/main.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/main.css')}}">
 <!-- forms CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/form/all-type-forms.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/form/all-type-forms.css')}}">
 <!-- educate icon CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/educate-custon-icon.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/educate-custon-icon.css')}}">
 <!-- morrisjs CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/morrisjs/morris.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/morrisjs/morris.css')}}">
 <!-- dropzone CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/dropzone/dropzone.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/dropzone/dropzone.css')}}">
 <!-- mCustomScrollbar CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/scrollbar/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
 <!-- metisMenu CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/metisMenu/metisMenu.min.css">
-<link rel="stylesheet" href="kiaalap-master/css/metisMenu/metisMenu-vertical.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/metisMenu/metisMenu.min.css')}}">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/metisMenu/metisMenu-vertical.css')}}">
 <!-- calendar CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/calendar/fullcalendar.min.css">
-<link rel="stylesheet" href="kiaalap-master/css/calendar/fullcalendar.print.min.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.min.css')}}">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.print.min.css')}}">
 <!-- style CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/style.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/style.css')}}">
 <!-- responsive CSS
     ============================================ -->
-<link rel="stylesheet" href="kiaalap-master/css/responsive.css">
+<link rel="stylesheet" href="{{ asset('kiaalap-master/css/responsive.css')}}">
 <!-- modernizr JS
     ============================================ -->
-<script src="kiaalap-master/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="{{ asset('kiaalap-master/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 
-        <!-- Mobile Menu end -->
-        <div class="breadcome-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="breadcome-list">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="breadcome-heading">
-                                        <form role="search" class="sr-input-func">
-                                            <input type="text" placeholder="Search..." class="search-int form-control">
-                                            <a href="#"><i class="fa fa-search"></i></a>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <ul class="breadcome-menu">
-                                        <li><a href="#">Usuarios-Instructores</a> <span class="bread-slash">/</span>
-                                        </li>
-                                        <li><span class="bread-blod">Agregar</span>
-                                        </li>
-                                    </ul>
-                                </div>
+<div class="single-pro-review-area mt-t-10 mg-b-10"></div>
+<!-- Mobile Menu end -->
+<div class="breadcome-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcome-heading">
+                                <form role="search" class="sr-input-func">
+                                    <input type="text" placeholder="Search..." class="search-int form-control">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                </form>
                             </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <ul class="breadcome-menu">
+                                <li><a href="#">INSTRUCTORES - ESTUDIANTES</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">AGREGAR</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
         <!-- Single pro tab review Start-->
         <div class="single-pro-review-area mt-t-30 mg-b-15">
             <div class="container-fluid">
@@ -260,20 +261,20 @@
 
         <!-- maskedinput JS
             ============================================ -->
-        <script src="kiaalap-master/js/jquery.maskedinput.min.js"></script>
-        <script src="kiaalap-master/js/masking-active.js"></script>
+        <script src="{{ asset('kiaalap-master/js/jquery.maskedinput.min.js')}}"></script>
+        <script src="{{ asset('kiaalap-master/js/masking-active.js')}}"></script>
         <!-- datepicker JS
             ============================================ -->
-        <script src="kiaalap-master/js/datepicker/jquery-ui.min.js"></script>
-        <script src="kiaalap-master/js/datepicker/datepicker-active.js"></script>
+        <script src="{{ asset('kiaalap-master/js/datepicker/jquery-ui.min.js')}}"></script>
+        <script src="{{ asset('kiaalap-master/js/datepicker/datepicker-active.js')}}"></script>
         <!-- form validate JS
             ============================================ -->
-        <script src="kiaalap-master/js/form-validation/jquery.form.min.js"></script>
-        <script src="kiaalap-master/js/form-validation/jquery.validate.min.js"></script>
-        <script src="kiaalap-master/js/form-validation/form-active.js"></script>
+        <script src="{{ asset('kiaalap-master/js/form-validation/jquery.form.min.js')}}"></script>
+        <script src="{{ asset('kiaalap-master/js/form-validation/jquery.validate.min.js')}}"></script>
+        <script src="{{ asset('kiaalap-master/js/form-validation/form-active.js')}}"></script>
         <!-- dropzone JS
             ============================================ -->
-        <script src="kiaalap-master/js/dropzone/dropzone.js"></script>
+        <script src="{{ asset('kiaalap-master/js/dropzone/dropzone.js')}}"></script>
         <!-- tab JS
             ============================================ -->
-        <script src="kiaalap-master/js/tab.js"></script>
+        <script src="{{ asset('kiaalap-master/js/tab.js')}}"></script>
