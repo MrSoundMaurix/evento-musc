@@ -92,11 +92,11 @@ class UsersTableSeeder extends Seeder
         ]);
         DB::table('role_user')->insert([
             'user_id' => '3',
-            'role_id' => '3',
+            'role_id' => '2',
         ]);
         DB::table('role_user')->insert([
             'user_id' => '4',
-            'role_id' => '3',
+            'role_id' => '2',
         ]);
         DB::table('role_user')->insert([
             'user_id' => '5',

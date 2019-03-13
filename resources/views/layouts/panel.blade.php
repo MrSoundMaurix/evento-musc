@@ -4,64 +4,64 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@yield('title','All Professor | Kiaalap - Kiaalap Admin Template')</title>
+    <title>@yield('title','Admin-Home | Event - MUSC')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="kiaalap-master/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('kiaalap-master/img/favicon.ico')}}">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/bootstrap.min.css')}}">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/font-awesome.min.css')}}">
     <!-- owl.carousel CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/owl.carousel.css">
-    <link rel="stylesheet" href="kiaalap-master/css/owl.theme.css">
-    <link rel="stylesheet" href="kiaalap-master/css/owl.transitions.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.transitions.css')}}">
     <!-- animate CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/animate.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/animate.css')}}">
     <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/normalize.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/normalize.css')}}">
     <!-- meanmenu icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/meanmenu.min.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/meanmenu.min.css')}}">
     <!-- main CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/main.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/main.css')}}">
     <!-- educate icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/educate-custon-icon.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/educate-custon-icon.css')}}">
     <!-- morrisjs CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/morrisjs/morris.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/morrisjs/morris.css')}}">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
     <!-- metisMenu CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="kiaalap-master/css/metisMenu/metisMenu-vertical.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/metisMenu/metisMenu.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/metisMenu/metisMenu-vertical.css')}}">
     <!-- calendar CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="kiaalap-master/css/calendar/fullcalendar.print.min.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.print.min.css')}}">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/style.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/style.css')}}">
     <!-- responsive CSS
 		============================================ -->
-    <link rel="stylesheet" href="kiaalap-master/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/responsive.css')}}">
     <!-- modernizr JS
 		============================================ -->
-    <script src="kiaalap-master/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
 
 <body>
@@ -73,7 +73,7 @@
         <nav id="sidebar" class="">
             <div class="sidebar-header">
                 <a href="index.html"><img class="main-logo" src="kiaalap-master/img/logo/logo.png" alt="" /></a>
-                <strong><a href="index.html"><img src="kiaalap-master/img/logo/logosn.png" alt="" /></a></strong>
+                <strong><a href="index.html"><img src="{{ asset('kiaalap-master/img/logo/logosn.png')}}" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -92,41 +92,41 @@
                             </ul>
                         </li>
                         <li>
-                            <a title="Landing Page" href="{{url('calendario')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Calendario</span></a>
+                            <a title="Landing Page" href="{{url('admin-calendario')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Calendario</span></a>
                         </li>
                         <li>
-                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Instructores</span></a>
+                            <a class="has-arrow" href="#" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Instructores</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Professors" href="{{ url('instructores') }}"><span class="mini-sub-pro">Listado</span></a></li>
-                                <li><a title="Add Professor" href="{{ url('agregar-instructor') }}"><span class="mini-sub-pro">Agregar</span></a></li>
+                                <li><a title="All Professors" href="{{ url('admin-instructores-l') }}"><span class="mini-sub-pro">Listado</span></a></li>
+                                <li><a title="Add Professor" href="{{ url('admin-instructores/create') }}"><span class="mini-sub-pro">Agregar</span></a></li>
                                 {{-- <li><a title="Edit Professor" href="#"><span class="mini-sub-pro">Editar</span></a></li> --}}
-                                <li><a title="Professor Profile" href="{{url('instructores/1')}}"><span class="mini-sub-pro">Perfil</span></a></li>
+                                <li><a title="Professor Profile" href="{{url('admin-instructores/1')}}"><span class="mini-sub-pro">Perfil</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Usuarios</span></a>
+                            <a class="has-arrow" href="#" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Usuarios</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Students" href="{{url('usuarios')}}"><span class="mini-sub-pro">Listado</span></a></li>
-                                <li><a title="Add Students" href="{{url('agregar-usuario')}}"><span class="mini-sub-pro">Agregar</span></a></li>
+                                <li><a title="All Students" href="{{url('admin-usuarios')}}"><span class="mini-sub-pro">Listado</span></a></li>
+                                <li><a title="Add Students" href="{{url('admin-usuarios/create')}}"><span class="mini-sub-pro">Agregar</span></a></li>
                                 {{-- <li><a title="Edit Students" href="#"><span class="mini-sub-pro">Edit Student</span></a></li>
                                 <li><a title="Students Profile" href="#"><span class="mini-sub-pro">Student Profile</span></a></li> --}}
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Talleres</span></a>
+                            <a class="has-arrow" href="" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Talleres</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Courses" href="{{url('talleres')}}"><span class="mini-sub-pro">Listado</span></a></li>
-                                <li><a title="Add Courses" href="{{url('agregar-taller')}}"><span class="mini-sub-pro">Agregar</span></a></li>
+                                <li><a title="All Courses" href="{{url('admin-talleres')}}"><span class="mini-sub-pro">Listado</span></a></li>
+                                <li><a title="Add Courses" href="{{url('admin-talleres/create')}}"><span class="mini-sub-pro">Agregar</span></a></li>
                                {{--  <li><a title="Edit Courses" href="#"><span class="mini-sub-pro">Edit Course</span></a></li>
                                 <li><a title="Courses Profile" href="#"><span class="mini-sub-pro">Courses Info</span></a></li>
                                 <li><a title="course Payment" href="#"><span class="mini-sub-pro">Courses Payment</span></a></li> --}}
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Conferencias</span></a>
+                            <a class="has-arrow" href="" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Conferencias</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Library" href="{{url('conferencias')}}"><span class="mini-sub-pro">Listado</span></a></li>
-                                <li><a title="Add Library" href="{{url('agregar-conferencia')}}"><span class="mini-sub-pro">Agregar</span></a></li>
+                                <li><a title="All Library" href="{{url('admin-conferencias')}}"><span class="mini-sub-pro">Listado</span></a></li>
+                                <li><a title="Add Library" href="{{url('admin-conferencias/create')}}"><span class="mini-sub-pro">Agregar</span></a></li>
                                {{--  <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li> --}}
                             </ul>
                         </li>
@@ -437,55 +437,55 @@
     </div>
     <!-- jquery
 		============================================ -->
-    <script src="kiaalap-master/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/vendor/jquery-1.12.4.min.js')}}"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="kiaalap-master/js/bootstrap.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/bootstrap.min.js')}}"></script>
     <!-- wow JS
 		============================================ -->
-    <script src="kiaalap-master/js/wow.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/wow.min.js')}}"></script>
     <!-- price-slider JS
 		============================================ -->
-    <script src="kiaalap-master/js/jquery-price-slider.js"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery-price-slider.js')}}"></script>
     <!-- meanmenu JS
 		============================================ -->
-    <script src="kiaalap-master/js/jquery.meanmenu.js"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.meanmenu.js')}}"></script>
     <!-- owl.carousel JS
 		============================================ -->
-    <script src="kiaalap-master/js/owl.carousel.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/owl.carousel.min.js')}}"></script>
     <!-- sticky JS
 		============================================ -->
-    <script src="kiaalap-master/js/jquery.sticky.js"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.sticky.js')}}"></script>
     <!-- scrollUp JS
 		============================================ -->
-    <script src="kiaalap-master/js/jquery.scrollUp.min.js"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.scrollUp.min.js')}}"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
-    <script src="kiaalap-master/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="kiaalap-master/js/scrollbar/mCustomScrollbar-active.js"></script>
+    <script src="{{ asset('kiaalap-master/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/scrollbar/mCustomScrollbar-active.js')}}"></script>
     <!-- metisMenu JS
 		============================================ -->
-    <script src="kiaalap-master/js/metisMenu/metisMenu.min.js"></script>
-    <script src="kiaalap-master/js/metisMenu/metisMenu-active.js"></script>
+    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu-active.js')}}"></script>
     <!-- morrisjs JS
 		============================================ -->
-    <script src="kiaalap-master/js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="kiaalap-master/js/sparkline/jquery.charts-sparkline.js"></script>
-    <script src="kiaalap-master/js/sparkline/sparkline-active.js"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.sparkline.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.charts-sparkline.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/sparkline-active.js')}}"></script>
     <!-- calendar JS
 		============================================ -->
-    <script src="kiaalap-master/js/calendar/moment.min.js"></script>
-    <script src="kiaalap-master/js/calendar/fullcalendar.min.js"></script>
-    <script src="kiaalap-master/js/calendar/fullcalendar-active.js"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/moment.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar-active.js')}}"></script>
     <!-- plugins JS
 		============================================ -->
-    <script src="kiaalap-master/js/plugins.js"></script>
+    <script src="{{ asset('kiaalap-master/js/plugins.js')}}"></script>
     <!-- main JS
 		============================================ -->
-    <script src="kiaalap-master/js/main.js"></script>
+    <script src="{{ asset('kiaalap-master/js/main.js')}}"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="kiaalap-master/js/tawk-chat.js"></script>
+    <script src="{{ asset('kiaalap-master/js/tawk-chat.js')}}"></script>
 </body>
 
 </html>

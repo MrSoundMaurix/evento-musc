@@ -16,9 +16,9 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <ul class="breadcome-menu">
-                                        <li><a href="#">Talleres-Conferencias</a> <span class="bread-slash">/</span>
+                                        <li><a href="#">TALLERES-CONFERENCIAS</a> <span class="bread-slash">/</span>
                                         </li>
-                                        <li><span class="bread-blod">Listado</span>
+                                        <li><span class="bread-blod">LISTADO</span>
                                         </li>
                                     </ul>
                                 </div>

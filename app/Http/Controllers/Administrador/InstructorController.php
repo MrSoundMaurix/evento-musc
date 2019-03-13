@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Administrador;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class AdministradorController extends Controller
+class InstructorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,13 +14,13 @@ class AdministradorController extends Controller
      */
     public function index()
     {
-        //
+        return view('Administrador.Instructor.index');
+    }
+    public function indexLista()
+    {
+        return view('Administrador.Instructor.index-list');
     }
 
-    public function calendario()
-    {
-        return view('Administrador.calendario');
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +28,7 @@ class AdministradorController extends Controller
      */
     public function create()
     {
-        //
+        return view('Administrador.Instructor.create');
     }
 
     /**
@@ -49,7 +50,7 @@ class AdministradorController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Administrador.Instructor.show');
     }
 
     /**

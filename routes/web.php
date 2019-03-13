@@ -28,17 +28,24 @@ Auth::routes();
     return view('layouts/index');
 })->middleware('auth'); */
 
-Route::group(['middleware' => ['auth']], function () {
-    Route::view('admin-home', 'Administrador.home');
-    Route::get('calendario', 'AdministradorController@calendario');
-    Route::resource('instructores', 'InstructorController');
-    Route::get('agregar-instructor', 'InstructorController@create');
-    Route::resource('usuarios', 'EstudianteController');
-    Route::get('agregar-usuario', 'EstudianteController@create');
-    Route::resource('talleres', 'TallerController');
-    Route::get('agregar-taller', 'TallerController@create');
-    Route::resource('conferencias', 'ConferenciaController');
-    Route::get('agregar-conferencia', 'ConferenciaController@create');
+Route::group(['middleware' => ['auth']], function ()
+{
+    Route::group(['middleware' => 'role:administrador|root'], function ()
+    {
+        Route::get('admin-home', 'Administrador\AdministraciónController@home');
+        Route::get('admin-calendario', 'Administrador\AdministraciónController@calendario');
+        Route::resource('admin-instructores', 'Administrador\InstructorController');
+        Route::get('admin-instructores-l', 'Administrador\InstructorController@indexLista');
+        Route::resource('admin-usuarios', 'Administrador\UsuarioController');
+        Route::resource('admin-talleres', 'Administrador\TallerController');
+        Route::resource('admin-conferencias', 'Administrador\ConferenciaController');
 
+
+
+    });
+    Route::group(['middleware' => 'role:usuario'], function ()
+    {
+       // Route::view('usuario-home', 'Usuario.home');
+    });
 });
 
