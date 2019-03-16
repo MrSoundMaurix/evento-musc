@@ -94,7 +94,7 @@
     <section id="intro">
         <div class="intro-container wow fadeIn">
             <h1 class="mb-4 pb-0">Evento<br><span>MUSC</span> Conferencias y Talleres</h1>
-            <p class="mb-4 pb-0">10-12 Junio, Universidad Técnica del Norte, Ibarra</p>
+            <p class="mb-4 pb-0">17 - 21 Junio, Universidad Técnica del Norte, Ibarra</p>
             <a href="https://www.youtube.com/watch?v=T_HQyQo7xyU" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
             <a href="#about" class="about-btn scrollto">Acerca del evento</a>
         </div>
