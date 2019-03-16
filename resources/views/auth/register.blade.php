@@ -11,6 +11,23 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="form-group row">
+                            <label for="pais" class="col-md-4 col-form-label text-md-right">{{ __('País') }}</label>
+
+                            <div class="col-md-6">
+                            <select required class="form-control" id="pais" name="pais">
+                                <option value="">-- Seleccionar --</option>
+                               
+                                <option value="Ecuador" {{ old('pais')=="Ecuador"? "selected":"" }} >Ecuador</option>
+                                <option value="Perú" {{ old('pais')=="Perú"? "selected":"" }} >Perú</option>
+                                <option value="Colombia" {{ old('pais')=="Colombia"? "selected":"" }} >Colombia</option>
+                                <option value="México" {{ old('pais')=="México"? "selected":"" }}  >México</option>
+                                <option value="Chile" {{ old('pais')=="Chile"? "selected":"" }}>Chile</option>
+
+                                
+                            </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="cedula" class="col-md-4 col-form-label text-md-right">{{ __('Cedula') }}</label>
 
                             <div class="col-md-6">
