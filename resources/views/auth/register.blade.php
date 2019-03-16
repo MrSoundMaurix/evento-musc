@@ -14,25 +14,23 @@
                             <label for="pais" class="col-md-4 col-form-label text-md-right">{{ __('País') }}</label>
 
                             <div class="col-md-6">
-                            <select required class="form-control" id="pais" name="pais">
+                            <select required class="form-control" onchange="ShowSelected();" id="pais" name="pais">
                                 <option value="">-- Seleccionar --</option>
-                               
                                 <option value="Ecuador" {{ old('pais')=="Ecuador"? "selected":"" }} >Ecuador</option>
                                 <option value="Perú" {{ old('pais')=="Perú"? "selected":"" }} >Perú</option>
                                 <option value="Colombia" {{ old('pais')=="Colombia"? "selected":"" }} >Colombia</option>
                                 <option value="México" {{ old('pais')=="México"? "selected":"" }}  >México</option>
-                                <option value="Chile" {{ old('pais')=="Chile"? "selected":"" }}>Chile</option>
-
-                                
+                                <option value="Chile" {{ old('pais')=="Chile"? "selected":"" }}>Chile</option>  
                             </select>
+
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="cedula" class="col-md-4 col-form-label text-md-right">{{ __('Cedula') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="cedula" type="text" class="form-control{{ $errors->has('cedula') ? ' is-invalid' : '' }}" name="cedula" value="{{ old('cedula') }}" required autofocus>
-
+                            <div class="col-md-6" id="pa">
+                             <input id="cedula" type="text" class="form-control{{ $errors->has('cedula') ? ' is-invalid' : '' }}" name="cedula" value="{{ old('cedula') }}" required autofocus>
+                                 
+                            
                                 @if ($errors->has('cedula'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('cedula') }}</strong>
@@ -86,13 +84,18 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
+                              <!--  <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+-->
+                            <input type="password" class="form-control example4" id="password4" placeholder="Password">
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+                            </div>
+                            <div class="form-group mg-b-pass">
+                                        <span class="font-bold pwstrength_viewport_verdict4"></span>
+                                        <span class="pwstrength_viewport_progress4"></span>
                             </div>
                         </div>
 
