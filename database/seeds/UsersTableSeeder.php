@@ -45,9 +45,18 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'pais' => 'Colombia',
             'cedula' => '1003088653',
-            'name' => 'Elvis David',
+            'name' => 'Elvis David Pacari',
             'apellido' => 'Moreta Moreta', 
-            'email' => 'edmoreta@utn.edu.ec',
+            'email' => 'edmoretam@utn.edu.ec',
+            'password' => bcrypt('12345678'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+        DB::table('users')->insert([
+            'cedula' => '0401939269',
+            'name' => 'Alexander Patricio',
+            'apellido' => 'Pinchao Pujota', 
+            'email' => 'appinchaop@utn.edu.ec',
             'password' => bcrypt('12345678'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
