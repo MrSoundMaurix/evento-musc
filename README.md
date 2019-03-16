@@ -43,6 +43,11 @@ php artisan serve
 Por último abrir el navegador http:\\localhost:8000 o http:\\127.0.0.1:8000
 
 
+```
+git remote add origin https://github.com/edmoreta/evento-musc.git
+```
+
+
 # Comandos git
 Configurar el email y el nombre de usuario de la cuenta GitHub
 ```
