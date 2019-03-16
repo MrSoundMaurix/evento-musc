@@ -19,9 +19,9 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <ul class="breadcome-menu">
-                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            <li><a href="#">DASHBOARD</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Dashboard </span>
+                                            <li><span class="bread-blod">HOME </span>
                                             </li>
                                         </ul>
                                     </div>
@@ -565,13 +565,13 @@
 
     <!-- counterup JS
 		============================================ -->
-    <script src="kiaalap-master/js/counterup/jquery.counterup.min.js"></script>
-    <script src="kiaalap-master/js/counterup/waypoints.min.js"></script>
-    <script src="kiaalap-master/js/counterup/counterup-active.js"></script>
+    <script src="{{ asset('kiaalap-master/js/counterup/jquery.counterup.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/counterup/waypoints.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/counterup/counterup-active.js')}}"></script>
 
     <!-- morrisjs JS
 		============================================ -->
-    <script src="kiaalap-master/js/morrisjs/raphael-min.js"></script>
-    <script src="kiaalap-master/js/morrisjs/morris.js"></script>
-    <script src="kiaalap-master/js/morrisjs/morris-active.js"></script>
+    <script src="{{ asset('kiaalap-master/js/morrisjs/raphael-min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/morrisjs/morris.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/morrisjs/morris-active.js')}}"></script>
 

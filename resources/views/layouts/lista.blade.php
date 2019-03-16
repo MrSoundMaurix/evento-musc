@@ -15,10 +15,22 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu">
-                                <li><a href="#">Instructores</a> <span class="bread-slash">/</span>
+                                <li><a href="#">INSTRUCTORES</a> <span class="bread-slash">/</span>
                                 </li>
-                                <li><span class="bread-blod">Listado</span>
+                                <li><span class="bread-blod">DETALLES</span>
                                 </li>
+                            </ul>
+                            <ul class="breadcome-menu">
+                                    <li>
+                                        <div class="social-media-in">
+                                            <a title="Detalles Instructores" href="{{url('admin-instructores')}}"><i class="fa fa-user"></i></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="social-media-in">
+                                            <a title="Listado Instructores" href="{{url('admin-instructores-l')}}"><i class="fa fa-list"></i></a>
+                                        </div>
+                                    </li>
                             </ul>
                         </div>
                     </div>
@@ -28,7 +40,11 @@
     </div>
 </div>
 <div class="contacts-area mg-b-15">
+
     <div class="container-fluid">
+            <div class="product-status-wrap">
+                    <h4>DETALLES DE INSTRUCTORES</h4>
+            </div>
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="hpanel hblue contact-panel contact-panel-cs responsive-mg-b-30">
