@@ -174,7 +174,21 @@
                                                                 </li>
                                                                 <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
                                                                 </li>
-                                                                <li><a href="#"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
+                                                                <li>
+                                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                                    onclick="event.preventDefault();
+                                                                                    document.getElementById('logout-form').submit();">
+                                                                        {{ __('Logout') }}
+                                                                    </a>
+
+
+                                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                                        @csrf
+                                                                    </form>
+                                                              <!--  <a href="#"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>-->
+
+
+
                                                                 </li>
                                                             </ul>
                                                         </li>

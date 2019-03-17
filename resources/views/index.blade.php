@@ -10,22 +10,22 @@
 
     <!-- Favicons -->
     <link href="https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/19149226_664521647079400_7057188107885065268_n.jpg?_nc_cat=105&_nc_ht=scontent.fuio1-1.fna&oh=5b1796a9cccf80edd19eb1365d444200&oe=5D1F4D0E" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Libraries CSS Files -->
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/venobox/venobox.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{asset('lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/venobox/venobox.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 
     <!-- Main Stylesheet File -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -52,8 +52,8 @@
                             Sistemas
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ url('sistemas-conferencias') }}">Conferencias</a></li>
-                            <li><a class="dropdown-item" href="{{ url('sistemas-talleres') }}">Talleres</a></li>                            
+                            <li><a class="dropdown-item" href="{{ url('sistemas/conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" href="{{ url('sistemas/talleres') }}">Talleres</a></li>                            
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -61,7 +61,8 @@
                             Publicidad
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ url('publicidad-conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" href="{{ url('publicidad/conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" href="{{ url('publicidad/talleres') }}">Talleres</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -69,7 +70,7 @@
                             Contabilidad
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ url('contabilidad-conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" href="{{ url('contabilidad/conferencias') }}">Conferencias</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -77,7 +78,7 @@
                             Biotecnología
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ url('biotecnologia-conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" href="{{ url('biotecnologia/conferencias') }}">Conferencias</a></li>
                         </ul>
                     </li>
                     <li class="buy-tickets"><a href="#buy-tickets">Inscríbete</a></li>
@@ -94,7 +95,7 @@
     <section id="intro">
         <div class="intro-container wow fadeIn">
             <h1 class="mb-4 pb-0">Evento<br><span>MUSC</span> Conferencias y Talleres</h1>
-            <p class="mb-4 pb-0">10-12 Junio, Universidad Técnica del Norte, Ibarra</p>
+            <p class="mb-4 pb-0">17 - 21 Junio, Universidad Técnica del Norte, Ibarra</p>
             <a href="https://www.youtube.com/watch?v=T_HQyQo7xyU" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
             <a href="#about" class="about-btn scrollto">Acerca del evento</a>
         </div>
@@ -184,21 +185,21 @@
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
     <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/superfish/hoverIntent.js"></script>
-    <script src="lib/superfish/superfish.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/venobox/venobox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{asset('lib/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('lib/jquery/jquery-migrate.min.js')}}"></script>
+    <script src="{{asset('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('lib/easing/easing.min.js')}}"></script>
+    <script src="{{asset('lib/superfish/hoverIntent.js')}}"></script>
+    <script src="{{asset('lib/superfish/superfish.min.js')}}"></script>
+    <script src="{{asset('lib/wow/wow.min.js')}}"></script>
+    <script src="{{asset('lib/venobox/venobox.min.js')}}"></script>
+    <script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
     <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
+    <script src="{{asset('contactform/contactform.js')}}"></script>
 
     <!-- Template Main Javascript File -->
-    <script src="js/main.js"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 </body>
 
 </html>
