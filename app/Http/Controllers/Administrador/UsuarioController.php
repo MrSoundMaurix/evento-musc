@@ -46,7 +46,7 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        return view('Administrador.Usuario.show');
+        //
     }
 
     /**
@@ -57,7 +57,7 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Administrador.Usuario.edit');
     }
 
     /**

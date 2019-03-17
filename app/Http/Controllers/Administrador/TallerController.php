@@ -57,7 +57,7 @@ class TallerController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Administrador.Talleres.edit');
     }
 
     /**

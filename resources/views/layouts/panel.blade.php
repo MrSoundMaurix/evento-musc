@@ -75,7 +75,8 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="{{ asset('kiaalap-master/img/logo/logo.png')}}" alt="" /></a>
+                {{--  <a href="index.html"><img class="main-logo" src="kiaalap-master/img/logo/logo.png" alt="" /></a>  --}}
+              {{--  <a href=""><h1 style="font-family:Times;">MUSC</h1></a>  --}}
                 <strong><a href="index.html"><img src="{{ asset('kiaalap-master/img/logo/logosn.png')}}" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -84,7 +85,7 @@
                         <li>
                             <a class="has-arrow" href="index.html">
 								   <span class="educate-icon educate-home icon-wrap"></span>
-								   <span class="mini-click-non">MUSC</span>
+								   <span class="mini-click-non"> <label class=".text-primary">MUSC</label></span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Dashboard v.1" href="{{url('/')}}"><span class="mini-sub-pro">Portal</span></a></li>
@@ -103,7 +104,7 @@
                                 <li><a title="All Professors" href="{{ url('admin-instructores-l') }}"><span class="mini-sub-pro">Listado</span></a></li>
                                 <li><a title="Add Professor" href="{{ url('admin-instructores/create') }}"><span class="mini-sub-pro">Agregar</span></a></li>
                                 {{-- <li><a title="Edit Professor" href="#"><span class="mini-sub-pro">Editar</span></a></li> --}}
-                                <li><a title="Professor Profile" href="{{url('admin-instructores/1')}}"><span class="mini-sub-pro">Perfil</span></a></li>
+                               {{--   <li><a title="Professor Profile" href="{{url('admin-instructores/1')}}"><span class="mini-sub-pro">Perfil</span></a></li>  --}}
                             </ul>
                         </li>
                         <li>
