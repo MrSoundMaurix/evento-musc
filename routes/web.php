@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth']], function ()
         Route::resource('admin-usuarios', 'Administrador\UsuarioController');
         Route::resource('admin-talleres', 'Administrador\TallerController');
         Route::resource('admin-conferencias', 'Administrador\ConferenciaController');
+        Route::resource('admin-espacios', 'Administrador\EspacioController');
 
 
 

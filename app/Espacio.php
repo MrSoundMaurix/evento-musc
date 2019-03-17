@@ -14,7 +14,7 @@ class Espacio extends Model
     const CREATED_AT="esp_created_at";
     const UPDATED_AT="esp_updated_at";
 
-    protected $fillable = ['esp_nombre','esp_capacidad'];
+    protected $fillable = ['esp_nombre','esp_capacidad','esp_foto','esp_fototype'];
 
     protected $hidden = ['esp_id'];
 

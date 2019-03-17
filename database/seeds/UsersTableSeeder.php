@@ -53,6 +53,7 @@ class UsersTableSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('users')->insert([
+            'pais' => 'Chile',
             'cedula' => '0401939269',
             'name' => 'Alexander Patricio',
             'apellido' => 'Pinchao Pujota', 

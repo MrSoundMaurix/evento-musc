@@ -17,6 +17,8 @@ class CreateEspaciosTable extends Migration
             $table->increments('esp_id');
             $table->string('esp_nombre',200);
             $table->integer('esp_capacidad');
+            $table->text('esp_foto')->nullable()->default(NULL);
+            $table->text('esp_fototype')->nullable()->default(NULL);
             $table->timestamp('esp_created_at');
             $table->timestamp('esp_updated_at');
         });

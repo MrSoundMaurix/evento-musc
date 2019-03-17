@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -36,6 +36,9 @@
     <!-- main CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('kiaalap-master/css/main.css')}}">
+    <!-- dropzone CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/dropzone/dropzone.css')}}">
     <!-- educate icon CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('kiaalap-master/css/educate-custon-icon.css')}}">
@@ -72,7 +75,7 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="kiaalap-master/img/logo/logo.png" alt="" /></a>
+                <a href="index.html"><img class="main-logo" src="{{ asset('kiaalap-master/img/logo/logo.png')}}" alt="" /></a>
                 <strong><a href="index.html"><img src="{{ asset('kiaalap-master/img/logo/logosn.png')}}" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -130,15 +133,15 @@
                                {{--  <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li> --}}
                             </ul>
                         </li>
-                        {{-- <li>
-                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Departments</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
+                        <li>
+                            <a class="has-arrow" href="{{url('admin-espacios')}}" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Espacios</span></a>
+                            {{-- <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Departments List" href="departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
                                 <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>
                                 <li><a title="Edit Departments" href="edit-department.html"><span class="mini-sub-pro">Edit Departments</span></a></li>
-                            </ul>
+                            </ul> --}}
                         </li>
-                        <li>
+                        {{-- <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-message icon-wrap"></span> <span class="mini-click-non">Mailbox</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
@@ -230,8 +233,211 @@
             </div>
         </div>
         <div class="header-advance-area">
-            @yield('nav')
-
+            {{-- @yield('nav') --}}
+            <div class="header-top-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="header-top-wraper">
+                                <div class="row">
+                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                                        <div class="menu-switcher-pro">
+                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                                    <i class="educate-icon educate-nav"></i>
+                                                </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+                                        <div class="header-top-menu tabl-d-n">
+                                            <ul class="nav navbar-nav mai-top-nav">
+                                                <li class="nav-item">
+                                                    <a href="{{url('admin-home')}}" class="nav-link">HOME</a>
+                                                </li>
+                                                {{-- <li class="nav-item">
+                                                    <a href="#" class="nav-link">About</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Services</a>
+                                                </li> --}}
+                                                {{-- <li class="nav-item dropdown res-dis-nn">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Project <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                                    <div role="menu" class="dropdown-menu animated zoomIn">
+                                                        <a href="#" class="dropdown-item">Documentation</a>
+                                                        <a href="#" class="dropdown-item">Expert Backend</a>
+                                                        <a href="#" class="dropdown-item">Expert FrontEnd</a>
+                                                        <a href="#" class="dropdown-item">Contact Support</a>
+                                                    </div>
+                                                </li> --}}
+                                                {{-- <li class="nav-item"> --}}
+                                                    {{-- <a href="#" class="nav-link">Support</a> --}}
+                                                {{-- </li> --}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                        <div class="header-right-info">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                <li class="nav-item dropdown">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-message edu-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a>
+                                                    <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
+                                                        <div class="message-single-top">
+                                                            <h1>Message</h1>
+                                                        </div>
+                                                        <ul class="message-menu">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="message-img">
+                                                                        <img src="{{ asset('kiaalap-master/img/contact/1.jpg')}}" alt="">
+                                                                    </div>
+                                                                    <div class="message-content">
+                                                                        <span class="message-date">16 Sept</span>
+                                                                        <h2>Advanda Cro</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="message-img">
+                                                                        <img src="{{ asset('kiaalap-master/img/contact/4.jpg')}}" alt="">
+                                                                    </div>
+                                                                    <div class="message-content">
+                                                                        <span class="message-date">16 Sept</span>
+                                                                        <h2>Sulaiman din</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="message-img">
+                                                                        <img src="{{ asset('kiaalap-master/img/contact/3.jpg')}}" alt="">
+                                                                    </div>
+                                                                    <div class="message-content">
+                                                                        <span class="message-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="message-img">
+                                                                        <img src="{{ asset('kiaalap-master/img/contact/2.jpg')}}" alt="">
+                                                                    </div>
+                                                                    <div class="message-content">
+                                                                        <span class="message-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="message-view">
+                                                            <a href="#">View All Messages</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
+                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
+                                                        <div class="notification-single-top">
+                                                            <h1>Notifications</h1>
+                                                        </div>
+                                                        <ul class="notification-menu">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="educate-icon educate-checked edu-checked-pro admin-check-pro" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Advanda Cro</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-cloud edu-cloud-computing-down" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Sulaiman din</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-eraser edu-shield" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-line-chart edu-analytics-arrow" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="notification-view">
+                                                            <a href="#">View All Notification</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                            <img src="{{ asset('kiaalap-master/img/product/pro4.jpg')}}" alt="" />
+                                                            <span class="admin-name">ADMINISTRADOR</span>
+                                                            <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
+                                                        </a>
+                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                        <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
+                                                        </li>
+                                                        <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
+                                                        </li>
+                                                        <li><a href="#"><span class="edu-icon edu-money author-log-ic"></span>User Billing</a>
+                                                        </li>
+                                                        <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                                onclick="event.preventDefault();
+                                                                            document.getElementById('logout-form').submit();">
+                                                                <span class="edu-icon edu-locked author-log-ic"></span>{{ __('Logout') }}
+                                                            </a>
+                                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                                @csrf
+                                                            </form>
+                                                            <!--  <a href="#"><span class="edu-icon edu-locked author-log-ic"></span></a>-->
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-menu"></i></a>
+            
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Mobile Menu start -->
             <div class="mobile-menu-area">
@@ -418,11 +624,11 @@
                     </div>
                 </div>
             </div>
+            @yield('search')
         </div>
-        <div>
-
+        {{-- <div class="container-fluid"> --}}
             @yield('content')
-        </div>
+        {{-- </div> --}}
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
@@ -437,55 +643,74 @@
     </div>
     <!-- jquery
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/vendor/jquery-1.12.4.min.js') }}"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/bootstrap.min.js') }}"></script>
     <!-- wow JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/wow.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/wow.min.js') }}"></script>
     <!-- price-slider JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery-price-slider.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery-price-slider.js') }}"></script>
     <!-- meanmenu JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery.meanmenu.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.meanmenu.js') }}"></script>
     <!-- owl.carousel JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/owl.carousel.min.js') }}"></script>
     <!-- sticky JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery.sticky.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.sticky.js') }}"></script>
     <!-- scrollUp JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery.scrollUp.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.scrollUp.min.js') }}"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/scrollbar/mCustomScrollbar-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/scrollbar/mCustomScrollbar-active.js') }}"></script>
     <!-- metisMenu JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu.min.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu-active.js') }}"></script>
     <!-- morrisjs JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.sparkline.min.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.charts-sparkline.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/sparkline/sparkline-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.charts-sparkline.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/sparkline-active.js') }}"></script>
     <!-- calendar JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/calendar/moment.min.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar.min.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/moment.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar-active.js') }}"></script>
+    <!-- maskedinput JS
+		============================================ -->
+    <script src="{{ asset('kiaalap-master/js/jquery.maskedinput.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/masking-active.js') }}"></script>
+    <!-- datepicker JS
+        ============================================ -->
+    <script src="{{ asset('kiaalap-master/js/datepicker/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/datepicker/datepicker-active.js') }}"></script>
+    <!-- form validate JS
+        ============================================ -->
+    <script src="{{ asset('kiaalap-master/js/form-validation/jquery.form.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/form-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/form-validation/form-active.js') }}"></script>
+    <!-- dropzone JS
+        ============================================ -->
+    <script src="{{ asset('kiaalap-master/js/dropzone/dropzone.js') }}"></script>
+    <!-- tab JS
+        ============================================ -->
+    <script src="{{ asset('kiaalap-master/js/tab.js') }}"></script>    
     <!-- plugins JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/plugins.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/plugins.js') }}"></script>
     <!-- main JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/main.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/main.js') }}"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/tawk-chat.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/tawk-chat.js') }}"></script>
 </body>
 
 </html>
