@@ -57,7 +57,7 @@ class ConferenciaController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Administrador.Conferencias.edit');
     }
 
     /**

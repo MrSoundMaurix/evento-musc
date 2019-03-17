@@ -1,5 +1,5 @@
 @extends('layouts.panel')
-@section('title','EVENT MUSC| AGREGAR TALLER')
+@section('title','EVENT MUSC| EDITAR TALLER')
 @section('nav')
     @include('layouts.nav')
 @stop
@@ -16,16 +16,16 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <div class="breadcome-heading">
                                         <form role="search" class="sr-input-func">
-                                            <input type="text" placeholder="Buscar..." class="search-int form-control">
+                                            <input type="text" placeholder="Search..." class="search-int form-control">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                         </form>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <ul class="breadcome-menu">
-                                        <li><a href="#">TALLERES</a> <span class="bread-slash">/</span>
+                                        <li><a href="#">TALLER</a> <span class="bread-slash">/</span>
                                         </li>
-                                        <li><span class="bread-blod">AGREGAR</span>
+                                        <li><span class="bread-blod">EDITAR</span>
                                         </li>
                                     </ul>
                                 </div>

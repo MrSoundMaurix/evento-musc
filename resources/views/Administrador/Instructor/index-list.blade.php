@@ -5,7 +5,7 @@
 @stop
 @section('content')
 
-<!-- Mobile Menu end -->
+
 <div class="breadcome-area">
     <div class="container-fluid">
         <div class="row">
@@ -15,7 +15,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
                                 <form role="search" class="sr-input-func">
-                                    <input type="text" placeholder="Search..." class="search-int form-control">
+                                    <input type="text" placeholder="Buscar..." class="search-int form-control">
                                     <a href="#"><i class="fa fa-search"></i></a>
                                 </form>
                             </div>
@@ -30,14 +30,14 @@
                             <ul class="breadcome-menu">
                                     <li>
                                         <div class="social-media-in">
-                                            <a title="Detalles Instructores" href="{{url('admin-instructores')}}"><i class="fa fa-user"></i></a>
+                                            <a title="Cambiar vista" href="{{url('admin-instructores')}}"><i class="fa fa-user"></i></a>
                                         </div>
                                     </li>
-                                    <li>
+                                   {{--   <li>
                                         <div class="social-media-in">
                                             <a title="Listado Instructores" href="{{url('admin-instructores-l')}}"><i class="fa fa-list"></i></a>
                                         </div>
-                                    </li>
+                                    </li>  --}}
                             </ul>
                         </div>
                     </div>
@@ -51,117 +51,104 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="product-status-wrap">
-                    <h4>LISTADO DE INSTRUCTORES</h4>
+                    <h4>LISTADO INSTRUCTORES</h4>
                     <div class="add-product">
-                        <a href="#">Registrar Nuevo</a>
+                        <a href="{{ url('admin-instructores/create') }}">Registrar Nuevo</a>
                     </div>
                     <div class="asset-inner">
                         <table>
                             <tr>
-                                <th>No</th>
-                                <th>Image</th>
-                                <th>Name of Asset</th>
-                                <th>Status</th>
-                                <th>Subject</th>
-                                <th>Department</th>
-                                <th>Type</th>
-                                <th>Price</th>
-                                <th>Setting</th>
+                                <th>Nro</th>
+                                <th>Fotografía</th>
+                                <th>Nombres y Apellidos</th>
+                                <th>Hoja de Vida</th>
+                                <th>Correo</th>
+                                <th>Nacionalidad</th>
+
+                                <th>Opciones</th>
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td><img src="img/product/book-1.jpg" alt="" /></td>
+                                <td><img src="kiaalap-master/img/contact/1.jpg" alt="" /></td>
                                 <td>Web Development Book</td>
                                 <td>
-                                    <button class="pd-setting">Active</button>
+                                    <button class="pd-setting">Ver</button>
                                 </td>
-                                <td>Html, Css</td>
-                                <td>CSE</td>
-                                <td>Book</td>
-                                <td>$1500</td>
+                                <td>micorreo@dominio.com</td>
+                                <td>Ecuador</td>
                                 <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td><img src="img/product/book-2.jpg" alt="" /></td>
+                                <td><img src="kiaalap-master/img/contact/2.jpg" alt="" /></td>
                                 <td>Quality Bol pen</td>
                                 <td>
-                                    <button class="ps-setting">Paused</button>
+                                    <button class="pd-setting">Ver</button>
                                 </td>
-                                <td>PHP</td>
-                                <td>CSE</td>
-                                <td>CD</td>
-                                <td>$1700</td>
+                                <td>micorreo@dominio.com</td>
+                                <td>Ecuador</td>
                                 <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td><img src="img/product/book-3.jpg" alt="" /></td>
+                                <td><img src="kiaalap-master/img/contact/3.jpg" alt="" /></td>
                                 <td>Box of pendrive</td>
                                 <td>
-                                    <button class="ds-setting">Disabled</button>
+                                    <button class="pd-setting">Ver</button>
                                 </td>
-                                <td>Java</td>
-                                <td>CSE</td>
-                                <td>Book</td>
-                                <td>$1500</td>
+                                <td>micorreo@dominio.com</td>
+                                <td>Ecuador</td>
                                 <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td><img src="img/product/book-4.jpg" alt="" /></td>
+                                <td><img src="kiaalap-master/img/contact/4.jpg" alt="" /></td>
                                 <td>Quality Bol pen</td>
                                 <td>
-                                    <button class="pd-setting">Active</button>
+                                    <button class="pd-setting">Ver</button>
                                 </td>
-                                <td>PHP</td>
-                                <td>CSE</td>
-                                <td>CD</td>
-                                <td>$1200</td>
+                                <td>micorreo@dominio.com</td>
+                                <td>Ecuador</td>
                                 <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td><img src="img/product/book-1.jpg" alt="" /></td>
+                                <td><img src="kiaalap-master/img/contact/1.jpg" alt="" /></td>
                                 <td>Web Development Book</td>
                                 <td>
-                                    <button class="pd-setting">Active</button>
+                                    <button class="pd-setting">Ver</button>
                                 </td>
-                                <td>Wordpress</td>
-                                <td>CSE</td>
-                                <td>Book</td>
-                                <td>$1800</td>
+                                <td>micorreo@dominio.com</td>
+                                <td>Ecuador</td>
                                 <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>6</td>
-                                <td><img src="img/product/book-2.jpg" alt="" /></td>
+                                <td><img src="kiaalap-master/img/contact/2.jpg" alt="" /></td>
                                 <td>Quality Bol pen</td>
                                 <td>
-                                    <button class="ps-setting">Paused</button>
+                                    <button class="pd-setting">Ver</button>
                                 </td>
-                                <td>Java</td>
-                                <td>CSE</td>
-                                <td>CD</td>
-                                <td>$1000</td>
+                                <td>micorreo@dominio.com</td>
+                                <td>Ecuador</td>
                                 <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </td>
                             </tr>
                         </table>
