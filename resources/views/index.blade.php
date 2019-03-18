@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Evento - MUSC</title>
+    <title>CIMA - Congreso Internacional  Multiacadémico</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicons -->
-    <link href="https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/19149226_664521647079400_7057188107885065268_n.jpg?_nc_cat=105&_nc_ht=scontent.fuio1-1.fna&oh=5b1796a9cccf80edd19eb1365d444200&oe=5D1F4D0E" rel="icon">
-    <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    {{-- <link href="https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/19149226_664521647079400_7057188107885065268_n.jpg?_nc_cat=105&_nc_ht=scontent.fuio1-1.fna&oh=5b1796a9cccf80edd19eb1365d444200&oe=5D1F4D0E" rel="icon"> --}}
+    <link href="{{ asset('img/logo-icon.png') }}" rel="icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
@@ -39,7 +39,7 @@
             <div id="logo" class="pull-left">
                 <!-- Uncomment below if you prefer to use a text logo -->
                 <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-                <a href="#intro" class="scrollto"><img src="https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/19149226_664521647079400_7057188107885065268_n.jpg?_nc_cat=105&_nc_ht=scontent.fuio1-1.fna&oh=5b1796a9cccf80edd19eb1365d444200&oe=5D1F4D0E" alt="" title=""></a>
+                <a href="#intro" class="scrollto"><img src="{{ asset('img/logo.png')}}" alt="" title=""></a>
             </div>
 
             <nav id="nav-menu-container">
@@ -81,7 +81,7 @@
                             <li><a class="dropdown-item" href="{{ url('biotecnologia/conferencias') }}">Conferencias</a></li>
                         </ul>
                     </li>
-                    <li class="buy-tickets"><a href="#buy-tickets">Inscríbete</a></li>
+                    <li class="buy-tickets"><a href="{{ route('register') }}">Inscríbete</a></li>
                 </ul>
             </nav>
             <!-- #nav-menu-container -->
@@ -94,10 +94,34 @@
   ============================-->
     <section id="intro">
         <div class="intro-container wow fadeIn">
-            <h1 class="mb-4 pb-0">Evento<br><span>MUSC</span> Conferencias y Talleres</h1>
-            <p class="mb-4 pb-0">17 - 21 Junio, Universidad Técnica del Norte, Ibarra</p>
+            <h1 class="mb-4 pb-0">Congreso<br><span style="color: #294D88;">Internacional</span> Multiacadémico</h1>
+            <p class="mb-4 pb-0" style="font-size: 18px">17 - 21 Junio, Universidad Técnica del Norte, Ibarra</p>
             <a href="https://www.youtube.com/watch?v=T_HQyQo7xyU" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
             <a href="#about" class="about-btn scrollto">Acerca del evento</a>
+        </div>
+    </section>
+
+    <!--==========================
+    About Section
+    ============================-->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Información del evento</h2>
+                    <p>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius
+                        aut accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt
+                        inventore in est ut optio sequi unde.</p>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Lugar</h3>
+                    <p>Universidad Técnica del Norte, Ibarra - Ecuador</p>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Fecha</h3>
+                    <p>Lunes a Viernes<br>17 - 21 Junio</p>
+                </div>
+            </div>
         </div>
     </section>
 
