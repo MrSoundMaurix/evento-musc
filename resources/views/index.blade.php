@@ -40,6 +40,11 @@
                 <!-- Uncomment below if you prefer to use a text logo -->
                 <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
                 <a href="#intro" class="scrollto"><img src="{{ asset('img/logo.png')}}" alt="" title=""></a>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                @role('administrador')<li class="active"><a href="{{ url('admin-home') }}">Admin</a></li>@endrole
+                    </ul>
+                </nav>
             </div>
 
             <nav id="nav-menu-container">
@@ -53,7 +58,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="{{ url('sistemas/conferencias') }}">Conferencias</a></li>
-                            <li><a class="dropdown-item" href="{{ url('sistemas/talleres') }}">Talleres</a></li>                            
+                            <li><a class="dropdown-item" href="{{ url('sistemas/talleres') }}">Talleres</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -227,4 +232,3 @@
 </body>
 
 </html>
-    

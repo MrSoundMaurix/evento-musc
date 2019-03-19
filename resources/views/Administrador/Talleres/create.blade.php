@@ -5,6 +5,9 @@
 @stop
 @section('content')
 
+
+
+
 <div class="single-pro-review-area mt-t-10 mg-b-10"></div>
         <!-- Mobile Menu end -->
         <div class="breadcome-area">
@@ -43,7 +46,8 @@
                         <div class="product-payment-inner-st">
                             <ul id="myTabedu1" class="tab-review-design">
                                 <li class="active"><a href="#description">Detalles Talleres</a></li>
-                                <li><a href="#INFORMATION">Información Social</a></li>
+                               {{--   <li><a href="#INFORMATION">Información Social</a></li>  --}}
+
                             </ul>
                             <div id="myTabContent" class="tab-content custom-product-edit">
                                 <div class="product-tab-list tab-pane fade active in" id="description">
@@ -51,18 +55,48 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="review-content-section">
                                                 <div id="dropzone1" class="pro-ad addcoursepro">
-                                                    <form action="/upload" class="dropzone dropzone-custom needsclick addcourse" id="demo1-upload">
+                                                        @include('layouts.messages')
+                                                        {!! Form::open(['url' => 'admin-talleres','files' => 'true']) !!}
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                 <div class="form-group">
-                                                                    <input name="nombrecurso" type="text" class="form-control" placeholder="Nombre">
+                                                                    <input name="tal_tema" type="text" class="form-control" placeholder="Tema Taller">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <input name="fechacurso" id="finish" type="text" class="form-control" placeholder="Fecha Inicio">
+                                                                    <input name="tal_fecha" id="finish" type="text" class="form-control" placeholder="Fecha">
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <input name="tal_horainicio" type="text" class="form-control" placeholder="Hora inicio">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <input name="duracion" type="text" class="form-control" placeholder="Duración">
+                                                                    <input name="tal_horafin" type="text" class="form-control" placeholder="Hora fin">
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <select name="esp_id" class="form-control">
+                                                                        <option value="none" selected="" disabled="">Seleccionar Espacio</option>
+                                                                        @foreach($espacios as $esp)
+                                                                        <option value="{{$esp->esp_id}}">{{$esp->esp_nombre}}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <select name="cat_id" class="form-control">
+                                                                        <option value="none" selected="" disabled="">Seleccionar Categoría</option>
+                                                                        @foreach($categorias as $cat)
+                                                                        <option value="{{$cat->cat_id}}">{{$cat->cat_nombre}}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                        <select name="ins_id" class="form-control">
+                                                                                <option value="none" selected="" disabled="">Seleccionar Instructor</option>
+                                                                                @foreach($instructores as $ins)
+                                                                                <option value="{{$ins->ins_id}}">{{$ins->ins_nombres.' '}}{{$ins->ins_apellidos}}</option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                </div>
+
                                                                 {{--  <div class="form-group">
                                                                     <input name="price" type="number" class="form-control" placeholder="Taller Price">
                                                                 </div>  --}}
@@ -70,38 +104,25 @@
                                                                     <div class="dz-message needsclick download-custom">
                                                                         <i class="fa fa-download edudropnone" aria-hidden="true"></i>
                                                                         <h2 class="edudropnone">Suelta el adjunto aquí o haz clic para subir.</h2>
-                                                                        <p class="edudropnone"><span class="note needsclick">(Archivos Adjuntos.)</span>
+                                                                        <p class="edudropnone"><span class="note needsclick">(Previos Insumos.)</span>
                                                                         </p>
                                                                         <input name="imageico" class="hd-pro-img" type="text" />
                                                                     </div>
                                                                 </div>
                                                                    <hr>
-                                                                <div class="form-group alert-up-pd">
-                                                                    <div class="dz-message needsclick download-custom">
-                                                                        <i class="fa fa-download edudropnone" aria-hidden="true"></i>
-                                                                        <h2 class="edudropnone">Suelta la imagen aquí o haz clic para subir.</h2>
-                                                                        <p class="edudropnone"><span class="note needsclick">(Imagen.)</span>
-                                                                        </p>
-                                                                        <input name="imageico" class="hd-pro-img" type="text" />
-                                                                    </div>
-                                                                </div>
+
 
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <div class="form-group res-mg-t-15">
-                                                                    <input name="carrera" type="text" class="form-control" placeholder="Carrera">
+
+
+
+                                                                <div class="form-group">
+                                                                    <textarea name="tal_materiales" placeholder="Materiales"></textarea>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <textarea name="descripcion" placeholder="Descripción"></textarea>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input name="instructor" type="text" class="form-control" placeholder="Instructor">
-
-                                                                </div>
-
-                                                               {{--   <div class="form-group">
-                                                                    <input id="year" name="year" type="text" class="form-control" placeholder="Year">
-                                                                </div>  --}}
+                                                                        <textarea name="tal_resumen" placeholder="Resúmen"></textarea>
+                                                                    </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -111,7 +132,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </form>
+                                                {!! Form::close() !!}
+
                                                 </div>
                                             </div>
                                         </div>
@@ -150,6 +172,7 @@
                 </div>
             </div>
         </div>
+
 
 
 @stop

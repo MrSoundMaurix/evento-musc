@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Administrador;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Espacio;
+use App\Taller;
+use App\Categoria;
+use App\Instructor;
+use App\Http\Requests\TallerRequest;
 
 class TallerController extends Controller
 {
@@ -14,7 +19,13 @@ class TallerController extends Controller
      */
     public function index()
     {
-        return view('Administrador.Talleres.index');
+        try{
+            $talleres = Taller::orderByDesc('tal_updated_at')->paginate(10);
+            return view('Administrador.Talleres.index',compact('talleres'));
+        }catch(\Exception | QueryException $e){
+            return back()->withErrors(['exception'=>$e->getMessage()]);
+        }
+
     }
 
     /**
@@ -24,7 +35,10 @@ class TallerController extends Controller
      */
     public function create()
     {
-        return view('Administrador.Talleres.create');
+        $espacios = Espacio::all();
+        $categorias = Categoria::all();
+        $instructores = Instructor::all();
+        return view('Administrador.Talleres.create',compact('categorias','instructores','espacios'));
     }
 
     /**
@@ -33,9 +47,15 @@ class TallerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TallerRequest $request)
     {
-        //
+         try{
+            $taller = Taller::create($request->all());
+            $taller->save();
+            return redirect('admin-talleres')->with('success','Taller creado');
+        }catch(\Exception | QueryException $e){
+            return back()->withErrors(['exception'=>$e->getMessage()]);
+        }
     }
 
     /**
@@ -46,7 +66,8 @@ class TallerController extends Controller
      */
     public function show($id)
     {
-        //
+        $taller = Taller::find($id);
+        return $taller;
     }
 
     /**

@@ -65,6 +65,8 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="{{ asset('kiaalap-master/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
+
 </head>
 
 <body>
@@ -88,7 +90,7 @@
 								   <span class="mini-click-non"> <label class=".text-primary">MUSC</label></span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="{{url('/')}}"><span class="mini-sub-pro">Portal</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{url('/')}}"><span class="mini-sub-pro">Ver Portal</span></a></li>
                                {{--   <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
                                 <li><a title="Dashboard v.3" href="index-2.html"><span class="mini-sub-pro">Dashboard v.3</span></a></li>
                                 <li><a title="Analytics" href="analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
@@ -117,14 +119,14 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Talleres</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Courses" href="{{url('admin-talleres')}}"><span class="mini-sub-pro">Listado</span></a></li>
+                            <a class="" href="{{url('admin-talleres')}}" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Talleres</span></a>
+                           {{--   <ul class="submenu-angle" aria-expanded="false">
+                               {{-- <li><a title="All Courses" href="{{url('admin-talleres')}}"><span class="mini-sub-pro">Listado</span></a></li>
                                 <li><a title="Add Courses" href="{{url('admin-talleres/create')}}"><span class="mini-sub-pro">Agregar</span></a></li>
-                               {{--  <li><a title="Edit Courses" href="#"><span class="mini-sub-pro">Edit Course</span></a></li>
+                                 <li><a title="Edit Courses" href="#"><span class="mini-sub-pro">Edit Course</span></a></li>
                                 <li><a title="Courses Profile" href="#"><span class="mini-sub-pro">Courses Info</span></a></li>
-                                <li><a title="course Payment" href="#"><span class="mini-sub-pro">Courses Payment</span></a></li> --}}
-                            </ul>
+                                <li><a title="course Payment" href="#"><span class="mini-sub-pro">Courses Payment</span></a></li>
+                            </ul>  --}}
                         </li>
                         <li>
                             <a class="has-arrow" href="" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Conferencias</span></a>
@@ -428,7 +430,7 @@
                                                     </ul>
                                                 </li>
                                                 <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-menu"></i></a>
-            
+
                                                 </li>
                                             </ul>
                                         </div>
@@ -702,7 +704,7 @@
     <script src="{{ asset('kiaalap-master/js/dropzone/dropzone.js') }}"></script>
     <!-- tab JS
         ============================================ -->
-    <script src="{{ asset('kiaalap-master/js/tab.js') }}"></script>    
+    <script src="{{ asset('kiaalap-master/js/tab.js') }}"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="{{ asset('kiaalap-master/js/plugins.js') }}"></script>
@@ -712,6 +714,7 @@
     <!-- tawk chat JS
 		============================================ -->
     <script src="{{ asset('kiaalap-master/js/tawk-chat.js') }}"></script>
+
 </body>
 
 </html>

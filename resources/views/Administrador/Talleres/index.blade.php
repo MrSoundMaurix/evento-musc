@@ -34,206 +34,68 @@
         </div>
     </div>
 </div>
-<div class="courses-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="courses-inner res-mg-b-30">
-                    <div class="courses-title">
-                        <a href="#"><img src="kiaalap-master/img/courses/1.jpg" alt=""></a>
-                        <h2>Seguridad en Base de Datos SQL Server</h2>
-                    </div>
-                    <div class="courses-alaltic">
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1 Year</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span> 500</span>
-                        <a href="{{url('admin-talleres/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        </a>
-                    </div>
-                    <div class="course-des">
-                        <p><span><i class="fa fa-clock"></i></span> <b>Duración:</b> 2 horas</p>
-                        <p><span><i class="fa fa-clock"></i></span> <b>Instructor:</b> Jayli</p>
-                        <p><span><i class="fa fa-clock"></i></span> <b>Estudiantes:</b> 100+</p>
-                    </div>
-                    <div class="product-buttons">
-                        <button type="button" class="button-default cart-btn">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="courses-inner">
-                    <div class="courses-title">
-                        <a href="#"><img src="kiaalap-master/img/courses/2.jpg" alt=""></a>
-                        <h2>Base de Datos Postgresql</h2>
-                    </div>
-                    <div class="courses-alaltic">
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1 Year</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span> 500</span>
-                        <a href="{{url('admin-talleres/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        </a>
-                    </div>
-                    <div class="course-des">
-                            <p><span><i class="fa fa-clock"></i></span> <b>Duración:</b> 2 horas</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Instructor:</b> Jayli</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Estudiantes:</b> 100+</p>
-                    </div>
-                    <div class="product-buttons">
-                        <button type="button" class="button-default cart-btn">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="courses-inner res-mg-t-30 dk-res-t-pro-30">
-                    <div class="courses-title">
-                        <a href="#"><img src="kiaalap-master/img/courses/3.jpg" alt=""></a>
-                        <h2>Laravel 5.8</h2>
-                    </div>
-                    <div class="courses-alaltic">
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1 Year</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span> 500</span>
-                        <a href="{{url('admin-talleres/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        </a>
-                    </div>
-                    <div class="course-des">
-                            <p><span><i class="fa fa-clock"></i></span> <b>Duración:</b> 2 horas</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Instructor:</b> Jayli</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Estudiantes:</b> 100+</p>
-                    </div>
-                    <div class="product-buttons">
-                        <button type="button" class="button-default cart-btn">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="courses-inner res-mg-t-30 dk-res-t-pro-30">
-                    <div class="courses-title">
-                        <a href="#"><img src="kiaalap-master/img/courses/1.jpg" alt=""></a>
-                        <h2>PHP con GIT</h2>
-                    </div>
-                    <div class="courses-alaltic">
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1 Year</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span> 500</span>
-                        <a href="{{url('admin-talleres/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        </a>
-                    </div>
-                    <div class="course-des">
-                            <p><span><i class="fa fa-clock"></i></span> <b>Duración:</b> 2 horas</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Instructor:</b> Jayli</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Estudiantes:</b> 100+</p>
-                    </div>
-                    <div class="product-buttons">
-                        <button type="button" class="button-default cart-btn">Read More</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mg-b-15">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="courses-inner mg-t-30">
-                    <div class="courses-title">
-                        <a href="#"><img src="kiaalap-master/img/courses/1.jpg" alt=""></a>
-                        <h2>Apps Development</h2>
-                    </div>
-                    <div class="courses-alaltic">
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1 Year</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span> 500</span>
-                        <a href="{{url('admin-talleres/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        </a>
-                    </div>
-                    <div class="course-des">
-                            <p><span><i class="fa fa-clock"></i></span> <b>Duración:</b> 2 horas</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Instructor:</b> Jayli</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Estudiantes:</b> 100+</p>
-                    </div>
-                    <div class="product-buttons">
-                        <button type="button" class="button-default cart-btn">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="courses-inner mg-t-30">
-                    <div class="courses-title">
-                        <a href="#"><img src="kiaalap-master/img/courses/2.jpg" alt=""></a>
-                        <h2>Illustrator CC 2018</h2>
-                    </div>
-                    <div class="courses-alaltic">
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1 Year</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span> 500</span>
-                        <a href="{{url('admin-talleres/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        </a>
-                    </div>
-                    <div class="course-des">
-                            <p><span><i class="fa fa-clock"></i></span> <b>Duración:</b> 2 horas</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Instructor:</b> Jayli</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Estudiantes:</b> 100+</p>
-                    </div>
-                    <div class="product-buttons">
-                        <button type="button" class="button-default cart-btn">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="courses-inner mg-t-30">
-                    <div class="courses-title">
-                        <a href="#"><img src="kiaalap-master/img/courses/3.jpg" alt=""></a>
-                        <h2>Indesign cs6 2018</h2>
-                    </div>
-                    <div class="courses-alaltic">
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1 Year</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span> 500</span>
-                        <a href="{{url('admin-talleres/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        </a>
-                    </div>
-                    <div class="course-des">
-                            <p><span><i class="fa fa-clock"></i></span> <b>Duración:</b> 2 horas</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Instructor:</b> Jayli</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Estudiantes:</b> 100+</p>
-                    </div>
-                    <div class="product-buttons">
-                        <button type="button" class="button-default cart-btn">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="courses-inner mg-t-30">
-                    <div class="courses-title">
-                        <a href="#"><img src="kiaalap-master/img/courses/1.jpg" alt=""></a>
-                        <h2>Web Development</h2>
-                    </div>
-                    <div class="courses-alaltic">
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-clock"></i></span> 1 Year</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-heart"></i></span> 50</span>
-                        <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-dollar"></i></span> 500</span>
-                        <a href="{{url('admin-talleres/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        </a>
-                    </div>
-                    <div class="course-des">
-                            <p><span><i class="fa fa-clock"></i></span> <b>Duración:</b> 2 horas</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Instructor:</b> Jayli</p>
-                            <p><span><i class="fa fa-clock"></i></span> <b>Estudiantes:</b> 100+</p>
-                    </div>
-                    <div class="product-buttons">
-                        <button type="button" class="button-default cart-btn">Read More</button>
+<div class="product-status mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-status-wrap">
+                        <h4>LISTADO TALLERES</h4>
+                        @include('layouts.messages')
+                        <div class="add-product">
+                            <a href="{{ url('admin-talleres/create') }}">Registrar Nuevo</a>
+                        </div>
+                        <div class="asset-inner">
+                            <table>
+                                <tr>
+                                    <th>Tema</th>
+                                    <th>Estado</th>
+                                    <th>Fecha</th>
+                                    <th>Hora Inicio</th>
+                                    <th>Hora Fin</th>
+                                    <th>Categoría</th>
+                                    <th>Instructor</th>
+                                    <th>Opciones</th>
+                                </tr>
+                                @foreach ($talleres as $taller)
+                                <tr>
+                                    <td>{{$taller->tal_tema}}</td>
+                                    <td>
+                                        @if ($taller->tal_estado == 1)
+                                        <button class="pd-setting">disponible</button>
+                                        @endif
+
+                                    </td>
+                                    <td>{{$taller->tal_fecha}}</td>
+                                    <td>{{$taller->tal_horainicio}}</td>
+                                    <td>{{$taller->tal_horafin}}</td>
+                                    <td>{{$taller->categoria->cat_nombre}}</td>
+                                    <td>{{$taller->instructor->ins_nombres.' '}}{{$taller->instructor->ins_apellidos}}</td>
+                                    <td>
+                                        <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                        <a href="{{route('admin-talleres.show',$taller->tal_id)}}"><button data-toggle="tooltip" title="Ver" class="pd-setting-ed"><i class="fa fa-folder-open" aria-hidden="true"></i></button></a>
+
+                                        <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    </td>
+                                </tr>
+                                @endforeach
+
+                            </table>
+                            {{$talleres->links()}}
+                        </div>
+                       {{--   <div class="custom-pagination">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </div>  --}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 @stop
 
