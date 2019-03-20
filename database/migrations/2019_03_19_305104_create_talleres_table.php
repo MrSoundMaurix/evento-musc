@@ -21,8 +21,10 @@ class CreateTalleresTable extends Migration
             $table->date('tal_fecha');
             $table->time('tal_horainicio');
             $table->time('tal_horafin');
-            $table->string('tal_materiales',500)->nullable()->default(NULL);
-            $table->string('tal_cprevios',500)->nullable()->default(NULL);
+            $table->string('tal_materiales',5000)->nullable()->default(NULL);
+            $table->string('tal_cprevios',5000)->nullable()->default(NULL);
+            $table->text('tal_foto')->nullable()->default(NULL);
+            $table->text('tal_fototype')->nullable()->default(NULL);
             $table->integer('cat_id');
             $table->integer('esp_id')->nullable()->default(NULL);
             $table->integer('ins_id');

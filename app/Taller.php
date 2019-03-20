@@ -15,7 +15,8 @@ class Taller extends Model
     const UPDATED_AT="tal_updated_at";
 
     protected $fillable = ['tal_tema','tal_resumen','tal_estado','tal_fecha','tal_horainicio'
-                        ,'tal_horafin','tal_materiales','tal_cprevios','cat_id','esp_id','ins_id'];
+                        ,'tal_horafin','tal_materiales','tal_cprevios','cat_id','esp_id','ins_id'
+                        ,'tal_foto','tal_fototype'];
 
     protected $hidden = ['tal_id'];
 

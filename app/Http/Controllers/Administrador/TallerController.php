@@ -9,6 +9,7 @@ use App\Taller;
 use App\Categoria;
 use App\Instructor;
 use App\Http\Requests\TallerRequest;
+use Image;
 
 class TallerController extends Controller
 {
@@ -49,10 +50,24 @@ class TallerController extends Controller
      */
     public function store(TallerRequest $request)
     {
+        //return $request;
          try{
             $taller = Taller::create($request->all());
-            $taller->save();
-            return redirect('admin-talleres')->with('success','Taller creado');
+
+            if ($request->hasFile('tal_foto')) {
+                $image = $request->file( 'tal_foto' );
+                $imageType = $image->getClientOriginalExtension();
+                $imageStr = (string) Image::make( $image )->
+                                        resize( 300, null, function ( $constraint ) {
+                                            $constraint->aspectRatio();
+                                        })->encode( $imageType );
+
+                $taller->tal_foto = base64_encode( $imageStr );
+                $taller->tal_fototype = $imageType;
+                $taller->save();
+            }
+
+            return redirect('admin-talleres')->with('success','Taller creado exitosamente');
         }catch(\Exception | QueryException $e){
             return back()->withErrors(['exception'=>$e->getMessage()]);
         }
@@ -67,7 +82,7 @@ class TallerController extends Controller
     public function show($id)
     {
         $taller = Taller::find($id);
-        return $taller;
+        return view('Administrador.Talleres.show',compact('taller'));
     }
 
     /**
@@ -78,7 +93,11 @@ class TallerController extends Controller
      */
     public function edit($id)
     {
-        return view('Administrador.Talleres.edit');
+        $espacios = Espacio::all();
+        $categorias = Categoria::all();
+        $instructores = Instructor::all();
+        $taller = Taller::findOrFail($id);
+        return view('Administrador.Talleres.edit',compact('taller','espacios','categorias','instructores'));
     }
 
     /**
@@ -88,9 +107,28 @@ class TallerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TallerRequest $request, $id)
     {
-        //
+        try{
+            $taller = Taller::updateOrCreate(['tal_id'=>$id],$request->all());
+
+            if ($request->hasFile('tal_foto')) {
+                $image = $request->file( 'tal_foto' );
+                $imageType = $image->getClientOriginalExtension();
+                $imageStr = (string) Image::make( $image )->
+                                        resize( 300, null, function ( $constraint ) {
+                                            $constraint->aspectRatio();
+                                        })->encode( $imageType );
+
+                $taller->tal_foto = base64_encode( $imageStr );
+                $taller->tal_fototype = $imageType;
+                $taller->save();
+            }
+
+            return redirect('admin-talleres')->with('success','Taller actualizado exitosamente');
+        }catch(\Exception | QueryException $e){
+            return back()->withErrors(['exception'=>$e->getMessage()]);
+        }
     }
 
     /**

@@ -49,7 +49,7 @@ class EspacioController extends Controller
             info($request);
             $espacio = Espacio::create($request->all());
 
-            if ($request->hasFile('esp_foto')) {                    
+            if ($request->hasFile('esp_foto')) {
                 $image = $request->file( 'esp_foto' );
                 $imageType = $image->getClientOriginalExtension();
                 $imageStr = (string) Image::make( $image )->
@@ -58,10 +58,10 @@ class EspacioController extends Controller
                                         })->encode( $imageType );
 
                 $espacio->esp_foto = base64_encode( $imageStr );
-                $espacio->esp_fototype = $imageType;                
+                $espacio->esp_fototype = $imageType;
                 $espacio->save();
             }
-            
+
             return redirect('admin-espacios')->with('success','espacio creado');
         }catch(\Exception | QueryException $e){
             return back()->withErrors(['exception'=>$e->getMessage()]);

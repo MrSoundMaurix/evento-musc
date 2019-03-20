@@ -1,8 +1,5 @@
 @extends('layouts.panel')
 @section('title','CIMA | Nuevo Espacio')
-@section('nav')
-    @include('layouts.nav')
-@stop
 @section('search')
 <div class="breadcome-area">
         <div class="container-fluid">
@@ -57,12 +54,11 @@
                                                             <div class="form-group">
                                                                 <input name="esp_capacidad" type="number" class="form-control" placeholder="Capacidad del autorio/laboratorio">
                                                             </div>
-                                                            
+
                                                             <div class="form-group">
                                                                 <input name="esp_foto" type="file" class="form-control">
-                                                            </div>          
+                                                            </div>
                                                         </div>
-
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-lg-12">

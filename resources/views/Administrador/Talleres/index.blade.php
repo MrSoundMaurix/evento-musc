@@ -1,8 +1,5 @@
 @extends('layouts.panel')
 @section('title','EVENT MUSC| TALLERES')
-@section('nav')
-    @include('layouts.nav')
-@stop
 @section('content')
 
 <!-- Mobile Menu end -->
@@ -48,7 +45,7 @@
                             <table>
                                 <tr>
                                     <th>Tema</th>
-                                    <th>Estado</th>
+
                                     <th>Fecha</th>
                                     <th>Hora Inicio</th>
                                     <th>Hora Fin</th>
@@ -58,22 +55,17 @@
                                 </tr>
                                 @foreach ($talleres as $taller)
                                 <tr>
-                                    <td>{{$taller->tal_tema}}</td>
-                                    <td>
-                                        @if ($taller->tal_estado == 1)
-                                        <button class="pd-setting">disponible</button>
-                                        @endif
-
-                                    </td>
+                                      <td><a href="{{route('admin-talleres.show',$taller->tal_id)}}" class="text-{{$taller->tal_estado === TRUE ? 'primary' :'danger' }}"
+                                          title="{{$taller->tal_estado === TRUE ? 'disponible' :'agotado' }}">{{$taller->tal_tema}}</a></td>
                                     <td>{{$taller->tal_fecha}}</td>
                                     <td>{{$taller->tal_horainicio}}</td>
                                     <td>{{$taller->tal_horafin}}</td>
                                     <td>{{$taller->categoria->cat_nombre}}</td>
                                     <td>{{$taller->instructor->ins_nombres.' '}}{{$taller->instructor->ins_apellidos}}</td>
                                     <td>
-                                        <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                        <a href="{{route('admin-talleres.show',$taller->tal_id)}}"><button data-toggle="tooltip" title="Ver" class="pd-setting-ed"><i class="fa fa-folder-open" aria-hidden="true"></i></button></a>
-
+                                        <a href="{{route('admin-talleres.edit',$taller->tal_id)}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                              {{--             <a href="{{route('admin-talleres.show',$taller->tal_id)}}"><button data-toggle="tooltip" title="Ver" class="pd-setting-ed"><i class="fa fa-folder-open" aria-hidden="true"></i></button></a>
+  --}}
                                         <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                     </td>
                                 </tr>

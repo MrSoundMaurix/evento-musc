@@ -1,8 +1,8 @@
 @extends('layouts.panel')
 @section('title','EVENT MUSC| AGREGAR CONFERENCIA')
-@section('nav')
+{{--  @section('nav')
     @include('layouts.nav')
-@stop
+@stop  --}}
 @section('content')
 
 <div class="single-pro-review-area mt-t-10 mg-b-10"></div>

@@ -1,8 +1,5 @@
 @extends('layouts.panel')
 @section('title','EVENT MUSC| Calendario')
-@section('nav')
-    @include('layouts.nav')
-@stop
 @section('content')
 <div class="header-advance-area">
 

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Taller;
 
 class TallerRequest extends FormRequest
 {
@@ -23,24 +24,42 @@ class TallerRequest extends FormRequest
      */
     public function rules()
     {
-       /*  switch($this->method())
-        { */
-           // case 'POST': //store
+         switch($this->method())
+        {
+            case 'POST': //store
 
                 return [
                     'tal_tema' => 'required|string|max:500|unique:talleres',
                     'tal_fecha' => 'required|string|max:10',
-                    'tal_horainicio'=>'required|string|max:10',
-                    'tal_horafin'=> 'required|string|max:10',
+                    'tal_horainicio'=>'required|hora|max:10',
+                    'tal_horafin'=> 'required|hora|max:10',
                     'esp_id'=>'nullable|integer|exists:espacios,esp_id',
                     'cat_id'=>'required|integer|exists:categorias,cat_id',
                     'ins_id'=>'required|integer|exists:instructores,ins_id',
                     'tal_materiales'=>'nullable|string|max:500',
-                    'tal_resumen'=>'nullable|string|max:5000'
+                    'tal_resumen'=>'nullable|string|max:5000',
+                    'tal_foto'=>'nullable|file|mimes:jpeg,png,jpg,JPG|dimensions:min_width=200,min_height=200,max_width=4000,max_height=4000|max:2048',
                 ];
-            /*     break;
+                 break;
+            case 'PATCH': //update
+                $taller = Taller::find($this->tal_id);
+                return [
+                     //'pro_codigo' => 'required|string|max:10|unique:inv_productos,pro_codigo,'.$producto->pro_id.',pro_id',
+                    'tal_tema' => 'required|string|max:500|unique:talleres,tal_tema,'.$taller->tal_id.',tal_id',
+                    'tal_fecha' => 'required|string|max:10',
+                    'tal_horainicio'=>'required|hora|max:10',
+                    'tal_horafin'=> 'required|hora|max:10',
+                    'esp_id'=>'nullable|integer|exists:espacios,esp_id',
+                    'cat_id'=>'required|integer|exists:categorias,cat_id',
+                    'ins_id'=>'required|integer|exists:instructores,ins_id',
+                    'tal_materiales'=>'nullable|string|max:500',
+                    'tal_resumen'=>'nullable|string|max:5000',
+                    'tal_foto'=>'nullable|file|mimes:jpeg,png,jpg,JPG|dimensions:min_width=200,min_height=200,max_width=4000,max_height=4000|max:2048',
+                 ];
+
+                break;
             default:
-                break; */
-      //  }
+                break;
+        }
     }
 }

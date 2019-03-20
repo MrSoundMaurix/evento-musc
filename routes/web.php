@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/p', function () {
+    return view('layouts.personalizar');
+});
 
 Route::prefix('sistemas')->group(function () {
     Route::view('conferencias', 'sistemasc');

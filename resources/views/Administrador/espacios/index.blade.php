@@ -1,8 +1,6 @@
 @extends('layouts.panel')
 @section('title','CIMA | Espacios')
-@section('nav')
-    @include('layouts.nav')
-@stop
+
 @section('content')
     <div class="breadcome-area">
         <div class="container-fluid">
@@ -56,7 +54,7 @@
                                         <td>{{$esp->esp_nombre}}</td>
                                         <td>
                                             @if($esp->esp_foto == null)
-                                                -								
+                                                -
                                             @else
                                                 <img src="{{ "data:image/" . $esp->esp_fototype . ";base64," . $esp->esp_foto }}" style="max-width:75px;">
                                             @endif
@@ -64,14 +62,14 @@
                                         <td>{{$esp->esp_capacidad}}</td>
                                         <td>
                                             <button class="pd-setting">Active</button>
-                                        </td>                                        
+                                        </td>
                                         <td>
                                             <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                             <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                         </td>
-                                    </tr>  
+                                    </tr>
                                     @endforeach
-                                @endif                                                              
+                                @endif
                             </table>
                         </div>
                         <div class="custom-pagination">
@@ -88,5 +86,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection

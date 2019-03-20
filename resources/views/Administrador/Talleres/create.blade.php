@@ -1,13 +1,6 @@
 @extends('layouts.panel')
 @section('title','EVENT MUSC| AGREGAR TALLER')
-@section('nav')
-    @include('layouts.nav')
-@stop
 @section('content')
-
-
-
-
 <div class="single-pro-review-area mt-t-10 mg-b-10"></div>
         <!-- Mobile Menu end -->
         <div class="breadcome-area">
@@ -60,69 +53,93 @@
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                                 <div class="form-group">
-                                                                    <input name="tal_tema" type="text" class="form-control" placeholder="Tema Taller">
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon">Tema</span>
+                                                                    <input name="tal_tema" type="text" class="form-control" placeholder="Mi taller" value="{{old('tal_tema')}}">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <input name="tal_fecha" id="finish" type="text" class="form-control" placeholder="Fecha">
-                                                                </div>
-
-                                                                <div class="form-group">
-                                                                    <input name="tal_horainicio" type="text" class="form-control" placeholder="Hora inicio">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input name="tal_horafin" type="text" class="form-control" placeholder="Hora fin">
+                                                                    <div class="input-group">
+                                                                            <span class="input-group-addon">Fecha</span>
+                                                                        <input name="tal_fecha" id="finish" type="text" class="form-control" placeholder="19.03.2019" value="{{old('tal_fecha')}}">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <select name="esp_id" class="form-control">
-                                                                        <option value="none" selected="" disabled="">Seleccionar Espacio</option>
-                                                                        @foreach($espacios as $esp)
-                                                                        <option value="{{$esp->esp_id}}">{{$esp->esp_nombre}}</option>
-                                                                        @endforeach
-                                                                    </select>
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon">Hora Inicio</span>
+                                                                    <input name="tal_horainicio" type="text" class="form-control" placeholder="00:00:00" value="{{old('tal_horainicio')}}">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <select name="cat_id" class="form-control">
-                                                                        <option value="none" selected="" disabled="">Seleccionar Categoría</option>
-                                                                        @foreach($categorias as $cat)
-                                                                        <option value="{{$cat->cat_id}}">{{$cat->cat_nombre}}</option>
-                                                                        @endforeach
-                                                                    </select>
+                                                                    <div class="input-group">
+                                                                            <span class="input-group-addon">Hora Fin</span>
+                                                                        <input name="tal_horafin" type="text" class="form-control" placeholder="00:00:00" value="{{old('tal_horafin')}}">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                        <select name="ins_id" class="form-control">
-                                                                                <option value="none" selected="" disabled="">Seleccionar Instructor</option>
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon">Espacio</span>
+                                                                        <select name="esp_id" class="form-control">
+                                                                            <option value="" selected="" disabled="">--Seleccionar--</option>
+                                                                            @foreach($espacios as $esp)
+                                                                            <option value="{{$esp->esp_id}}">{{$esp->esp_nombre}}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-addon">Categoría</span>
+                                                                        <select name="cat_id" class="form-control">
+                                                                            <option value="" selected="" disabled="">--Seleccionar--</option>
+                                                                            @foreach($categorias as $cat)
+                                                                            <option value="{{$cat->cat_id}}">{{$cat->cat_nombre}}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                            <span class="input-group-addon">Instructor</span>
+                                                                            <select name="ins_id" class="form-control">
+                                                                                <option value="" selected="" disabled="">--Seleccionar--</option>
                                                                                 @foreach($instructores as $ins)
                                                                                 <option value="{{$ins->ins_id}}">{{$ins->ins_nombres.' '}}{{$ins->ins_apellidos}}</option>
                                                                                 @endforeach
                                                                             </select>
-                                                                </div>
-
-                                                                {{--  <div class="form-group">
-                                                                    <input name="price" type="number" class="form-control" placeholder="Taller Price">
-                                                                </div>  --}}
-                                                                <div class="form-group alert-up-pd">
-                                                                    <div class="dz-message needsclick download-custom">
-                                                                        <i class="fa fa-download edudropnone" aria-hidden="true"></i>
-                                                                        <h2 class="edudropnone">Suelta el adjunto aquí o haz clic para subir.</h2>
-                                                                        <p class="edudropnone"><span class="note needsclick">(Previos Insumos.)</span>
-                                                                        </p>
-                                                                        <input name="imageico" class="hd-pro-img" type="text" />
                                                                     </div>
                                                                 </div>
-                                                                   <hr>
+                                                                <hr>
+                                                                <div class="form-group alert-up-pd">
+                                                                    <div class="dz-message needsclick download-custom">
+                                                                      {{--    <i class="fa fa-download edudropnone" aria-hidden="true"></i>  --}}
+                                                                        <h2 class="edudropnone">Haz clic para subir una imagen.</h2>
 
 
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <input name="tal_foto" type="file"  class="btn btn-default">
+                                                                    </div>
+                                                                </div>
                                                             </div>
+
+
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
 
 
                                                                 <div class="form-group">
-                                                                    <textarea name="tal_materiales" placeholder="Materiales"></textarea>
+                                                                        <span class="input-group-addon"> Materiales</span>
+                                                                    <textarea name="tal_materiales" placeholder=""></textarea>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                        <textarea name="tal_resumen" placeholder="Resúmen"></textarea>
-                                                                    </div>
+                                                                        <span class="input-group-addon"> Resúmen</span>
+                                                                        <textarea name="tal_resumen" placeholder=""></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                        <span class="input-group-addon"> Previos</span>
+                                                                        <textarea name="tal_cprevios" placeholder=""></textarea>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">

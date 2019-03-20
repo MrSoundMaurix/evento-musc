@@ -1,75 +1,77 @@
-<!doctype html>
-<html lang="en">
-
-<head>
+@extends('layouts.panel')
+@section('title','EVENT MUSC| Calendario')
+@section('content')
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@yield('title','Admin-Home | Event - MUSC')</title>
+    <title>Data Table | Kiaalap - Kiaalap Admin Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('kiaalap-master/img/favicon.ico')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico')}}">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
     <!-- owl.carousel CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.theme.css')}}">
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/owl.transitions.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/owl.transitions.css')}}">
     <!-- animate CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/animate.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css')}}">
     <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/normalize.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/normalize.css')}}">
     <!-- meanmenu icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/meanmenu.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/meanmenu.min.css')}}">
     <!-- main CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/main.css')}}">
-    <!-- dropzone CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/dropzone/dropzone.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/main.css')}}">
     <!-- educate icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/educate-custon-icon.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/educate-custon-icon.css')}}">
     <!-- morrisjs CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/morrisjs/morris.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/morrisjs/morris.css')}}">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
     <!-- metisMenu CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/metisMenu/metisMenu.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/metisMenu/metisMenu-vertical.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/metisMenu/metisMenu.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/metisMenu/metisMenu-vertical.css')}}">
     <!-- calendar CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.print.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/calendar/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/calendar/fullcalendar.print.min.css')}}">
+    <!-- x-editor CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('css/editor/select2.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/editor/datetimepicker.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/editor/bootstrap-editable.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/editor/x-editor-style.css')}}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('css/data-table/bootstrap-table.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/data-table/bootstrap-editable.css')}}">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('style.css')}}">
     <!-- responsive CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css')}}">
     <!-- modernizr JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
 
-
-</head>
-
-<body>
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
@@ -77,9 +79,8 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                {{--  <a href="index.html"><img class="main-logo" src="kiaalap-master/img/logo/logo.png" alt="" /></a>
-             <a href=""><h1 style="font-family:Times;">MUSC</h1></a> --}}
-                <strong><a href="#"><img src="{{ asset('img/logo.png')}}" alt="" /></a></strong>
+                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                <strong><a href="index.html"><img src="img/logo/logosn.png" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -87,64 +88,64 @@
                         <li>
                             <a class="has-arrow" href="index.html">
 								   <span class="educate-icon educate-home icon-wrap"></span>
-								   <span class="mini-click-non"> <label class=".text-primary">MUSC</label></span>
+								   <span class="mini-click-non">Education</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="{{url('/')}}"><span class="mini-sub-pro">Ver Portal</span></a></li>
-                               {{--   <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
+                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard v.1</span></a></li>
+                                <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
                                 <li><a title="Dashboard v.3" href="index-2.html"><span class="mini-sub-pro">Dashboard v.3</span></a></li>
                                 <li><a title="Analytics" href="analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
-                                <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>  --}}
+                                <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a title="Landing Page" href="{{url('admin-calendario')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Calendario</span></a>
+                            <a title="Landing Page" href="events.html" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Event</span></a>
                         </li>
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Instructores</span></a>
+                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Professors</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Professors" href="{{ url('admin-instructores-l') }}"><span class="mini-sub-pro">Listado</span></a></li>
-                                <li><a title="Add Professor" href="{{ url('admin-instructores/create') }}"><span class="mini-sub-pro">Agregar</span></a></li>
-                                {{-- <li><a title="Edit Professor" href="#"><span class="mini-sub-pro">Editar</span></a></li> --}}
-                               {{--   <li><a title="Professor Profile" href="{{url('admin-instructores/1')}}"><span class="mini-sub-pro">Perfil</span></a></li>  --}}
+                                <li><a title="All Professors" href="all-professors.html"><span class="mini-sub-pro">All Professors</span></a></li>
+                                <li><a title="Add Professor" href="add-professor.html"><span class="mini-sub-pro">Add Professor</span></a></li>
+                                <li><a title="Edit Professor" href="edit-professor.html"><span class="mini-sub-pro">Edit Professor</span></a></li>
+                                <li><a title="Professor Profile" href="professor-profile.html"><span class="mini-sub-pro">Professor Profile</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Usuarios</span></a>
+                            <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Students</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Students" href="{{url('admin-usuarios')}}"><span class="mini-sub-pro">Listado</span></a></li>
-                                <li><a title="Add Students" href="{{url('admin-usuarios/create')}}"><span class="mini-sub-pro">Agregar</span></a></li>
-                                {{-- <li><a title="Edit Students" href="#"><span class="mini-sub-pro">Edit Student</span></a></li>
-                                <li><a title="Students Profile" href="#"><span class="mini-sub-pro">Student Profile</span></a></li> --}}
+                                <li><a title="All Students" href="all-students.html"><span class="mini-sub-pro">All Students</span></a></li>
+                                <li><a title="Add Students" href="add-student.html"><span class="mini-sub-pro">Add Student</span></a></li>
+                                <li><a title="Edit Students" href="edit-student.html"><span class="mini-sub-pro">Edit Student</span></a></li>
+                                <li><a title="Students Profile" href="student-profile.html"><span class="mini-sub-pro">Student Profile</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="" href="{{url('admin-talleres')}}" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Talleres</span></a>
-                           {{--   <ul class="submenu-angle" aria-expanded="false">
-                               {{-- <li><a title="All Courses" href="{{url('admin-talleres')}}"><span class="mini-sub-pro">Listado</span></a></li>
-                                <li><a title="Add Courses" href="{{url('admin-talleres/create')}}"><span class="mini-sub-pro">Agregar</span></a></li>
-                                 <li><a title="Edit Courses" href="#"><span class="mini-sub-pro">Edit Course</span></a></li>
-                                <li><a title="Courses Profile" href="#"><span class="mini-sub-pro">Courses Info</span></a></li>
-                                <li><a title="course Payment" href="#"><span class="mini-sub-pro">Courses Payment</span></a></li>
-                            </ul>  --}}
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Conferencias</span></a>
+                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Courses</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Library" href="{{url('admin-conferencias')}}"><span class="mini-sub-pro">Listado</span></a></li>
-                                <li><a title="Add Library" href="{{url('admin-conferencias/create')}}"><span class="mini-sub-pro">Agregar</span></a></li>
-                               {{--  <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li> --}}
+                                <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">All Courses</span></a></li>
+                                <li><a title="Add Courses" href="add-course.html"><span class="mini-sub-pro">Add Course</span></a></li>
+                                <li><a title="Edit Courses" href="edit-course.html"><span class="mini-sub-pro">Edit Course</span></a></li>
+                                <li><a title="Courses Profile" href="course-info.html"><span class="mini-sub-pro">Courses Info</span></a></li>
+                                <li><a title="course Payment" href="course-payment.html"><span class="mini-sub-pro">Courses Payment</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="{{url('admin-espacios')}}" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Espacios</span></a>
-                            {{-- <ul class="submenu-angle" aria-expanded="false">
+                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Library</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="All Library" href="library-assets.html"><span class="mini-sub-pro">Library Assets</span></a></li>
+                                <li><a title="Add Library" href="add-library-assets.html"><span class="mini-sub-pro">Add Library Asset</span></a></li>
+                                <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Departments</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Departments List" href="departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
                                 <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>
                                 <li><a title="Edit Departments" href="edit-department.html"><span class="mini-sub-pro">Edit Departments</span></a></li>
-                            </ul> --}}
+                            </ul>
                         </li>
-                        {{-- <li>
+                        <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-message icon-wrap"></span> <span class="mini-click-non">Mailbox</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
@@ -177,7 +178,7 @@
                                 <li><a title="Peity Charts" href="peity.html"><span class="mini-sub-pro">Peity Charts</span></a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Data Tables</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
@@ -216,7 +217,7 @@
                                 <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
                                 <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>
                             </ul>
-                        </li> --}}
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -225,18 +226,16 @@
     <!-- End Left menu area -->
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="kiaalap-master/img/logo/logo.png" alt="" /></a>
+                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="header-advance-area">
-            {{-- @yield('nav') --}}
             <div class="header-top-area">
                 <div class="container-fluid">
                     <div class="row">
@@ -246,23 +245,20 @@
                                     <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
                                         <div class="menu-switcher-pro">
                                             <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
-                                                    <i class="educate-icon educate-nav"></i>
-                                                </button>
+													<i class="educate-icon educate-nav"></i>
+												</button>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item">
-                                                    <a href="{{url('admin-home')}}" class="nav-link">HOME</a>
+                                                <li class="nav-item"><a href="#" class="nav-link">Home</a>
                                                 </li>
-                                                {{-- <li class="nav-item">
-                                                    <a href="#" class="nav-link">About</a>
+                                                <li class="nav-item"><a href="#" class="nav-link">About</a>
                                                 </li>
-                                                <li class="nav-item">
-                                                    <a href="#" class="nav-link">Services</a>
-                                                </li> --}}
-                                                {{-- <li class="nav-item dropdown res-dis-nn">
+                                                <li class="nav-item"><a href="#" class="nav-link">Services</a>
+                                                </li>
+                                                <li class="nav-item dropdown res-dis-nn">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Project <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
                                                     <div role="menu" class="dropdown-menu animated zoomIn">
                                                         <a href="#" class="dropdown-item">Documentation</a>
@@ -270,10 +266,9 @@
                                                         <a href="#" class="dropdown-item">Expert FrontEnd</a>
                                                         <a href="#" class="dropdown-item">Contact Support</a>
                                                     </div>
-                                                </li> --}}
-                                                {{-- <li class="nav-item"> --}}
-                                                    {{-- <a href="#" class="nav-link">Support</a> --}}
-                                                {{-- </li> --}}
+                                                </li>
+                                                <li class="nav-item"><a href="#" class="nav-link">Support</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -290,7 +285,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="{{ asset('kiaalap-master/img/contact/1.jpg')}}" alt="">
+                                                                        <img src="img/contact/1.jpg" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -302,7 +297,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="{{ asset('kiaalap-master/img/contact/4.jpg')}}" alt="">
+                                                                        <img src="img/contact/4.jpg" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -314,7 +309,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="{{ asset('kiaalap-master/img/contact/3.jpg')}}" alt="">
+                                                                        <img src="img/contact/3.jpg" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -326,7 +321,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="{{ asset('kiaalap-master/img/contact/2.jpg')}}" alt="">
+                                                                        <img src="img/contact/2.jpg" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -403,10 +398,10 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                            <img src="{{ asset('kiaalap-master/img/product/pro4.jpg')}}" alt="" />
-                                                            <span class="admin-name">{{Auth::user()->name}}</span>
-                                                            <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
-                                                        </a>
+															<img src="img/product/pro4.jpg" alt="" />
+															<span class="admin-name">Prof.Anderson</span>
+															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
+														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                         <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
                                                         </li>
@@ -416,16 +411,7 @@
                                                         </li>
                                                         <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
                                                         </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                                                onclick="event.preventDefault();
-                                                                            document.getElementById('logout-form').submit();">
-                                                                <span class="edu-icon edu-locked author-log-ic"></span>{{ __('Logout') }}
-                                                            </a>
-                                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                                @csrf
-                                                            </form>
-                                                            <!--  <a href="#"><span class="edu-icon edu-locked author-log-ic"></span></a>-->
+                                                        <li><a href="#"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -454,7 +440,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="{{ asset('kiaalap-master/img/contact/4.jpg')}}" alt="" />
+                                                                                            <img src="img/contact/4.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -467,7 +453,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="{{ asset('kiaalap-master/img/contact/1.jpg')}}" alt="" />
+                                                                                            <img src="img/contact/1.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -480,7 +466,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="{{ asset('kiaalap-master/img/contact/2.jpg')}}" alt="" />
+                                                                                            <img src="img/contact/2.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -493,7 +479,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="{{ asset('kiaalap-master/img/contact/3.jpg')}}" alt="" />
+                                                                                            <img src="img/contact/3.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -506,7 +492,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="{{ asset('kiaalap-master/img/contact/4.jpg')}}" alt="" />
+                                                                                            <img src="img/contact/4.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -519,7 +505,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="{{ asset('kiaalap-master/img/contact/1.jpg')}}" alt="" />
+                                                                                            <img src="img/contact/1.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -532,7 +518,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="{{ asset('kiaalap-master/img/contact/2.jpg')}}" alt="" />
+                                                                                            <img src="img/contact/2.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -545,7 +531,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="{{ asset('kiaalap-master/img/contact/1.jpg')}}" alt="" />
+                                                                                            <img src="img/contact/1.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -558,7 +544,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="{{ asset('kiaalap-master/img/contact/2.jpg')}}" alt="" />
+                                                                                            <img src="img/contact/2.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -571,7 +557,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="{{ asset('kiaalap-master/img/contact/3.jpg')}}" alt="" />
+                                                                                            <img src="img/contact/3.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -875,7 +861,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Mobile Menu start -->
             <div class="mobile-menu-area">
                 <div class="container">
@@ -1061,94 +1046,458 @@
                     </div>
                 </div>
             </div>
-            @yield('search')
+            <!-- Mobile Menu end -->
+            <div class="breadcome-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list single-page-breadcome">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="breadcome-heading">
+                                            <form role="search" class="sr-input-func">
+                                                <input type="text" placeholder="Search..." class="search-int form-control">
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Data Table</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        {{-- <div class="container-fluid"> --}}
-            @yield('content')
-        {{-- </div> --}}
+        <!-- Static Table Start -->
+        <div class="data-table-area mg-b-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sparkline13-list">
+                            <div class="sparkline13-hd">
+                                <div class="main-sparkline13-hd">
+                                    <h1>Projects <span class="table-project-n">Data</span> Table</h1>
+                                </div>
+                            </div>
+                            <div class="sparkline13-graph">
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                        <select class="form-control dt-tb">
+											<option value="">Export Basic</option>
+											<option value="all">Export All</option>
+											<option value="selected">Export Selected</option>
+										</select>
+                                    </div>
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switc="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                        data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="id">ID</th>
+                                                <th data-field="name" data-editable="true">Task</th>
+                                                <th data-field="email" data-editable="true">Email</th>
+                                                <th data-field="phone" data-editable="true">Phone</th>
+                                                <th data-field="complete">Completed</th>
+                                                <th data-field="task" data-editable="true">Task</th>
+                                                <th data-field="date" data-editable="true">Date</th>
+                                                <th data-field="price" data-editable="true">Price</th>
+                                                <th data-field="action">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>1</td>
+                                                <td>Web Development</td>
+                                                <td>admin@uttara.com</td>
+                                                <td>+8801962067309</td>
+                                                <td class="datatable-ct"><span class="pie">1/6</span>
+                                                </td>
+                                                <td>10%</td>
+                                                <td>Jul 14, 2017</td>
+                                                <td>$5455</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>2</td>
+                                                <td>Graphic Design</td>
+                                                <td>fox@itpark.com</td>
+                                                <td>+8801762067304</td>
+                                                <td class="datatable-ct"><span class="pie">230/360</span>
+                                                </td>
+                                                <td>70%</td>
+                                                <td>fab 2, 2017</td>
+                                                <td>$8756</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>3</td>
+                                                <td>Software Development</td>
+                                                <td>gumre@hash.com</td>
+                                                <td>+8801862067308</td>
+                                                <td class="datatable-ct"><span class="pie">0.42/1.461</span>
+                                                </td>
+                                                <td>5%</td>
+                                                <td>Seb 5, 2017</td>
+                                                <td>$9875</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>4</td>
+                                                <td>Woocommerce</td>
+                                                <td>kyum@frok.com</td>
+                                                <td>+8801962066547</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>Oct 10, 2017</td>
+                                                <td>$3254</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>5</td>
+                                                <td>Joomla</td>
+                                                <td>jams@game.com</td>
+                                                <td>+8801962098745</td>
+                                                <td class="datatable-ct"><span class="pie">200,133</span>
+                                                </td>
+                                                <td>80%</td>
+                                                <td>Nov 20, 2017</td>
+                                                <td>$58745</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>6</td>
+                                                <td>Wordpress</td>
+                                                <td>flat@yem.com</td>
+                                                <td>+8801962254781</td>
+                                                <td class="datatable-ct"><span class="pie">0.42,1.051</span>
+                                                </td>
+                                                <td>30%</td>
+                                                <td>Aug 25, 2017</td>
+                                                <td>$789879</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>Ecommerce</td>
+                                                <td>hasan@wpm.com</td>
+                                                <td>+8801962254863</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>July 17, 2017</td>
+                                                <td>$21424</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>8</td>
+                                                <td>Android Apps</td>
+                                                <td>ATM@devep.com</td>
+                                                <td>+8801962875469</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>June 11, 2017</td>
+                                                <td>$78978</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>9</td>
+                                                <td>Prestashop</td>
+                                                <td>presta@Prest.com</td>
+                                                <td>+8801962067524</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>May 9, 2017</td>
+                                                <td>$45645</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td>Game Development</td>
+                                                <td>Dev@game.com</td>
+                                                <td>+8801962067457</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>April 5, 2017</td>
+                                                <td>$4564545</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>11</td>
+                                                <td>Angular Js</td>
+                                                <td>gular@angular.com</td>
+                                                <td>+8801962067124</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>Dec 1, 2017</td>
+                                                <td>$645455</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>12</td>
+                                                <td>Opencart</td>
+                                                <td>open@cart.com</td>
+                                                <td>+8801962067587</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>Jan 6, 2017</td>
+                                                <td>$78978</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>13</td>
+                                                <td>Education</td>
+                                                <td>john@example.com</td>
+                                                <td>+8801962067471</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>Feb 6, 2016</td>
+                                                <td>$456456</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>14</td>
+                                                <td>Construction</td>
+                                                <td>mary@example.com</td>
+                                                <td>+8801962012457</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>Jan 6, 2016</td>
+                                                <td>$87978</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>15</td>
+                                                <td>Real Estate</td>
+                                                <td>july@example.com</td>
+                                                <td>+8801962067309</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>Dec 1, 2016</td>
+                                                <td>$454554</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>16</td>
+                                                <td>Personal Regume</td>
+                                                <td>john@example.com</td>
+                                                <td>+8801962067306</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>May 9, 2016</td>
+                                                <td>$564555</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>17</td>
+                                                <td>Admin Template</td>
+                                                <td>mary@example.com</td>
+                                                <td>+8801962067305</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>June 11, 2016</td>
+                                                <td>$454565</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>18</td>
+                                                <td>FrontEnd</td>
+                                                <td>july@example.com</td>
+                                                <td>+8801962067304</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>May 9, 2015</td>
+                                                <td>$456546</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>19</td>
+                                                <td>Backend</td>
+                                                <td>john@range.com</td>
+                                                <td>+8801962067303</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>Feb 9, 2014</td>
+                                                <td>$564554</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>20</td>
+                                                <td>Java Advance</td>
+                                                <td>lamon@ghs.com</td>
+                                                <td>+8801962067302</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>July 6, 2014</td>
+                                                <td>$789889</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>21</td>
+                                                <td>Jquery Advance</td>
+                                                <td>hasad@uth.com</td>
+                                                <td>+8801962067301</td>
+                                                <td class="datatable-ct"><span class="pie">2,7</span>
+                                                </td>
+                                                <td>15%</td>
+                                                <td>Jun 6, 2013</td>
+                                                <td>$4565656</td>
+                                                <td class="datatable-ct"><i class="fa fa-check"></i>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Static Table End -->
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="footer-copy-right">
-                            <p>Copyright © 2019. Microsoft UTN Student Cellule</p>
+                            <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- jquery
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
     <!-- wow JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js')}}"></script>
     <!-- price-slider JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery-price-slider.js') }}"></script>
+    <script src="{{ asset('js/jquery-price-slider.js')}}"></script>
     <!-- meanmenu JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery.meanmenu.js') }}"></script>
+    <script src="{{ asset('js/jquery.meanmenu.js')}}"></script>
     <!-- owl.carousel JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js')}}"></script>
     <!-- sticky JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('js/jquery.sticky.js')}}"></script>
     <!-- scrollUp JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.scrollUp.min.js')}}"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/scrollbar/mCustomScrollbar-active.js') }}"></script>
+    <script src="{{ asset('js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="{{ asset('js/scrollbar/mCustomScrollbar-active.js')}}"></script>
     <!-- metisMenu JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu.min.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu-active.js') }}"></script>
-    <!-- morrisjs JS
+    <script src="{{ asset('js/metisMenu/metisMenu.min.js')}}"></script>
+    <script src="{{ asset('js/metisMenu/metisMenu-active.js')}}"></script>
+    <!-- data table JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.sparkline.min.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.charts-sparkline.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/sparkline/sparkline-active.js') }}"></script>
-    <!-- calendar JS
+    <script src="{{ asset('js/data-table/bootstrap-table.js')}}"></script>
+    <script src="{{ asset('js/data-table/tableExport.js')}}"></script>
+    <script src="{{ asset('js/data-table/data-table-active.js')}}"></script>
+    <script src="{{ asset('js/data-table/bootstrap-table-editable.js')}}"></script>
+    <script src="{{ asset('js/data-table/bootstrap-editable.js')}}"></script>
+    <script src="{{ asset('js/data-table/bootstrap-table-resizable.js')}}"></script>
+    <script src="{{ asset('js/data-table/colResizable-1.5.source.js')}}"></script>
+    <script src="{{ asset('js/data-table/bootstrap-table-export.js')}}"></script>
+    <!--  editable JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/calendar/moment.min.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar.min.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar-active.js') }}"></script>
-    <!-- maskedinput JS
+    <script src="{{ asset('js/editable/jquery.mockjax.js')}}"></script>
+    <script src="{{ asset('js/editable/mock-active.js')}}"></script>
+    <script src="{{ asset('js/editable/select2.js')}}"></script>
+    <script src="{{ asset('js/editable/moment.min.js')}}"></script>
+    <script src="{{ asset('js/editable/bootstrap-datetimepicker.js')}}"></script>
+    <script src="{{ asset('js/editable/bootstrap-editable.js')}}"></script>
+    <script src="{{ asset('js/editable/xediable-active.js')}}"></script>
+    <!-- Chart JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery.maskedinput.min.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/masking-active.js') }}"></script>
-    <!-- datepicker JS
-        ============================================ -->
-    <script src="{{ asset('kiaalap-master/js/datepicker/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/datepicker/datepicker-active.js') }}"></script>
-    <!-- form validate JS
-        ============================================ -->
-    <script src="{{ asset('kiaalap-master/js/form-validation/jquery.form.min.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/form-validation/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/form-validation/form-active.js') }}"></script>
-    <!-- dropzone JS
-        ============================================ -->
-    <script src="{{ asset('kiaalap-master/js/dropzone/dropzone.js') }}"></script>
+    <script src="{{ asset('js/chart/jquery.peity.min.js')}}"></script>
+    <script src="{{ asset('js/peity/peity-active.js')}}"></script>
     <!-- tab JS
-        ============================================ -->
-    <script src="{{ asset('kiaalap-master/js/tab.js') }}"></script>
+		============================================ -->
+    <script src="{{ asset('js/tab.js')}}"></script>
     <!-- plugins JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/plugins.js') }}"></script>
+    <script src="{{ asset('js/plugins.js')}}"></script>
     <!-- main JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/main.js') }}"></script>
+    <script src="{{ asset('js/main.js')}}"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/tawk-chat.js') }}"></script>
+    <script src="{{ asset('js/tawk-chat.js')}}"></script>
 
-</body>
 
-</html>
+    @stop
+

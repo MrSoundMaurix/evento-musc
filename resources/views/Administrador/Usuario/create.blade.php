@@ -1,8 +1,5 @@
 @extends('layouts.panel')
 @section('title','EVENT MUSC| AGREGAR USUARIO')
-@section('nav')
-    @include('layouts.nav')
-@stop
 @section('content')
 <div class="single-pro-review-area mt-t-10 mg-b-10"></div>
 <!-- Mobile Menu end -->

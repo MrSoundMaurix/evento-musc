@@ -1,8 +1,8 @@
 @extends('layouts.panel')
 @section('title','EVENT MUSC| CONFERENCIAS')
-@section('nav')
+{{--  @section('nav')
     @include('layouts.nav')
-@stop
+@stop  --}}
 @section('content')
 
 <!-- Mobile Menu end -->

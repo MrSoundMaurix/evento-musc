@@ -1,8 +1,5 @@
 @extends('layouts.panel')
 @section('title','EVENT MUSC| USUARIOS')
-@section('nav')
-    @include('layouts.nav')
-@stop
 @section('content')
 <div class="breadcome-area">
         <div class="container-fluid">
