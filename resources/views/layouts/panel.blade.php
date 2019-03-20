@@ -56,6 +56,28 @@
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.min.css')}}">
     <link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.print.min.css')}}">
+    <!-- touchspin CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('css/touchspin/jquery.bootstrap-touchspin.min.css')}}">
+    <!-- datapicker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/datapicker/datepicker3.css')}}">
+    <!-- forms CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/form/themesaller-forms.css')}}">
+    <!-- colorpicker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/colorpicker/colorpicker.css')}}">
+    <!-- select2 CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/select2/select2.min.css')}}">
+    <!-- chosen CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/chosen/bootstrap-chosen.css')}}">
+    <!-- ionRangeSlider CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/ionRangeSlider/ion.rangeSlider.css')}}">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/ionRangeSlider/ion.rangeSlider.skinFlat.css')}}">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('kiaalap-master/style.css')}}">
@@ -129,15 +151,15 @@
                             </ul>  --}}
                         </li>
                         <li>
-                            <a class="has-arrow" href="" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Conferencias</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
+                            <a class="" href="{{url('admin-conferencias')}}" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Conferencias</span></a>
+                            {{-- <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Library" href="{{url('admin-conferencias')}}"><span class="mini-sub-pro">Listado</span></a></li>
                                 <li><a title="Add Library" href="{{url('admin-conferencias/create')}}"><span class="mini-sub-pro">Agregar</span></a></li>
-                               {{--  <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li> --}}
-                            </ul>
+                                <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li>
+                            </ul> --}}
                         </li>
                         <li>
-                            <a class="has-arrow" href="{{url('admin-espacios')}}" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Espacios</span></a>
+                            <a class="" href="{{url('admin-espacios')}}" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Espacios</span></a>
                             {{-- <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Departments List" href="departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
                                 <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>
@@ -280,127 +302,7 @@
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                                <li class="nav-item dropdown">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-message edu-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a>
-                                                    <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
-                                                        <div class="message-single-top">
-                                                            <h1>Message</h1>
-                                                        </div>
-                                                        <ul class="message-menu">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="{{ asset('kiaalap-master/img/contact/1.jpg')}}" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="{{ asset('kiaalap-master/img/contact/4.jpg')}}" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="{{ asset('kiaalap-master/img/contact/3.jpg')}}" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="{{ asset('kiaalap-master/img/contact/2.jpg')}}" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="message-view">
-                                                            <a href="#">View All Messages</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
-                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-                                                        <div class="notification-single-top">
-                                                            <h1>Notifications</h1>
-                                                        </div>
-                                                        <ul class="notification-menu">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="educate-icon educate-checked edu-checked-pro admin-check-pro" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-cloud edu-cloud-computing-down" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-eraser edu-shield" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-line-chart edu-analytics-arrow" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="notification-view">
-                                                            <a href="#">View All Notification</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                                {{-- Message & Notifications --}}
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                             <img src="{{ asset('kiaalap-master/img/product/pro4.jpg')}}" alt="" />
@@ -1071,7 +973,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="footer-copy-right">
-                            <p>Copyright © 2019. Microsoft UTN Student Cellule</p>
+                            <p>Copyright © 2019. Microsoft UTN Student Community</p>
                         </div>
                     </div>
                 </div>
@@ -1127,7 +1029,8 @@
     <!-- datepicker JS
         ============================================ -->
     <script src="{{ asset('kiaalap-master/js/datepicker/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('kiaalap-master/js/datepicker/datepicker-active.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/datapicker/bootstrap-datepicker.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/datapicker/datepicker-active.js') }}"></script>
     <!-- form validate JS
         ============================================ -->
     <script src="{{ asset('kiaalap-master/js/form-validation/jquery.form.min.js') }}"></script>
@@ -1147,7 +1050,7 @@
     <script src="{{ asset('kiaalap-master/js/main.js') }}"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/tawk-chat.js') }}"></script>
+    {{-- <script src="{{ asset('kiaalap-master/js/tawk-chat.js') }}"></script> --}}
 
 </body>
 
