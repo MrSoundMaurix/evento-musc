@@ -49,41 +49,41 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="/">Inicio</a></li>
+                    <li class="{{ Request::path() == '/' ? 'menu-active' : ''}}"><a href="/">Inicio</a></li>
                     {{-- <li><a href="{{ url('sistemas') }}">Sistemas</a></li> --}}
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown {{strpos(Request::path(), 'sistemas/') !== false ? 'menu-active' : ''}}">
                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sistemas
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ url('sistemas/conferencias') }}">Conferencias</a></li>
-                            <li><a class="dropdown-item" href="{{ url('sistemas/talleres') }}">Talleres</a></li>
+                            <li><a class="dropdown-item" style="color: black" href="{{ url('sistemas/conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" style="color: black" href="{{ url('sistemas/talleres') }}">Talleres</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown {{strpos(Request::path(), 'publicidad/') !== false ? 'menu-active' : ''}}">
                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Publicidad
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ url('publicidad/conferencias') }}">Conferencias</a></li>
-                            <li><a class="dropdown-item" href="{{ url('publicidad/talleres') }}">Talleres</a></li>
+                            <li><a class="dropdown-item" style="color: black" href="{{ url('publicidad/conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" style="color: black" href="{{ url('publicidad/talleres') }}">Talleres</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown {{strpos(Request::path(), 'contabilidad/') !== false ? 'menu-active' : ''}}">
+                        <a class="menu-active nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Contabilidad
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ url('contabilidad/conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" style="color: black" href="{{ url('contabilidad/conferencias') }}">Conferencias</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown {{strpos(Request::path(), 'biotecnologia/') !== false ? 'menu-active' : ''}}">
                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Biotecnología
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ url('biotecnologia/conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" style="color: black" href="{{ url('biotecnologia/conferencias') }}">Conferencias</a></li>
                         </ul>
                     </li>
                     <li class="buy-tickets"><a href="{{ route('register') }}">Inscríbete</a></li>
@@ -175,14 +175,14 @@
                     <div class="col-lg-3 col-md-6 footer-contact">
                         <h4>Contact Us</h4>
                         <p>
-                            A108 Adam Street <br> New York, NY 535022<br> United States <br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
+                            Av. 17 de Julio <br> Ibarra, EC 100105<br> Ecuador <br>
+                            <strong>Phone:</strong> +593 99 999 9999<br>
+                            <strong>Email:</strong> musc@utn.edu.ec<br>
                         </p>
 
                         <div class="social-links">
                             <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/MUSCUTN/" class="facebook"><i class="fa fa-facebook"></i></a>
                             <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                             <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
                             <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
@@ -196,7 +196,7 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
+                &copy; Copyright <strong>2019</strong>. All Rights Reserved
             </div>
             <div class="credits">
                 <!--
@@ -205,7 +205,7 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
         -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by <a href="#">MUSC</a>
             </div>
         </div>
     </footer>
