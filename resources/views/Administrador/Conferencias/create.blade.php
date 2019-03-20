@@ -1,66 +1,35 @@
 @extends('layouts.panel')
-
-@section('title','EVENT MUSC| AGREGAR CONFERENCIA')
-@section('content')
-
-<div class="single-pro-review-area mt-t-10 mg-b-10"></div>
-        <!-- Mobile Menu end -->
-        <div class="breadcome-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="breadcome-list">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="breadcome-heading">
-                                        <form role="search" class="sr-input-func">
-                                            <input type="text" placeholder="Buscar..." class="search-int form-control">
-                                            <a href="#"><i class="fa fa-search"></i></a>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <ul class="breadcome-menu">
-                                        <li><a href="#">CONFERENCIAS</a> <span class="bread-slash">/</span>
-                                        </li>
-                                        <li><span class="bread-blod">AGREGAR</span>
-                                        </li>
-                                    </ul>
-
 @section('title','CIMA | Nueva Conferencia')
-@section('nav')
-    @include('layouts.nav')
-@stop
 @section('search')
 <div class="breadcome-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcome-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcome-heading">
-                                    <form role="search" class="sr-input-func">
-                                        <input type="text" placeholder="Search..." class="search-int form-control">
-                                        <a href="#"><i class="fa fa-search"></i></a>
-                                    </form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcome-heading">
+                                <form role="search" class="sr-input-func">
+                                    <input type="text" placeholder="Search..." class="search-int form-control">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                </form>
 
-                                </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <ul class="breadcome-menu">
-                                    <li><a href="#">Conferencias</a> <span class="bread-slash">/</span>
-                                    </li>
-                                    <li><span class="bread-blod">Index</span>
-                                    </li>
-                                </ul>
-                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <ul class="breadcome-menu">
+                                <li><a href="#">Conferencias</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Index</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @stop
 @section('content')
     <div class="single-pro-review-area mt-t-30 mg-b-15">
@@ -85,11 +54,11 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <select name="ins_id" class="form-control">
-                                                                    {{-- @if(isset($espacios)) --}}
-                                                                        {{-- @foreach($espacios as $esp) --}}
-                                                                            <option value="1">uno</option>
-                                                                        {{-- @endforeach --}}
-                                                                    {{-- @endif --}}
+                                                                    @if(isset($instructores))
+                                                                        @foreach($instructores as $ins)
+                                                                            <option value="{{$ins->ins_id}}">{{$esp->esp_nombre}}</option>
+                                                                        @endforeach
+                                                                    @endif
                                                                 </select>
                                                             </div>
                                                             <div class="form-group">
