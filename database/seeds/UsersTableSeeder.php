@@ -13,6 +13,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
+            'pais' => 'Ecuador',
             'cedula' => '1002003001',
             'name' => 'SuperAdm',
             'apellido' => 'Root',
@@ -22,6 +23,7 @@ class UsersTableSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('users')->insert([
+            'pais' => 'Ecuador',
             'cedula' => '1003840541',
             'name' => 'Luz Amanda',
             'apellido' => 'Córdova Quinchiguango', 
@@ -31,7 +33,8 @@ class UsersTableSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('users')->insert([
-            'cedula' => '1003969852',
+            'pais' => 'Perú',
+            'cedula' => '1002003002',
             'name' => 'René Mauricio',
             'apellido' => 'Ipiales Gubio', 
             'email' => 'rmipialesg@utn.edu.ec',
@@ -40,15 +43,27 @@ class UsersTableSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('users')->insert([
+            'pais' => 'Colombia',
             'cedula' => '1003088653',
-            'name' => 'Elvis David',
+            'name' => 'Elvis David Pacari',
             'apellido' => 'Moreta Moreta', 
-            'email' => 'edmoreta@utn.edu.ec',
+            'email' => 'edmoretam@utn.edu.ec',
             'password' => bcrypt('12345678'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
         DB::table('users')->insert([
+            'pais' => 'Chile',
+            'cedula' => '0401939269',
+            'name' => 'Alexander Patricio',
+            'apellido' => 'Pinchao Pujota', 
+            'email' => 'appinchaop@utn.edu.ec',
+            'password' => bcrypt('12345678'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+        DB::table('users')->insert([
+            'pais' => 'Chile',
             'cedula' => '1004228282',
             'name' => 'Roger Alexander',
             'apellido' => 'Vaca Ponce', 

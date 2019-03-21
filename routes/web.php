@@ -14,12 +14,22 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/p', function () {
+    return view('layouts.personalizar');
+});
 
-Route::view('sistemas-conferencias', 'sistemasc');
-Route::view('sistemas-talleres', 'sistemast');
-Route::view('publicidad-conferencias', 'publicidad');
-Route::view('contabilidad-conferencias', 'contabilidad');
-Route::view('biotecnologia-conferencias', 'biotecnologia');
+Route::prefix('sistemas')->group(function () {
+    Route::view('conferencias', 'sistemasc');
+    Route::view('talleres', 'sistemast');
+});
+
+Route::prefix('publicidad')->group(function () {
+    Route::view('conferencias', 'publicidadc');
+    Route::view('talleres', 'publicidadt');
+});
+
+Route::view('contabilidad/conferencias', 'contabilidad');
+Route::view('biotecnologia/conferencias', 'biotecnologia');
 
 Auth::routes();
 
@@ -39,6 +49,7 @@ Route::group(['middleware' => ['auth']], function ()
         Route::resource('admin-usuarios', 'Administrador\UsuarioController');
         Route::resource('admin-talleres', 'Administrador\TallerController');
         Route::resource('admin-conferencias', 'Administrador\ConferenciaController');
+        Route::resource('admin-espacios', 'Administrador\EspacioController');
 
 
 

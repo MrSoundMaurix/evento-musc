@@ -17,7 +17,7 @@ use App\Role;
 use Illuminate\Database\QueryException;
 
 use Illuminate\Auth\Events\Registered;
- 
+use Tavo\ValidadorEc as ValidatorEcPackage;
 
 class RegisterController extends Controller
 {
@@ -78,6 +78,7 @@ class RegisterController extends Controller
     {
     $usuario= User::create
         ([
+            'pais' => $data['pais'],
             'cedula' => $data['cedula'],
             'name' => $data['name'],
             'apellido' => $data['apellido'],
@@ -92,7 +93,12 @@ class RegisterController extends Controller
     }
     public function register(Request $request)
     {
-        $this->validator($request->all())->validate();        
+        $this->validator($request->all())->validate();  
+        $validatorEc = new ValidatorEcPackage();
+        $isValid = $validatorEc->validarCedula($user->cedula);
+        if (!$isValid) {
+            return back()->with('error_prov', 'La cédula es INCORRECTA')->withInput();
+        }      
         event(new Registered($user = $this->create($request->all())));
         $this->guard()->login($user);
       

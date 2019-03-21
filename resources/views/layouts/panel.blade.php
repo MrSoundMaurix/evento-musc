@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -36,6 +36,9 @@
     <!-- main CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('kiaalap-master/css/main.css')}}">
+    <!-- dropzone CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/dropzone/dropzone.css')}}">
     <!-- educate icon CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('kiaalap-master/css/educate-custon-icon.css')}}">
@@ -53,6 +56,28 @@
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.min.css')}}">
     <link rel="stylesheet" href="{{ asset('kiaalap-master/css/calendar/fullcalendar.print.min.css')}}">
+    <!-- touchspin CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('css/touchspin/jquery.bootstrap-touchspin.min.css')}}">
+    <!-- datapicker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/datapicker/datepicker3.css')}}">
+    <!-- forms CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/form/themesaller-forms.css')}}">
+    <!-- colorpicker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/colorpicker/colorpicker.css')}}">
+    <!-- select2 CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/select2/select2.min.css')}}">
+    <!-- chosen CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/chosen/bootstrap-chosen.css')}}">
+    <!-- ionRangeSlider CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/ionRangeSlider/ion.rangeSlider.css')}}">
+    <link rel="stylesheet" href="{{ asset('kiaalap-master/css/ionRangeSlider/ion.rangeSlider.skinFlat.css')}}">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('kiaalap-master/style.css')}}">
@@ -62,6 +87,8 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="{{ asset('kiaalap-master/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
+
 </head>
 
 <body>
@@ -72,8 +99,9 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="kiaalap-master/img/logo/logo.png" alt="" /></a>
-                <strong><a href="index.html"><img src="{{ asset('kiaalap-master/img/logo/logosn.png')}}" alt="" /></a></strong>
+                {{--  <a href="index.html"><img class="main-logo" src="kiaalap-master/img/logo/logo.png" alt="" /></a>
+             <a href=""><h1 style="font-family:Times;">MUSC</h1></a> --}}
+                <strong><a href="#"><img src="{{ asset('img/logo.png')}}" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -81,10 +109,10 @@
                         <li>
                             <a class="has-arrow" href="index.html">
 								   <span class="educate-icon educate-home icon-wrap"></span>
-								   <span class="mini-click-non">MUSC</span>
+								   <span class="mini-click-non"> <label class=".text-primary">MUSC</label></span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="{{url('/')}}"><span class="mini-sub-pro">Portal</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{url('/')}}"><span class="mini-sub-pro">Ver Portal</span></a></li>
                                {{--   <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
                                 <li><a title="Dashboard v.3" href="index-2.html"><span class="mini-sub-pro">Dashboard v.3</span></a></li>
                                 <li><a title="Analytics" href="analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
@@ -100,7 +128,7 @@
                                 <li><a title="All Professors" href="{{ url('admin-instructores-l') }}"><span class="mini-sub-pro">Listado</span></a></li>
                                 <li><a title="Add Professor" href="{{ url('admin-instructores/create') }}"><span class="mini-sub-pro">Agregar</span></a></li>
                                 {{-- <li><a title="Edit Professor" href="#"><span class="mini-sub-pro">Editar</span></a></li> --}}
-                                <li><a title="Professor Profile" href="{{url('admin-instructores/1')}}"><span class="mini-sub-pro">Perfil</span></a></li>
+                               {{--   <li><a title="Professor Profile" href="{{url('admin-instructores/1')}}"><span class="mini-sub-pro">Perfil</span></a></li>  --}}
                             </ul>
                         </li>
                         <li>
@@ -113,32 +141,32 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Talleres</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Courses" href="{{url('admin-talleres')}}"><span class="mini-sub-pro">Listado</span></a></li>
+                            <a class="" href="{{url('admin-talleres')}}" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Talleres</span></a>
+                           {{--   <ul class="submenu-angle" aria-expanded="false">
+                               {{-- <li><a title="All Courses" href="{{url('admin-talleres')}}"><span class="mini-sub-pro">Listado</span></a></li>
                                 <li><a title="Add Courses" href="{{url('admin-talleres/create')}}"><span class="mini-sub-pro">Agregar</span></a></li>
-                               {{--  <li><a title="Edit Courses" href="#"><span class="mini-sub-pro">Edit Course</span></a></li>
+                                 <li><a title="Edit Courses" href="#"><span class="mini-sub-pro">Edit Course</span></a></li>
                                 <li><a title="Courses Profile" href="#"><span class="mini-sub-pro">Courses Info</span></a></li>
-                                <li><a title="course Payment" href="#"><span class="mini-sub-pro">Courses Payment</span></a></li> --}}
-                            </ul>
+                                <li><a title="course Payment" href="#"><span class="mini-sub-pro">Courses Payment</span></a></li>
+                            </ul>  --}}
                         </li>
                         <li>
-                            <a class="has-arrow" href="" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Conferencias</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
+                            <a class="" href="{{url('admin-conferencias')}}" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Conferencias</span></a>
+                            {{-- <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Library" href="{{url('admin-conferencias')}}"><span class="mini-sub-pro">Listado</span></a></li>
                                 <li><a title="Add Library" href="{{url('admin-conferencias/create')}}"><span class="mini-sub-pro">Agregar</span></a></li>
-                               {{--  <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li> --}}
-                            </ul>
+                                <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li>
+                            </ul> --}}
                         </li>
-                        {{-- <li>
-                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Departments</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
+                        <li>
+                            <a class="" href="{{url('admin-espacios')}}" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Espacios</span></a>
+                            {{-- <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Departments List" href="departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
                                 <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>
                                 <li><a title="Edit Departments" href="edit-department.html"><span class="mini-sub-pro">Edit Departments</span></a></li>
-                            </ul>
+                            </ul> --}}
                         </li>
-                        <li>
+                        {{-- <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-message icon-wrap"></span> <span class="mini-click-non">Mailbox</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
@@ -230,8 +258,525 @@
             </div>
         </div>
         <div class="header-advance-area">
-            @yield('nav')
+            {{-- @yield('nav') --}}
+            <div class="header-top-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="header-top-wraper">
+                                <div class="row">
+                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                                        <div class="menu-switcher-pro">
+                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                                    <i class="educate-icon educate-nav"></i>
+                                                </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+                                        <div class="header-top-menu tabl-d-n">
+                                            <ul class="nav navbar-nav mai-top-nav">
+                                                <li class="nav-item">
+                                                    <a href="{{url('admin-home')}}" class="nav-link">HOME</a>
+                                                </li>
+                                                {{-- <li class="nav-item">
+                                                    <a href="#" class="nav-link">About</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Services</a>
+                                                </li> --}}
+                                                {{-- <li class="nav-item dropdown res-dis-nn">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Project <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                                    <div role="menu" class="dropdown-menu animated zoomIn">
+                                                        <a href="#" class="dropdown-item">Documentation</a>
+                                                        <a href="#" class="dropdown-item">Expert Backend</a>
+                                                        <a href="#" class="dropdown-item">Expert FrontEnd</a>
+                                                        <a href="#" class="dropdown-item">Contact Support</a>
+                                                    </div>
+                                                </li> --}}
+                                                {{-- <li class="nav-item"> --}}
+                                                    {{-- <a href="#" class="nav-link">Support</a> --}}
+                                                {{-- </li> --}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                        <div class="header-right-info">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                {{-- Message & Notifications --}}
+                                                <li class="nav-item">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                            <img src="{{ asset('kiaalap-master/img/product/pro4.jpg')}}" alt="" />
+                                                            <span class="admin-name">{{Auth::user()->name}}</span>
+                                                            <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
+                                                        </a>
+                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                        <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
+                                                        </li>
+                                                        <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
+                                                        </li>
+                                                        <li><a href="#"><span class="edu-icon edu-money author-log-ic"></span>User Billing</a>
+                                                        </li>
+                                                        <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                                onclick="event.preventDefault();
+                                                                            document.getElementById('logout-form').submit();">
+                                                                <span class="edu-icon edu-locked author-log-ic"></span>{{ __('Logout') }}
+                                                            </a>
+                                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                                @csrf
+                                                            </form>
+                                                            <!--  <a href="#"><span class="edu-icon edu-locked author-log-ic"></span></a>-->
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-menu"></i></a>
 
+                                                    <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
+                                                        <ul class="nav nav-tabs custon-set-tab">
+                                                            <li class="active"><a data-toggle="tab" href="#Notes">Notes</a>
+                                                            </li>
+                                                            <li><a data-toggle="tab" href="#Projects">Projects</a>
+                                                            </li>
+                                                            <li><a data-toggle="tab" href="#Settings">Settings</a>
+                                                            </li>
+                                                        </ul>
+
+                                                        <div class="tab-content custom-bdr-nt">
+                                                            <div id="Notes" class="tab-pane fade in active">
+                                                                <div class="notes-area-wrap">
+                                                                    <div class="note-heading-indicate">
+                                                                        <h2><i class="fa fa-comments-o"></i> Latest Notes</h2>
+                                                                        <p>You have 10 new message.</p>
+                                                                    </div>
+                                                                    <div class="notes-list-area notes-menu-scrollbar">
+                                                                        <ul class="notes-menu-list">
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{ asset('kiaalap-master/img/contact/4.jpg')}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{ asset('kiaalap-master/img/contact/1.jpg')}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{ asset('kiaalap-master/img/contact/2.jpg')}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{ asset('kiaalap-master/img/contact/3.jpg')}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{ asset('kiaalap-master/img/contact/4.jpg')}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{ asset('kiaalap-master/img/contact/1.jpg')}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{ asset('kiaalap-master/img/contact/2.jpg')}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{ asset('kiaalap-master/img/contact/1.jpg')}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{ asset('kiaalap-master/img/contact/2.jpg')}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{ asset('kiaalap-master/img/contact/3.jpg')}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="Projects" class="tab-pane fade">
+                                                                <div class="projects-settings-wrap">
+                                                                    <div class="note-heading-indicate">
+                                                                        <h2><i class="fa fa-cube"></i> Latest projects</h2>
+                                                                        <p> You have 20 projects. 5 not completed.</p>
+                                                                    </div>
+                                                                    <div class="project-st-list-area project-st-menu-scrollbar">
+                                                                        <ul class="projects-st-menu-list">
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Web Development</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">1 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content">
+                                                                                            <p>Completion with: 28%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 28%;" class="progress-bar progress-bar-danger hd-tp-1"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Software Development</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">2 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content project-rating-cl">
+                                                                                            <p>Completion with: 68%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 68%;" class="progress-bar hd-tp-2"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Graphic Design</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">3 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content">
+                                                                                            <p>Completion with: 78%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 78%;" class="progress-bar hd-tp-3"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Web Design</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">4 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content project-rating-cl2">
+                                                                                            <p>Completion with: 38%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 38%;" class="progress-bar progress-bar-danger hd-tp-4"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Business Card</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">5 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content">
+                                                                                            <p>Completion with: 28%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 28%;" class="progress-bar progress-bar-danger hd-tp-5"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Ecommerce Business</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">6 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content project-rating-cl">
+                                                                                            <p>Completion with: 68%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 68%;" class="progress-bar hd-tp-6"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Woocommerce Plugin</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">7 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content">
+                                                                                            <p>Completion with: 78%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 78%;" class="progress-bar"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Wordpress Theme</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">9 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content project-rating-cl2">
+                                                                                            <p>Completion with: 38%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 38%;" class="progress-bar progress-bar-danger"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="Settings" class="tab-pane fade">
+                                                                <div class="setting-panel-area">
+                                                                    <div class="note-heading-indicate">
+                                                                        <h2><i class="fa fa-gears"></i> Settings Panel</h2>
+                                                                        <p> You have 20 Settings. 5 not completed.</p>
+                                                                    </div>
+                                                                    <ul class="setting-panel-list">
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Show notifications</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                                                                            <label class="onoffswitch-label" for="example">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Disable Chat</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                                                                            <label class="onoffswitch-label" for="example3">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Enable history</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+                                                                                            <label class="onoffswitch-label" for="example4">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Show charts</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+                                                                                            <label class="onoffswitch-label" for="example7">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Update everyday</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example2">
+                                                                                            <label class="onoffswitch-label" for="example2">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Global search</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example6">
+                                                                                            <label class="onoffswitch-label" for="example6">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Offline users</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example5">
+                                                                                            <label class="onoffswitch-label" for="example5">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Mobile Menu start -->
             <div class="mobile-menu-area">
@@ -418,17 +963,17 @@
                     </div>
                 </div>
             </div>
+            @yield('search')
         </div>
-        <div>
-
+        {{-- <div class="container-fluid"> --}}
             @yield('content')
-        </div>
+        {{-- </div> --}}
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="footer-copy-right">
-                            <p>Copyright © 2019. Microsoft UTN Student Cellule</p>
+                            <p>Copyright © 2019. Microsoft UTN Student Community</p>
                         </div>
                     </div>
                 </div>
@@ -437,55 +982,76 @@
     </div>
     <!-- jquery
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/vendor/jquery-1.12.4.min.js') }}"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/bootstrap.min.js') }}"></script>
     <!-- wow JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/wow.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/wow.min.js') }}"></script>
     <!-- price-slider JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery-price-slider.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery-price-slider.js') }}"></script>
     <!-- meanmenu JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery.meanmenu.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.meanmenu.js') }}"></script>
     <!-- owl.carousel JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/owl.carousel.min.js') }}"></script>
     <!-- sticky JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery.sticky.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.sticky.js') }}"></script>
     <!-- scrollUp JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/jquery.scrollUp.min.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/jquery.scrollUp.min.js') }}"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/scrollbar/mCustomScrollbar-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/scrollbar/mCustomScrollbar-active.js') }}"></script>
     <!-- metisMenu JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu.min.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/metisMenu/metisMenu-active.js') }}"></script>
     <!-- morrisjs JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.sparkline.min.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.charts-sparkline.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/sparkline/sparkline-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/jquery.charts-sparkline.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/sparkline/sparkline-active.js') }}"></script>
     <!-- calendar JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/calendar/moment.min.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar.min.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/moment.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/calendar/fullcalendar-active.js') }}"></script>
+    <!-- maskedinput JS
+		============================================ -->
+    <script src="{{ asset('kiaalap-master/js/jquery.maskedinput.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/masking-active.js') }}"></script>
+    <!-- datepicker JS
+        ============================================ -->
+    <script src="{{ asset('kiaalap-master/js/datepicker/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/datapicker/bootstrap-datepicker.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/datapicker/datepicker-active.js') }}"></script>
+    <!-- form validate JS
+        ============================================ -->
+    <script src="{{ asset('kiaalap-master/js/form-validation/jquery.form.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/form-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('kiaalap-master/js/form-validation/form-active.js') }}"></script>
+    <!-- dropzone JS
+        ============================================ -->
+    <script src="{{ asset('kiaalap-master/js/dropzone/dropzone.js') }}"></script>
+    <!-- tab JS
+        ============================================ -->
+    <script src="{{ asset('kiaalap-master/js/tab.js') }}"></script>
     <!-- plugins JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/plugins.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/plugins.js') }}"></script>
     <!-- main JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/main.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/js/main.js') }}"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="{{ asset('kiaalap-master/js/tawk-chat.js')}}"></script>
+    {{-- <script src="{{ asset('kiaalap-master/js/tawk-chat.js') }}"></script> --}}
+
 </body>
 
 </html>

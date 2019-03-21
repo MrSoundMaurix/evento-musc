@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Administrador;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Conferencia;
+use App\Espacio;
+use Image;
+use App\Http\Requests\ConferenciaRequest;
+
 class ConferenciaController extends Controller
 {
     /**
@@ -14,7 +19,12 @@ class ConferenciaController extends Controller
      */
     public function index()
     {
-        return view('Administrador.Conferencias.index');
+        try{
+            $conferencias = Conferencia::with('espacio')->orderByDesc('con_updated_at')->paginate(7);
+            return view('Administrador.conferencias.index',compact('conferencias'));
+        }catch(\Exception | QueryException $e){
+            return back()->withErrors(['exception'=>$e->getMessage()]);
+        }
     }
 
     /**
@@ -24,7 +34,13 @@ class ConferenciaController extends Controller
      */
     public function create()
     {
-        return view('Administrador.Conferencias.create');
+        try{
+            $conferencias = Conferencia::orderByDesc('con_updated_at')->paginate(7);
+            $espacios = Espacio::orderByDesc('esp_updated_at')->paginate(7);
+            return view('Administrador.conferencias.create',compact('espacios'));
+        }catch(\Exception | QueryException $e){
+            return back()->withErrors(['exception'=>$e->getMessage()]);
+        }
     }
 
     /**
@@ -33,9 +49,15 @@ class ConferenciaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ConferenciaRequest $request)
     {
-        //
+        try{
+            info($request);
+            $conferencia = Conferencia::create($request->all());
+            return redirect('admin-conferencias')->with('success','conferencia creada');
+        }catch(\Exception | QueryException $e){
+            return back()->withErrors(['exception'=>$e->getMessage()]);
+        }
     }
 
     /**
@@ -57,7 +79,7 @@ class ConferenciaController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Administrador.Conferencias.edit');
     }
 
     /**
