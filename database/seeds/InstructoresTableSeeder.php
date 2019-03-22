@@ -18,6 +18,7 @@ class InstructoresTableSeeder extends Seeder
             'ins_nombres' => 'Luz Amanda',
             'ins_apellidos' => 'Córdova Quinchiguango',
             'ins_email' => 'lacordovaq@utn.edu.ec',
+            'ins_cv' => 'Pdf',
             'ins_created_at' => Carbon::now(),
             'ins_updated_at' => Carbon::now()
         ]);

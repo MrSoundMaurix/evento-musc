@@ -20,9 +20,8 @@ class CreateInstructoresTable extends Migration
             $table->string('ins_apellidos',50);
             $table->string('ins_email',50)->unique();
             $table->string('ins_pais',50);
-            $table->string('ins_cv',1000)->nullable()->default(null);
-            $table->string('ins_cvtype',1000)->nullable()->default(null);
-            $table->string('ins_foto',1000)->nullable()->default(null);
+            $table->text('ins_cv');
+            $table->text('ins_foto')->nullable()->default(null);
             $table->string('ins_fototype',20)->nullable()->default(null);
             $table->timestamp('ins_created_at');
             $table->timestamp('ins_updated_at');

@@ -74,8 +74,13 @@ git push origin master
 composer require zizaco/entrust
 ```
 Para la cedula
+```
 composer require tavo1987/laravel-ec-validator
-
+```
+Para PDF
+```
+composer require barryvdh/laravel-dompdf
+```
 Cada vez que se instala una nueva librería aplicar el comando
 ```
 composer dump-autoload

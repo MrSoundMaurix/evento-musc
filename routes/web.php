@@ -46,6 +46,8 @@ Route::group(['middleware' => ['auth']], function ()
         Route::get('admin-calendario', 'Administrador\AdministraciónController@calendario');
         Route::resource('admin-instructores', 'Administrador\InstructorController');
         Route::get('admin-instructores-l', 'Administrador\InstructorController@indexLista');
+        Route::get('admin-instructores-pdf/{id}', 'Administrador\InstructorController@pdf_cv');
+        Route::get('admin-instructores-destroy/{id}', 'Administrador\InstructorController@destroy');
         Route::resource('admin-usuarios', 'Administrador\UsuarioController');
         Route::resource('admin-talleres', 'Administrador\TallerController');
         Route::resource('admin-conferencias', 'Administrador\ConferenciaController');
