@@ -105,7 +105,7 @@
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
-                    @role('administrador')
+                    @role(['administrador','root'])
                     <ul class="metismenu" id="menu1">
                         <li>
                             <a class="has-arrow" href="index.html">
