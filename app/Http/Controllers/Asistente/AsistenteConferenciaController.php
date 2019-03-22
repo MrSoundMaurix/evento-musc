@@ -7,17 +7,13 @@ use App\Http\Controllers\Controller;
 
 use Auth;
 use App\User;
+use DB;
 use Image;
 use App\Http\Requests\AsistenteConferenciaRequest;
 use App\AsistenteConferencia;
 
 class AsistenteConferenciaController extends Controller
 {
-
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
     /**
      * Display a listing of the resource.
      *
@@ -44,12 +40,12 @@ class AsistenteConferenciaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AsistenteConferenciaRequest $request)
+    public function store(Request $request)
     {
-        try{
-            Auth::check();
+        try{            
             info($request.'$$$$$$$$$$$$$$$$444'.Auth::user().'iddddd'.Auth::id());
             $asistenteConferencia = AsistenteConferencia::create($request->all());
+            // $asistenteConferencia = new AsistenteConferencia;
             info('ass: '.$asistenteConferencia);
             info( Auth::id().'########'.Auth::user());
             $asistenteConferencia->usu_id = Auth::id();            
@@ -93,8 +89,7 @@ class AsistenteConferenciaController extends Controller
      */
     public function edit($id)
     {
-        $estudiante = User::find($id);
-        return view('Estudiante.edit', ["estudiante" => $estudiante]);
+        //
     }
 
     /**
@@ -106,18 +101,7 @@ class AsistenteConferenciaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try {
-
-            $estudiante = User::findOrFail($id);
-            $estudiante->cedula = $request->get('cedula');
-            $estudiante->name = $request->get('nombres');
-            $estudiante->apellido = $request->get('apellidos');
-
-            $estudiante->update();
-            return redirect('usuarios')->with('success', 'Punto Actualizado con éxito');
-        } catch (Exception $e) {
-            return back()->withErrors(['exception' => $e->getMessage()])->withInput();
-        }
+        //
     }
 
     /**
@@ -128,8 +112,6 @@ class AsistenteConferenciaController extends Controller
      */
     public function destroy($id)
     {
-
         //
-
     }
 }

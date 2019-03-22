@@ -38,7 +38,7 @@ class AsistenteConferenciaRequest extends FormRequest
             case 'PUT': //update
                 break; 
             case 'POST': //store
-                
+                info('hola');
                 return [
                     'asc_nrodocumento' => 'required|string|max:30',
                     'asc_foto'=>'nullable|file|mimes:jpeg,png,jpg,JPG|dimensions:min_width=200,min_height=200,max_width=4000,max_height=4000|max:2048',                    
