@@ -52,38 +52,38 @@
                     <li class="{{ Request::path() == '/' ? 'menu-active' : ''}}"><a href="/">Inicio</a></li>
                     {{-- <li><a href="{{ url('sistemas') }}">Sistemas</a></li> --}}
 
-                    <li class="nav-item dropdown {{strpos(Request::path(), 'sistemas/') !== false ? 'menu-active' : ''}}">
+                    <li class="nav-item dropdown {{strpos(Request::path(), 'sistemas') !== false ? 'menu-active' : ''}}">
                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sistemas
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" style="color: black" href="{{ url('sistemas/conferencias') }}">Conferencias</a></li>
-                            <li><a class="dropdown-item" style="color: black" href="{{ url('sistemas/talleres') }}">Talleres</a></li>
+                            <li><a class="dropdown-item" id="dp-item" href="{{ url('conferencias/sistemas') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" id="dp-item" href="{{ url('talleres/sistemas') }}">Talleres</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown {{strpos(Request::path(), 'publicidad/') !== false ? 'menu-active' : ''}}">
+                    <li class="nav-item dropdown {{strpos(Request::path(), 'publicidad') !== false ? 'menu-active' : ''}}">
                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Publicidad
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" style="color: black" href="{{ url('publicidad/conferencias') }}">Conferencias</a></li>
-                            <li><a class="dropdown-item" style="color: black" href="{{ url('publicidad/talleres') }}">Talleres</a></li>
+                            <li><a class="dropdown-item" id="dp-item" href="{{ url('conferencias/publicidad') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" id="dp-item" href="{{ url('talleres/publicidad') }}">Talleres</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown {{strpos(Request::path(), 'contabilidad/') !== false ? 'menu-active' : ''}}">
+                    <li class="nav-item dropdown {{strpos(Request::path(), 'contabilidad') !== false ? 'menu-active' : ''}}">
                         <a class="menu-active nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Contabilidad
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" style="color: black" href="{{ url('contabilidad/conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" id="dp-item" href="{{ url('conferencias/contabilidad') }}">Conferencias</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown {{strpos(Request::path(), 'biotecnologia/') !== false ? 'menu-active' : ''}}">
+                    <li class="nav-item dropdown {{strpos(Request::path(), 'biotecnologia') !== false ? 'menu-active' : ''}}">
                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Biotecnología
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" style="color: black" href="{{ url('biotecnologia/conferencias') }}">Conferencias</a></li>
+                            <li><a class="dropdown-item" id="dp-item" href="{{ url('conferencias/biotecnologia') }}">Conferencias</a></li>
                         </ul>
                     </li>
                     <li class="buy-tickets"><a href="{{ route('register') }}">Inscríbete</a></li>

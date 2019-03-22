@@ -18,18 +18,18 @@ Route::get('/p', function () {
     return view('layouts.personalizar');
 });
 
-Route::prefix('sistemas')->group(function () {
-    Route::view('conferencias', 'sistemasc');
-    Route::view('talleres', 'sistemast');
+Route::prefix('conferencias/')->group(function () {
+    Route::get('sistemas', 'IndexController@sistemasc');
+    Route::get('publicidad', 'IndexController@publicidadc');
+    Route::get('contabilidad', 'IndexController@contabilidad');
+    Route::get('biotecnologia', 'IndexController@biotecnologia');  
+    
 });
 
-Route::prefix('publicidad')->group(function () {
-    Route::view('conferencias', 'publicidadc');
-    Route::view('talleres', 'publicidadt');
+Route::prefix('talleres/')->group(function () {
+    Route::get('sistemas', 'IndexController@sistemast');
+    Route::get('publicidad', 'IndexController@publicidadt');
 });
-
-Route::view('contabilidad/conferencias', 'contabilidad');
-Route::view('biotecnologia/conferencias', 'biotecnologia');
 
 Auth::routes();
 
@@ -56,7 +56,8 @@ Route::group(['middleware' => ['auth']], function ()
     });
     Route::group(['middleware' => 'role:usuario'], function ()
     {
-       // Route::view('usuario-home', 'Usuario.home');
+       Route::view('assistant-home', 'Asistente.home');
+       Route::resource('assistant-conferencia','Asistente\AsistenteConferenciaController');
     });
 });
 

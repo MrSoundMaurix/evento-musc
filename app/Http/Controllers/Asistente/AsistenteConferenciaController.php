@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Asistente;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class EstudianteController extends Controller
+class AsistenteConferenciaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        return view('Estudiante.index');
+        //
     }
 
     /**
@@ -23,7 +24,7 @@ class EstudianteController extends Controller
      */
     public function create()
     {
-        return view('Estudiante.create');
+        return view('Asistente.conferencias.create');
     }
 
     /**

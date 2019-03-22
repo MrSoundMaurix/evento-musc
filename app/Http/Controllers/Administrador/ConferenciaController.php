@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Conferencia;
 use App\Espacio;
+use App\Instructor;
 use Image;
 use App\Http\Requests\ConferenciaRequest;
 
@@ -21,7 +22,9 @@ class ConferenciaController extends Controller
     {
         try{
             $conferencias = Conferencia::with('espacio')->orderByDesc('con_updated_at')->paginate(7);
-            return view('Administrador.conferencias.index',compact('conferencias'));
+            $instructores = Instructor::all();
+            info($instructores);
+            return view('Administrador.conferencias.index',compact('conferencias','instructores'));
         }catch(\Exception | QueryException $e){
             return back()->withErrors(['exception'=>$e->getMessage()]);
         }
