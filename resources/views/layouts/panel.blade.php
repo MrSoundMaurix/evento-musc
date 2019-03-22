@@ -105,6 +105,7 @@
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
+                    @role('administrador')
                     <ul class="metismenu" id="menu1">
                         <li>
                             <a class="has-arrow" href="index.html">
@@ -240,6 +241,14 @@
                             </ul>
                         </li> --}}
                     </ul>
+                    @endrole
+                    @role('usuario')
+                    <ul class="metismenu" id="menu1">
+                       <li>
+                            <a class="" href="{{url('asistente-talleres')}}" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Mis Talleres</span></a>
+                       </li>
+                    </ul>
+                    @endrole
                 </nav>
             </div>
         </nav>

@@ -1,5 +1,5 @@
 @extends('layouts.panel')
-@section('title','EVENT MUSC| TALLERES')
+@section('title','CIMA| TALLERES')
 @section('content')
 
 <!-- Mobile Menu end -->

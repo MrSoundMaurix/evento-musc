@@ -1,12 +1,6 @@
 @extends('layouts.panel')
-@section('title','EVENT MUSC| CONFERENCIAS')
-{{--  @section('nav')
+@section('title','CIMA| CONFERENCIAS')
 
-@section('title','CIMA | Conferencias')
-@section('nav')
-
-    @include('layouts.nav')
-@stop  --}}
 @section('content')
     <div class="breadcome-area">
         <div class="container-fluid">

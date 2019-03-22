@@ -22,7 +22,7 @@ class TallerController extends Controller
     {
         try{
             $talleres = Taller::orderByDesc('tal_updated_at')->paginate(10);
-            return view('Administrador.Talleres.index',compact('talleres'));
+            return view('Administrador.talleres.index',compact('talleres'));
         }catch(\Exception | QueryException $e){
             return back()->withErrors(['exception'=>$e->getMessage()]);
         }
@@ -39,7 +39,7 @@ class TallerController extends Controller
         $espacios = Espacio::all();
         $categorias = Categoria::all();
         $instructores = Instructor::all();
-        return view('Administrador.Talleres.create',compact('categorias','instructores','espacios'));
+        return view('Administrador.talleres.create',compact('categorias','instructores','espacios'));
     }
 
     /**
@@ -82,7 +82,7 @@ class TallerController extends Controller
     public function show($id)
     {
         $taller = Taller::find($id);
-        return view('Administrador.Talleres.show',compact('taller'));
+        return view('Administrador.talleres.show',compact('taller'));
     }
 
     /**
@@ -97,7 +97,7 @@ class TallerController extends Controller
         $categorias = Categoria::all();
         $instructores = Instructor::all();
         $taller = Taller::findOrFail($id);
-        return view('Administrador.Talleres.edit',compact('taller','espacios','categorias','instructores'));
+        return view('Administrador.talleres.edit',compact('taller','espacios','categorias','instructores'));
     }
 
     /**
@@ -110,9 +110,9 @@ class TallerController extends Controller
     public function update(TallerRequest $request, $id)
     {
         try{
-            $taller = Taller::updateOrCreate(['tal_id'=>$id],$request->all());
+            $taller = Taller::updateOrCreate(['tal_id'=>$id],$request->except('tal_foto'));
 
-            if ($request->hasFile('tal_foto')) {
+            /* if ($request->hasFile('tal_foto')) {
                 $image = $request->file( 'tal_foto' );
                 $imageType = $image->getClientOriginalExtension();
                 $imageStr = (string) Image::make( $image )->
@@ -123,7 +123,7 @@ class TallerController extends Controller
                 $taller->tal_foto = base64_encode( $imageStr );
                 $taller->tal_fototype = $imageType;
                 $taller->save();
-            }
+            } */
 
             return redirect('admin-talleres')->with('success','Taller actualizado exitosamente');
         }catch(\Exception | QueryException $e){
