@@ -31,157 +31,103 @@
         </div>
     </div>
 </div>
-        <!-- Single pro tab review Start-->
-        <div class="single-pro-review-area mt-t-30 mg-b-15">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="product-payment-inner-st">
-                            <ul id="myTabedu1" class="tab-review-design">
-                                <li class="active"><a href="#description">Editar Información Básica</a></li>
-                                <li><a href="#reviews">Editar Información Cuenta</a></li>
-                                <li><a href="#INFORMATION">Editar Información Social</a></li>
-                            </ul>
-                            <div id="myTabContent" class="tab-content custom-product-edit">
-                                <div class="product-tab-list tab-pane fade active in" id="description">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="review-content-section">
-                                                <div id="dropzone1" class="pro-ad">
-                                                    <form action="/upload" class="dropzone dropzone-custom needsclick add-professors" id="demo1-upload">
-                                                        <div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
-                                                                <div class="form-group">
-                                                                    <input name="ci" id="ci" type="text" class="form-control" placeholder="Cédula"  value="179899199">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input name="nombres" type="text" class="form-control" placeholder="Nombres Completos" value="Cristopher Cristopher Coronado Moreira">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input name="nacionalidad" type="text" class="form-control" placeholder="Nacionalidad" value="Ecuador">
-                                                                </div>
-
-                                                                {{--  <div class="form-group">
-                                                                    <input name="finish" id="finish" type="text" class="form-control" placeholder="Fecha de nacimiento">
-                                                                </div>  --}}
-                                                                {{--  <div class="form-group">
-                                                                    <input name="postcode" id="postcode" type="text" class="form-control" placeholder="Postcode">
-                                                                </div>  --}}
-                                                                <div class="form-group alert-up-pd">
-                                                                    <div class="dz-message needsclick download-custom">
-                                                                        <i class="fa fa-download edudropnone" aria-hidden="true"></i>
-                                                                        <h2 class="edudropnone">Suelta la imagen aquí o haz clic para subir.</h2>
-                                                                        <p class="edudropnone"><span class="note needsclick">(Imagen.)</span>
-                                                                        </p>
-                                                                        <input name="imageico" class="hd-pro-img" type="text" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
-
-                                                                <div class="form-group">
-                                                                    <select name="gender" class="form-control">
-																		<option value="0" selected="" >Hombre</option>
-																		{{--  <option value="0">Hombre</option>  --}}
-																		<option value="1">Mujer</option>
-																	</select>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <select name="nacionalidad" class="form-control">
-                                                                       {{--   <option value="none" selected="" disabled="">Seleccionar Nacionalidad</option>  --}}
-                                                                        <option value="2" selected onclick="setCedula('ecuador')">Ecuador</option>
-                                                                        <option value="3" onclick="setCedula('colombia')">Colombia</option>
-                                                                        <option value="4" onclick="setCedula('mexico')">Mexico</option>
-                                                                    </select>
-                                                                </div>
-
-                                                                <div class="form-group">
-                                                                    <select name="ciudad" class="form-control">
-																			{{--  <option value="none" selected="" disabled="">Seleccionar Ciudad</option>  --}}
-                                                                            <option value="0" selected>Valencia</option>
-                                                                            <option value="1">Ibarra</option>
-																			<option value="2">Quito</option>
-																			<option value="3">Ambato</option>
-                                                                            <option value="4">Guayaquil</option>
-
-																		</select>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input name="website" type="text" class="form-control" placeholder="URL Sitio Web" value="www.Cristofima.com">
-                                                                </div>
-                                                                <div class="form-group res-mg-t-15">
-                                                                    <textarea name="domicilio" placeholder="Descripción Domicilio">Universidad Técnica del Norte</textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <div class="payment-adress">
-                                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">GUARDAR CAMBIOS</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
+<div class="row">
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+        @include('includes.messages')
+    </div>
+</div>
+<div class="single-pro-review-area mt-t-30 mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-payment-inner-st">
+                    <ul id="myTabedu1" class="tab-review-design">
+                        <li class="active"><a href="#description">Información Básica</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content custom-product-edit">
+                        <div class="product-tab-list tab-pane fade active in" id="description">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="review-content-section">
+                                        <div id="dropzone1" class="pro-ad">
+                                            {!!Form::model($instructor,['method'=>'PATCH','route'=>['admin-instructores.update',$instructor->ins_id], 'files'=>'true'])!!}
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="form-group">
+                                                        <input name="ins_nombres" type="text" required class="form-control"
+                                                            placeholder="Nombres" value="{{ $instructor->ins_nombres }}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="ins_apellidos" type="text" required class="form-control"
+                                                            placeholder="Apellidos" value="{{ $instructor->ins_apellidos }}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="tema" type="text" required class="form-control"
+                                                            placeholder="Tema" value="{{ $instructor->ins_cv[0] }}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea name="hojav" required
+                                                            placeholder="Hoja de Vida">{{ $instructor->ins_cv[1] }}</textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea name="resumen" required
+                                                            placeholder="Resumen" >{{ $instructor->ins_cv[2] }}</textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="ins_foto" type="file" class="form-control">
+                                                    </div>
+                                                    @if($instructor->ins_foto == null)
+                                                        -
+                                                    @else
+                                                        <img src="{{ "data:image/" . $instructor->ins_fototype . ";base64," . $instructor->ins_foto }}" style="max-width:150px;">
+                                                    @endif
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-tab-list tab-pane fade" id="reviews">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="review-content-section">
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                        <form id="acount-infor" action="#" class="acount-infor">
-                                                            <div class="devit-card-custom">
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control" name="correo" placeholder="Correo electrónico" value="cristofima@gamil.com">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input name="celular" type="text" class="form-control" placeholder="Celular" value="0987654321">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input name="contraseña" type="password" class="form-control" placeholder="Contraseña" value="12345678">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input name="confarmcontraseña" type="password" class="form-control" placeholder="Confirmar Contraseña" value="12345678">
-                                                                </div>
-                                                                <a href="#" class="btn btn-primary waves-effect waves-light">GUARDAR CAMBIOS</a>
-                                                            </div>
-                                                        </form>
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="form-group">
+                                                        <select name="ins_pais" required class="form-control">
+                                                            <option value="" Selected disabled="">Seleccionar
+                                                                Nacionalidad</option>
+                                                            <option value="Ecuador" <?php if ($instructor->ins_pais=="Ecuador") {
+                                                                echo 'Selected';
+                                                            }?> onclick="setCedula('ecuador')">
+                                                                Ecuador
+                                                            </option>
+                                                            <option value="Colombia" <?php if ($instructor->ins_pais=="Colombia") {
+                                                                echo 'Selected';
+                                                            }?> onclick="setCedula('colombia')">
+                                                                Colombia</option>
+                                                            <option value="Mexico" <?php if ($instructor->ins_pais=="Mexico") {
+                                                                echo 'Selected';
+                                                            }?> onclick="setCedula('mexico')">Mexico
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="ins_cedula" id="ci" type="text"
+                                                            class="form-control" required placeholder="Cédula" value="{{ $instructor->ins_cedula }}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="ins_email" required type="text" class="form-control"
+                                                            placeholder="Dirección de correo eléctronico" value="{{ $instructor->ins_email }}">
+                                                    </div>
+                                                    <div class="form-group res-mg-t-15">
+                                                        <textarea name="materiales" required placeholder="Materiales">{{ $instructor->ins_cv[3] }}</textarea>
+                                                    </div>
+                                                    <div class="form-group res-mg-t-15">
+                                                        <textarea name="conocimientosp"
+                                                            placeholder="Conocimientos Previos" required>{{ $instructor->ins_cv[4] }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-tab-list tab-pane fade" id="INFORMATION">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="review-content-section">
-												<div class="row">
-													<div class="col-lg-12">
-                                                            <div class="devit-card-custom">
-                                                                    <div class="form-group">
-                                                                        <input type="url" class="form-control" placeholder="Facebook URL" name="fb" value="http://www.facebook.com">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <input type="url" class="form-control" placeholder="Twitter URL" name="tw" value="http://www.twitter.com">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <input type="url" class="form-control" placeholder="Google Plus" name="gp" value="http://www.google-plus.com">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <input type="url" class="form-control" placeholder="Linkedin URL" name="lk" value="http://www.Linkedin.com">
-                                                                    </div>
-                                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">GUARDAR CAMBIOS</button>
-                                                                </div>
-													</div>
-												</div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="payment-adress">
+                                                        <button type="submit"
+                                                            class="btn btn-primary waves-effect waves-light">GUARDAR</button>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            {!! Form::close() !!}
                                         </div>
                                     </div>
                                 </div>
@@ -191,21 +137,20 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-
-            function setCedula(ciudad){
-                if(ciudad == 'ecuador'){
-                document.getElementById('ci').disabled=false;
-                document.getElementById('ci').placeholder="Ingrese identificación Ecuatoriana";
-                }
-                else if(ciudad=='colombia'){
-                document.getElementById('ci').disabled=false;
-                document.getElementById('ci').placeholder="Ingrese identificación Colombiana";
-                }
-                else if(ciudad=='mexico'){
-                document.getElementById('ci').disabled=false;
-                document.getElementById('ci').placeholder="Ingrese identificación Mexicana ";
-                }
-            }
-        </script>
+    </div>
+</div>
+<script type="text/javascript">
+function setCedula(ciudad) {
+    if (ciudad == 'ecuador') {
+        document.getElementById('ci').disabled = false;
+        document.getElementById('ci').placeholder = "Ingrese identificación Ecuatoriana";
+    } else if (ciudad == 'colombia') {
+        document.getElementById('ci').disabled = false;
+        document.getElementById('ci').placeholder = "Ingrese identificación Colombiana";
+    } else if (ciudad == 'mexico') {
+        document.getElementById('ci').disabled = false;
+        document.getElementById('ci').placeholder = "Ingrese identificación Mexicana ";
+    }
+}
+</script>
 @stop

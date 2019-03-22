@@ -43,6 +43,11 @@
         </div>
     </div>
 </div>
+<div class="row">
+		<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+				@include('includes.messages')
+		</div>
+</div>
 <div class="product-status mg-b-15">
     <div class="container-fluid">
         <div class="row">
@@ -57,108 +62,42 @@
                             <tr>
                                 <th>Nro</th>
                                 <th>Fotografía</th>
-                                <th>Nombres y Apellidos</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
                                 <th>Hoja de Vida</th>
                                 <th>Correo</th>
                                 <th>Nacionalidad</th>
-
                                 <th>Opciones</th>
                             </tr>
+                            <?php $a=1; ?>
+                            @foreach($instructores as $inst)
+                            
                             <tr>
-                                <td>1</td>
-                                <td><img src="kiaalap-master/img/contact/1.jpg" alt="" /></td>
-                                <td>Web Development Book</td>
+                                <td>{{ $a }}</td>
+                                <?php $a=$a+1; ?>
                                 <td>
-                                    <button class="pd-setting">Ver</button>
+                                @if($inst->ins_foto == null)
+                                    -
+                                @else
+                                    <img src="{{ "data:image/" . $inst->ins_fototype . ";base64," . $inst->ins_foto }}" style="max-width:75px;">
+                                @endif
                                 </td>
-                                <td>micorreo@dominio.com</td>
-                                <td>Ecuador</td>
+                                <td>{{ $inst->ins_nombres }}</td>
+                                <td>{{ $inst->ins_apellidos }}</td>
                                 <td>
-                                    <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    <a href="{{url('admin-instructores-pdf/'.$inst->ins_id.'')}}"><button class="pd-setting" style="font-size:20px">Ver <i class="fa fa-file-pdf-o"></i></button></a>
+                                </td>
+                                <td>{{ $inst->ins_email }}</td>
+                                <td>{{ $inst->ins_pais }}</td>
+                                <td>
+                                    <a href="{{url('admin-instructores/'.$inst->ins_id.'/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                    <a href="{{url('admin-instructores-destroy/'.$inst->ins_id.'')}}"><button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><img src="kiaalap-master/img/contact/2.jpg" alt="" /></td>
-                                <td>Quality Bol pen</td>
-                                <td>
-                                    <button class="pd-setting">Ver</button>
-                                </td>
-                                <td>micorreo@dominio.com</td>
-                                <td>Ecuador</td>
-                                <td>
-                                    <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><img src="kiaalap-master/img/contact/3.jpg" alt="" /></td>
-                                <td>Box of pendrive</td>
-                                <td>
-                                    <button class="pd-setting">Ver</button>
-                                </td>
-                                <td>micorreo@dominio.com</td>
-                                <td>Ecuador</td>
-                                <td>
-                                        <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><img src="kiaalap-master/img/contact/4.jpg" alt="" /></td>
-                                <td>Quality Bol pen</td>
-                                <td>
-                                    <button class="pd-setting">Ver</button>
-                                </td>
-                                <td>micorreo@dominio.com</td>
-                                <td>Ecuador</td>
-                                <td>
-                                        <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td><img src="kiaalap-master/img/contact/1.jpg" alt="" /></td>
-                                <td>Web Development Book</td>
-                                <td>
-                                    <button class="pd-setting">Ver</button>
-                                </td>
-                                <td>micorreo@dominio.com</td>
-                                <td>Ecuador</td>
-                                <td>
-                                        <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td><img src="kiaalap-master/img/contact/2.jpg" alt="" /></td>
-                                <td>Quality Bol pen</td>
-                                <td>
-                                    <button class="pd-setting">Ver</button>
-                                </td>
-                                <td>micorreo@dominio.com</td>
-                                <td>Ecuador</td>
-                                <td>
-                                        <a href="{{url('admin-instructores/1/edit')}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                    <button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
+                            @endforeach
                         </table>
                     </div>
-                    <div class="custom-pagination">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </div>
+                    {{$instructores->render()}}
                 </div>
             </div>
         </div>
