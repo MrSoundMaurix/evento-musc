@@ -3,13 +3,7 @@
 namespace App\Http\Controllers\Asistente;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD:app/Http/Controllers/Asistente/AsistenteConferenciaController.php
 use App\Http\Controllers\Controller;
-=======
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\Auth;
-
->>>>>>> 01cb6ff0169e49e15575a1d14e52086ac8ea3136:app/Http/Controllers/EstudianteController.php
 
 class AsistenteConferenciaController extends Controller
 {
@@ -25,13 +19,7 @@ class AsistenteConferenciaController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD:app/Http/Controllers/Asistente/AsistenteConferenciaController.php
         //
-=======
-
-        $estudiante = User::find(Auth::user()->id);
-        return view('Estudiante.index', ["estudiante" => $estudiante]);
->>>>>>> 01cb6ff0169e49e15575a1d14e52086ac8ea3136:app/Http/Controllers/EstudianteController.php
     }
 
     /**
