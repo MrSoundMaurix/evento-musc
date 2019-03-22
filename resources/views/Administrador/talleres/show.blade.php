@@ -164,7 +164,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="ex-pro">
-                                                                <p ALIGN="justify">{{$taller->tal_previos}}</p>
+                                                                <p ALIGN="justify">{{$taller->tal_cprevios}}</p>
                                                         </div>
                                                     </div>
                                                 </div>

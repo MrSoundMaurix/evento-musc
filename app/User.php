@@ -42,13 +42,16 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
     $this->notify(new MailResetPasswordNotification($token));
-    }   
+    }
 
     public function roles()
     {
         return $this
             ->belongsToMany('App\Role');
     }
-       
+
+    public function talleres(){
+        return $this->belongsToMany('App\Taller','asistente_taller','id','tal_id');
+    }
 
 }

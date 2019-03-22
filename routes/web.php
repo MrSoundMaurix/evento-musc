@@ -18,12 +18,24 @@ Route::get('/p', function () {
     return view('layouts.personalizar');
 });
 
+Route::get('/home', function () {
+    if( Auth::user() )
+        if( Auth::user()->hasRole('administrador') || Auth::user()->hasRole('root') ) //se valida el tipo de usuario
+        return redirect('/admin-home');
+        elseif(Auth::user()->hasRole('usuario'))
+        return redirect('/asistente-talleres');
+    else
+    return redirect('/login');
+
+
+});
+
 Route::prefix('conferencias/')->group(function () {
     Route::get('sistemas', 'IndexController@sistemasc');
     Route::get('publicidad', 'IndexController@publicidadc');
     Route::get('contabilidad', 'IndexController@contabilidad');
-    Route::get('biotecnologia', 'IndexController@biotecnologia');  
-    
+    Route::get('biotecnologia', 'IndexController@biotecnologia');
+
 });
 
 Route::prefix('talleres/')->group(function () {
@@ -60,6 +72,7 @@ Route::group(['middleware' => ['auth']], function ()
     {
        Route::view('assistant-home', 'Asistente.home');
        Route::resource('assistant-conferencia','Asistente\AsistenteConferenciaController');
+       Route::resource('asistente-talleres','Asistente\TallerController');
     });
 });
 

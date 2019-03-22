@@ -33,4 +33,8 @@ class Taller extends Model
     {
         return $this->belongsTo('App\Instructor','ins_id');
     }
+
+    public function asistentes(){
+        return $this->belongsToMany('App\User','asistente_taller','tal_id','id');
+    }
 }
