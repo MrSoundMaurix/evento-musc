@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Asistente;
 
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\Controller;
 
 class AsistenteConferenciaController extends Controller
 {
@@ -21,9 +19,7 @@ class AsistenteConferenciaController extends Controller
      */
     public function index()
     {
-
-        $estudiante = User::find(Auth::user()->id);
-        return view('Estudiante.index', ["estudiante" => $estudiante]);
+        //
     }
 
     /**
