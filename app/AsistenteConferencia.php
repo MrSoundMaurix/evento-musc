@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class AsistenteConferencia extends Model
 {
-    protected $primaryKey="asc_id" ;
-    protected $table="asistente-conferencia" ;
-    public $timestamps=true; 
+    protected $primaryKey = "asc_id";
+    protected $table = "asistente_conferencia";
+    public $timestamps = true; 
     protected $dates = ['asc_created_at','asc_updated_at'];
 
     const CREATED_AT="asc_created_at";

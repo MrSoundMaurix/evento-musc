@@ -71,7 +71,7 @@ Route::group(['middleware' => ['auth']], function ()
     Route::group(['middleware' => 'role:usuario'], function ()
     {
        Route::view('assistant-home', 'Asistente.home');
-       Route::resource('assistant-conferencia','Asistente\AsistenteConferenciaController');
+       Route::resource('asistente-conferencia','Asistente\AsistenteConferenciaController');
        Route::resource('asistente-talleres','Asistente\TallerController');
     });
 });

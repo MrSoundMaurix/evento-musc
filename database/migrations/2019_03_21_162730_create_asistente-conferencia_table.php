@@ -13,7 +13,7 @@ class CreateAsistenteConferenciaTable extends Migration
      */
     public function up()
     {
-        Schema::create('asistente-conferencia', function (Blueprint $table) {
+        Schema::create('asistente_conferencia', function (Blueprint $table) {
             $table->increments('asc_id');
             $table->integer('usu_id');
             $table->integer('con_id');

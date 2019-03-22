@@ -1,7 +1,8 @@
-@extends('layouts.panel2')
+@extends('layouts.panel')
 @section('title','CIMA | Conferencias')
 
 @section('content')
+    <div class="single-pro-review-area mt-t-30 mg-b-15"></div>
     <div class="breadcome-area">
         <div class="container-fluid">
             <div class="row">

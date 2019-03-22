@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Asistente;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\AsistenteConferencia;
 use Auth;
 use App\User;
 use DB;
 use Image;
 use App\Http\Requests\AsistenteConferenciaRequest;
-use App\AsistenteConferencia;
 
 class AsistenteConferenciaController extends Controller
 {
@@ -40,16 +40,17 @@ class AsistenteConferenciaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AsistenteConferenciaRequest $request)
     {
         try{            
-            info($request.'$$$$$$$$$$$$$$$$444'.Auth::user().'iddddd'.Auth::id());
-            $asistenteConferencia = AsistenteConferencia::create($request->all());
-            // $asistenteConferencia = new AsistenteConferencia;
-            info('ass: '.$asistenteConferencia);
-            info( Auth::id().'########'.Auth::user());
+            // info($request.'$$$$$$$$$$$$$$$$444'.Auth::user().'iddddd'.Auth::id());
+            // $asistenteConferencia = AsistenteConferencia::create($request->all());
+            $asistenteConferencia = new AsistenteConferencia;
+            // info('ass: '.$asistenteConferencia);
+            // info( Auth::id().'########'.Auth::user());
             $asistenteConferencia->usu_id = Auth::id();            
             $asistenteConferencia->con_id = 1;
+            $asistenteConferencia->asc_nrodocumento = $request->asc_nrodocumento;
 
             if ($request->hasFile('asc_foto')) {
                 $image = $request->file( 'asc_foto' );
@@ -64,7 +65,7 @@ class AsistenteConferenciaController extends Controller
                 $asistenteConferencia->save();
             }
 
-            return redirect('assistant-conferencia')->with('success','asc creado');
+            return redirect('asistente-conferencia')->with('success','asc creado');
         }catch(\Exception | QueryException $e){
             return back()->withErrors(['exception'=>$e->getMessage()]);
         }

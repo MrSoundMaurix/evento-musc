@@ -2,6 +2,7 @@
 @section('title','CIMA | Nuevo Espacio')
 
 @section('content')
+<div class="single-pro-review-area mt-t-10 mg-b-10"></div>
     <div class="breadcome-area">
         <div class="container-fluid">
             <div class="row">
@@ -38,7 +39,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-payment-inner-st">
                         <ul id="myTabedu1" class="tab-review-design">
-                            <li class="active"><a href="#description">Nuevo Espacio | Detalles Espacio</a></li>
+                            <li class="active"><a href="#description">Nuevo Espacio | Detalles del Espacio</a></li>
                         </ul>
                         <div id="myTabContent" class="tab-content custom-product-edit">
                             <div class="product-tab-list tab-pane fade active in" id="description">
