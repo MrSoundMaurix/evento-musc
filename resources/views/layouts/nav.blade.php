@@ -14,9 +14,16 @@
                         <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                             <div class="header-top-menu tabl-d-n">
                                 <ul class="nav navbar-nav mai-top-nav">
+                                    @role('administrador|root')
                                     <li class="nav-item">
                                         <a href="{{url('admin-home')}}" class="nav-link">HOME</a>
                                     </li>
+                                    @endrole
+                                    @role('usuario')
+                                    <li class="nav-item">
+                                            <a href="{{url('/')}}" class="nav-link">PORTADA</a>
+                                        </li>
+                                    @endrole
                                     {{-- <li class="nav-item">
                                         <a href="#" class="nav-link">About</a>
                                     </li>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Asistente;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Taller;
+use App\AsistenteTaller;
+use Auth;
 
 class TallerController extends Controller
 {
@@ -41,7 +43,19 @@ class TallerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //return $request->tal_id;
+         try{
+
+            $usuario = Auth::user();
+            $Asistaller = new AsistenteTaller;
+            $Asistaller->asi_id=$usuario->id;
+            $Asistaller->tal_id=$request->tal_id;
+            $Asistaller->save();
+            return redirect('asistente-talleres/'.$request->tal_id)->with('success','Us se ha registrado a ese taller');
+        }catch(\Exception | QueryException $e){
+            return back()->withErrors(['exception'=>$e->getMessage()]);
+        }
+
     }
 
     /**

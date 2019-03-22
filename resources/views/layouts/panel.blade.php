@@ -99,9 +99,9 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                {{--  <a href="index.html"><img class="main-logo" src="kiaalap-master/img/logo/logo.png" alt="" /></a>
-             <a href=""><h1 style="font-family:Times;">MUSC</h1></a> --}}
-                <strong><a href="#"><img src="{{ asset('img/logo.png')}}" alt="" /></a></strong>
+                  <a href="#"><img class="main-logo" src="{{ asset('img/logo.png')}}" style="width:200px;height:50px;" alt="" /></a>
+             {{-- <a href=""><h1 style="font-family:Times;">MUSC</h1></a> --}}
+                <strong><a href="#"><img src="{{ asset('img/logo-icon.png')}}" style="width:55px;height:50px;" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -284,9 +284,17 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item">
-                                                    <a href="{{url('admin-home')}}" class="nav-link">HOME</a>
-                                                </li>
+                                                    @role('administrador|root')
+                                                    <li class="nav-item">
+                                                        <a href="{{url('admin-home')}}" class="nav-link">HOME</a>
+                                                    </li>
+                                                    @endrole
+                                                    @role('usuario')
+                                                    <li class="nav-item">
+                                                            <a href="{{url('/')}}" class="nav-link">PORTADA</a>
+                                                        </li>
+                                                    @endrole
+
                                                 {{-- <li class="nav-item">
                                                     <a href="#" class="nav-link">About</a>
                                                 </li>

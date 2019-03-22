@@ -36,6 +36,7 @@
 
         <!-- Single pro  review Start-->
         <div class="single-pro-review-area mt-t-30 mg-b-15">
+            @include('layouts.messages')
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">

@@ -113,7 +113,10 @@
                     <div class="product-status-wrap">
                             <h4>LISTADO DE TALLERES</h4>
                     </div>
+                    @include('layouts.messages')
                     @foreach ($talleres as $taller)
+                    {!! Form::open(['url' => 'asistente-talleres','files' => 'true']) !!}
+                    <input type="hidden" name="tal_id" value="{{$taller->tal_id}}">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 
                         <div class="hpanel hblue contact-panel contact-panel-cs responsive-mg-b-30">
@@ -145,11 +148,17 @@
                                 </div>
                                 <div class="product-buttons">
                                     {{--  <button type="button" class="button-default cart-btn"> Red</button>  --}}
-
+                                    <input type="submit" value="SUSCRIBIRSE">
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
+
+
+
+                    {!! Form::close() !!}
                     @endforeach
             </div>
         </div>
