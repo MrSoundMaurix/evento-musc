@@ -354,6 +354,18 @@ h6 {
   margin: 0;
 }
 
+/* ul > .dropdown-menu > li > a{
+  color: #000;
+} */
+
+.menu-active .dropdown-menu a, #dp-item a{
+  color: #000;
+}
+
+.dropdown-item a:hover{
+  color: #fff;
+}
+
 /* Mobile Nav Toggle */
 
 #mobile-nav-toggle {

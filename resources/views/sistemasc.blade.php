@@ -5,7 +5,7 @@
     ============================-->
         <section id="schedule" class="section-with-bg">
             <div class="container wow fadeInUp">
-                <div class="section-header">
+                <div class="section-header">                    
                     <h2>Conferencias</h2>
                     <p>Here is our event schedule</p>
                 </div>

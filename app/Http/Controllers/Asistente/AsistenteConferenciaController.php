@@ -1,11 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Asistente;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 
-class EstudianteController extends Controller
+
+class AsistenteConferenciaController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,9 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        return view('Estudiante.index');
+
+        $estudiante = User::find(Auth::user()->id);
+        return view('Estudiante.index', ["estudiante" => $estudiante]);
     }
 
     /**
@@ -23,7 +33,7 @@ class EstudianteController extends Controller
      */
     public function create()
     {
-        return view('Estudiante.create');
+        return view('Asistente.conferencias.create');
     }
 
     /**
@@ -56,7 +66,8 @@ class EstudianteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $estudiante = User::find($id);
+        return view('Estudiante.edit', ["estudiante" => $estudiante]);
     }
 
     /**
@@ -68,7 +79,18 @@ class EstudianteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+
+            $estudiante = User::findOrFail($id);
+            $estudiante->cedula = $request->get('cedula');
+            $estudiante->name = $request->get('nombres');
+            $estudiante->apellido = $request->get('apellidos');
+
+            $estudiante->update();
+            return redirect('usuarios')->with('success', 'Punto Actualizado con éxito');
+        } catch (Exception $e) {
+            return back()->withErrors(['exception' => $e->getMessage()])->withInput();
+        }
     }
 
     /**
@@ -79,6 +101,8 @@ class EstudianteController extends Controller
      */
     public function destroy($id)
     {
+
         //
+
     }
 }
