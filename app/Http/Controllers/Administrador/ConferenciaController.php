@@ -38,9 +38,9 @@ class ConferenciaController extends Controller
     public function create()
     {
         try{
-            $conferencias = Conferencia::orderByDesc('con_updated_at')->paginate(7);
+            $instructores = Instructor::orderByDesc('ins_updated_at')->paginate(7);
             $espacios = Espacio::orderByDesc('esp_updated_at')->paginate(7);
-            return view('Administrador.conferencias.create',compact('espacios'));
+            return view('Administrador.conferencias.create',compact('espacios','instructores'));
         }catch(\Exception | QueryException $e){
             return back()->withErrors(['exception'=>$e->getMessage()]);
         }

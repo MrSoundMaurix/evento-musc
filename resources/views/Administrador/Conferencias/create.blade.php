@@ -56,7 +56,7 @@
                                                                 <select name="ins_id" class="form-control">
                                                                     @if(isset($instructores))
                                                                         @foreach($instructores as $ins)
-                                                                            <option value="{{$ins->ins_id}}">{{$ins->nombre}} {{$ins->apellido}}</option>
+                                                                            <option value="{{$ins->ins_id}}">{{$ins->ins_nombres}} {{$ins->ins_apellidos}}</option>
                                                                         @endforeach
                                                                     @endif
                                                                 </select>

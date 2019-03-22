@@ -47,14 +47,14 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div class="review-content-section">
                                             <div id="dropzone1" class="pro-ad addcoursepro">
-                                                {!! Form::open(['url' => 'admin-espacios','files' => 'true']) !!}
+                                                {!! Form::open(['url' => 'assistant-conferencia','files' => 'true']) !!}
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                             <div class="form-group">
                                                                 <input name="asc_nrodocumento" type="text" class="form-control" placeholder="Nro. de documento del depósito o transacción">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="asc_foto" type="file" class="form-control" placeholder="foto del deposito o transferencia">
+                                                                <input name="asc_foto" type="file" class="form-control">
                                                             </div>
                                                         </div>
                                                     </div>

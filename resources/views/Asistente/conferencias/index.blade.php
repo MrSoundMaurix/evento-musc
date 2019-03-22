@@ -1,4 +1,4 @@
-@extends('layouts.panel')
+@extends('layouts.panel2')
 @section('title','CIMA | Conferencias')
 
 @section('content')
@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-status-wrap">
-                        <h4>Espacios</h4>
+                        <h4>Registros</h4>
                         <div class="add-product">
                             <a href="{{url('admin-espacios/create')}}">Registrar Nuevo</a>
                         </div>
