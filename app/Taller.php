@@ -14,11 +14,12 @@ class Taller extends Model
     const CREATED_AT="tal_created_at";
     const UPDATED_AT="tal_updated_at";
 
-    protected $fillable = ['tal_tema','tal_resumen','tal_estado','tal_fecha','tal_horainicio'
-                        ,'tal_horafin','tal_materiales','tal_cprevios','cat_id','esp_id','ins_id'
+    protected $fillable = ['tal_tema','tal_resumen','tal_estado','tal_fecha','hor_id','tal_materiales','tal_cprevios','cat_id','esp_id','ins_id'
                         ,'tal_foto','tal_fototype'];
 
-    protected $hidden = ['tal_id'];
+    //protected $hidden = ['pivot'];
+
+     protected $hidden = ['tal_id'];
 
     public function espacio()
     {
@@ -35,6 +36,10 @@ class Taller extends Model
     }
 
     public function asistentes(){
-        return $this->belongsToMany('App\User','asistente_taller','tal_id','id');
+        return $this->belongsToMany('App\User','asistente_taller','tal_id','asi_id');
+    }
+    public function horario()
+    {
+        return $this->belongsTo('App\Horario','hor_id');
     }
 }

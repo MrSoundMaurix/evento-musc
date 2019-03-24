@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/p', function () {
-    return view('layouts.personalizar');
+   // return view('layouts.personalizar');
+   return view('layouts.pdf');
 });
 
 Route::get('/home', function () {
@@ -64,6 +65,7 @@ Route::group(['middleware' => ['auth']], function ()
         Route::resource('admin-talleres', 'Administrador\TallerController');
         Route::resource('admin-conferencias', 'Administrador\ConferenciaController');
         Route::resource('admin-espacios', 'Administrador\EspacioController');
+        Route::resource('admin-horarios', 'Administrador\Configuración\HorarioController');
 
 
 
@@ -73,6 +75,9 @@ Route::group(['middleware' => ['auth']], function ()
        Route::view('assistant-home', 'Asistente.home');
        Route::resource('asistente-conferencia','Asistente\AsistenteConferenciaController');
        Route::resource('asistente-talleres','Asistente\TallerController');
+       Route::get('asistente-mistalleres', 'Asistente\TallerController@mistalleres');
+       Route::get('cancelar-taller/{id}', 'Asistente\TallerController@cancelar');
+
     });
 });
 

@@ -10,6 +10,7 @@ use Auth;
 
 class TallerController extends Controller
 {
+    public $user_id;
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +19,11 @@ class TallerController extends Controller
     public function index()
     {
         try{
-            $talleres = Taller::orderByDesc('tal_updated_at')->paginate(10);
+
+            $this->user_id = Auth::user()->id;
+            $talleres = Taller::with(['asistentes'=> function($query){
+                $query->select()->where('id',"=",$this->user_id)->get();
+                }])->orderByDesc('tal_updated_at')->paginate(10);
             return view('Asistente.talleres.index',compact('talleres'));
         }catch(\Exception | QueryException $e){
             return back()->withErrors(['exception'=>$e->getMessage()]);
@@ -47,10 +52,7 @@ class TallerController extends Controller
          try{
 
             $usuario = Auth::user();
-            $Asistaller = new AsistenteTaller;
-            $Asistaller->asi_id=$usuario->id;
-            $Asistaller->tal_id=$request->tal_id;
-            $Asistaller->save();
+            $usuario->talleres()->attach($request->tal_id);
             return redirect('asistente-talleres/'.$request->tal_id)->with('success','Us se ha registrado a ese taller');
         }catch(\Exception | QueryException $e){
             return back()->withErrors(['exception'=>$e->getMessage()]);
@@ -66,10 +68,31 @@ class TallerController extends Controller
      */
     public function show($id)
     {
+
         $taller = Taller::find($id);
         return view('Asistente.talleres.show',compact('taller'));
+        //return view('layouts.pdf');
     }
 
+    public function mistalleres(){
+        $this->user_id = Auth::user()->id;
+        $mistalleres = Taller::with(['asistentes'=> function($query){
+            $query->select()->where('id',"=",$this->user_id)->get();
+            }])->get();
+        return view('Asistente.talleres.mistalleres',compact('mistalleres'));
+    }
+
+    public function cancelar($id){
+        try{
+            info('id eliminar: '.$id);
+            $usuario = Auth::user();
+            $usuario->talleres()->detach($id);
+            return redirect('asistente-talleres')->with('success','Taller cancelado');
+        }catch(\Exception | QueryException $e){
+            return back()->withErrors(['exception'=>$e->getMessage()]);
+        }
+
+    }
     /**
      * Show the form for editing the specified resource.
      *

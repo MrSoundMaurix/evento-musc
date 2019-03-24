@@ -123,7 +123,7 @@
                             <div class="panel-body custom-panel-jw">
                                 <div class="courses-title">
                                         @if($taller->tal_foto == null)
-                                        <img src="{{ asset('img/logo-icon.png')}}" title="Ícono evento" style="max-width:175px;height:150px;"/>
+                                        <img src="{{ asset('img/logo-icon.png')}}" title="Ícono evento" style="max-width:190px;height:150px;"/>
                                         @else
                                             <img title="{{$taller->tal_tema}}" src="{{ "data:image/" . $taller->tal_fototype . ";base64," . $taller->tal_foto }}" style="max-width:190px;height:150px;">
                                         @endif
@@ -142,13 +142,17 @@
                                     <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-home"></i></span> {{$taller->espacio->esp_nombre}}</span>
                                 </div>
                                 <div class="course-des">
-                                    <p><span><i class="fa fa-clock"></i></span> <b class="text-primary">Hora Inicio:</b> {{$taller->tal_horainicio}}</p>
-                                    <p><span><i class="fa fa-clock"></i></span> <b class="text-primary">Hora Fin:</b> {{$taller->tal_horafin}}</p>
+                                    <p><span><i class="fa fa-clock"></i></span> <b class="text-primary">Hora Inicio:</b> {{$taller->horario->horainicio}}</p>
+                                    <p><span><i class="fa fa-clock"></i></span> <b class="text-primary">Hora Fin:</b> {{$taller->horario->horafin}}</p>
                                     <p><span><i class="fa fa-clock"></i></span> <b class="text-primary">Instructor:</b> {{$taller->instructor->ins_nombres}}</p>
                                 </div>
                                 <div class="product-buttons">
                                     {{--  <button type="button" class="button-default cart-btn"> Red</button>  --}}
-                                    <input type="submit" value="SUSCRIBIRSE">
+                                    @if (count($taller->asistentes)>0)
+                                        <input type="button" value="CANCELAR" onclick="cancelar({{$taller->tal_id}})">
+                                    @else
+                                        <button type="submit" class="btn btn-primary">INSCRIBIRME</button>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -162,8 +166,12 @@
                     @endforeach
             </div>
         </div>
-
 @stop
+<script type="text/javascript">
+    function cancelar(taller){
+        location.href = "cancelar-taller/"+taller;
+    }
+</script>
 
 
 

@@ -70,12 +70,12 @@
                                     </div>
                                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
                                         <div class="address-hr tb-sm-res-d-n dps-tb-ntn">
-                                            <p><b>Hora Inicio</b><br /> {{$taller->tal_horainicio}}</p>
+                                            <p><b>Hora Inicio</b><br /> {{$taller->horario->horainicio}}</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
                                         <div class="address-hr tb-sm-res-d-n dps-tb-ntn">
-                                            <p><b>Hora Fin</b><br /> {{$taller->tal_horafin}}</p>
+                                            <p><b>Hora Fin</b><br /> {{$taller->horario->horafin}}</p>
                                         </div>
                                     </div>
                                 </div>

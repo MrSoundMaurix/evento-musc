@@ -58,8 +58,8 @@
                                       <td><a href="{{route('admin-talleres.show',$taller->tal_id)}}" class="text-{{$taller->tal_estado === TRUE ? 'primary' :'danger' }}"
                                           title="{{$taller->tal_estado === TRUE ? 'disponible' :'agotado' }}">{{$taller->tal_tema}}</a></td>
                                     <td>{{$taller->tal_fecha}}</td>
-                                    <td>{{$taller->tal_horainicio}}</td>
-                                    <td>{{$taller->tal_horafin}}</td>
+                                    <td>{{$taller->horario->horainicio}}</td>
+                                    <td>{{$taller->horario->horafin}}</td>
                                     <td>{{$taller->categoria->cat_nombre}}</td>
                                     <td>{{$taller->instructor->ins_nombres.' '}}{{$taller->instructor->ins_apellidos}}</td>
                                     <td>

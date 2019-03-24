@@ -39,6 +39,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
     public function sendPasswordResetNotification($token)
     {
     $this->notify(new MailResetPasswordNotification($token));
@@ -51,7 +53,7 @@ class User extends Authenticatable
     }
 
     public function talleres(){
-        return $this->belongsToMany('App\Taller','asistente_taller','id','tal_id');
+        return $this->belongsToMany('App\Taller','asistente_taller','asi_id','tal_id');
     }
 
 }
