@@ -51,7 +51,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                             <div class="form-group">
-                                                            <label for="css_nombre">Nombre del Concurso :</label><input name="css_nombre" type="text" class="form-control" value="{{$concurso->css_nombre}}" placeholder="Nombre del Concurso">
+                                                            <label for="css_nombre">Nombre del Concurso :</label><input name="css_nombre" type="text" class="form-control" value="{{$concurso->css_nombre}}" required placeholder="Nombre del Concurso">
                                                             </div>
                                                             <label for="css_nombre">Estado :</label>
                                                             <div class="form-group">
@@ -63,8 +63,9 @@
 
                                                             <div class="form-group">
                                                                 <label for="css_reglamento">Reglamento del concurso en PDF:</label>
-                                                            <input name="css_reglamento" type="file" placeholder="ingrese reglamento" value="{{$concurso->css_reglamento}}" class="form-control">
-                                                            </div>
+                                                            <input name="css_reglamento" type="file" placeholder="ingrese reglamento"  value="{{$concurso->css_reglamento}}" class="form-control">
+                                                        {!!$errors->first('css_reglamento','<span style="color:red" class=error>:message</span>')!!}
+                                                        </div>
 
                                                         </div>
                                                     </div>

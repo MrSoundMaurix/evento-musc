@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrador;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Concurso;
+use App\Http\Requests\ConcursoRequest;
 
 class ConcursoController extends Controller
 {
@@ -39,7 +40,7 @@ class ConcursoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ConcursoRequest $request)
     {
 
         try{
@@ -108,7 +109,7 @@ class ConcursoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ConcursoRequest $request, $id)
     {
 
       //  try{

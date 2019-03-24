@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class InstructorRequest extends FormRequest
+class ConcursoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,6 +23,7 @@ class InstructorRequest extends FormRequest
      */
     public function rules()
     {
+
         switch($this->method())
         {
             case 'PATCH': //update
@@ -31,7 +32,9 @@ class InstructorRequest extends FormRequest
                     //'pro_codigo' => 'required|string|max:10|unique:inv_productos,pro_codigo,'.$producto->pro_id.',pro_id',
                     // 'esp_nombre' => 'required|string|max:200',
                     // 'esp_capacidad' => 'required|integer|min:0',
-                    'esp_foto'=>'nullable|file|mimes:jpeg,png,jpg,JPG|dimensions:min_width=200,min_height=200,max_width=4000,max_height=4000|max:2048',
+                    'css_nombre'=>'required|string|max:200',
+                    'css_reglamento'=>'mimes:pdf',
+                    // 'esp_foto'=>'nullable|file|mimes:jpeg,png,jpg,JPG|dimensions:min_width=200,min_height=200,max_width=4000,max_height=4000|max:2048',
                 ];
 
                 break;
@@ -42,12 +45,15 @@ class InstructorRequest extends FormRequest
                 return [
                     // 'esp_nombre' => 'required|string|max:200',
                     // 'esp_capacidad' => 'required|integer|min:0',
-                    'esp_foto'=>'nullable|file|mimes:jpeg,png,jpg,JPG|dimensions:min_width=200,min_height=200,max_width=4000,max_height=4000|max:2048',
+                    'css_nombre'=>'required|string|max:200',
+                    'css_reglamento'=>'required|mimes:pdf',
+                    // 'esp_foto'=>'nullable|file|mimes:jpeg,png,jpg,JPG|dimensions:min_width=200,min_height=200,max_width=4000,max_height=4000|max:2048',
                 ];
 
                 break;
             default:
                 break;
         }
+
     }
 }

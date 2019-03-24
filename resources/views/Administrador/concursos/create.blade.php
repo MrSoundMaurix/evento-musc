@@ -51,12 +51,13 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                             <div class="form-group">
-                                                               <label for="css_nombre">Nombre del Concurso :</label><input name="css_nombre" type="text" class="form-control" placeholder="Nombre del Concurso">
+                                                               <label for="css_nombre">Nombre del Concurso :</label><input name="css_nombre" type="text" required class="form-control" placeholder="Nombre del Concurso">
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <label for="css_reglamento">Reglamento del concurso en PDF:</label>
-                                                                <input name="css_reglamento" type="file" placeholder="ingrese reglamento" class="form-control">
+                                                                <input name="css_reglamento" type="file" placeholder="ingrese reglamento" required class="form-control">
+                                                                {!!$errors->first('css_reglamento','<span style="color:red" class=error>:message</span>')!!}
                                                             </div>
                                                         </div>
                                                     </div>
