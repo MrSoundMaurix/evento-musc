@@ -17,6 +17,7 @@ class CreateConcursosTable extends Migration
             $table->increments('css_id');
            $table->string('css_nombre');
            $table->text('css_reglamento');
+           $table->boolean('css_status');
            $table->timestamp('css_created_at');
            $table->timestamp('css_updated_at');
         });

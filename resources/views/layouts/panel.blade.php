@@ -167,6 +167,14 @@
                                 <li><a title="Edit Departments" href="edit-department.html"><span class="mini-sub-pro">Edit Departments</span></a></li>
                             </ul> --}}
                         </li>
+                        <li>
+                            <a class="" href="{{url('admin-concursos')}}" aria-expanded="false"><span class="educate-icon educate-star-half icon-wrap"></span> <span class="mini-click-non">Concursos</span></a>
+                            {{-- <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Departments List" href="departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
+                                <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>
+                                <li><a title="Edit Departments" href="edit-department.html"><span class="mini-sub-pro">Edit Departments</span></a></li>
+                            </ul> --}}
+                        </li>
                     </ul>
                     @endrole
                     @role('usuario')
@@ -361,6 +369,14 @@
                                         </li>
                                         <li>
                                             <a class="" href="{{url('admin-espacios')}}" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Espacios</span></a>
+                                            {{-- <ul class="submenu-angle" aria-expanded="false">
+                                                <li><a title="Departments List" href="departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
+                                                <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>
+                                                <li><a title="Edit Departments" href="edit-department.html"><span class="mini-sub-pro">Edit Departments</span></a></li>
+                                            </ul> --}}
+                                        </li>
+                                        <li>
+                                            <a class="" href="{{url('admin-concursos')}}" aria-expanded="false"><span class="educate-icon educate-star-half icon-wrap"></span> <span class="mini-click-non">Concursos</span></a>
                                             {{-- <ul class="submenu-angle" aria-expanded="false">
                                                 <li><a title="Departments List" href="departments.html"><span class="mini-sub-pro">Departments List</span></a></li>
                                                 <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>

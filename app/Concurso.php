@@ -14,7 +14,7 @@ class Concurso extends Model
     const CREATED_AT="css_created_at";
     const UPDATED_AT="css_updated_at";
 
-    protected $fillable = ['css_nombre','css_reglamento'];
+    protected $fillable = ['css_nombre','css_reglamento','css_status'];
 
     protected $hidden = ['css_id'];
 
