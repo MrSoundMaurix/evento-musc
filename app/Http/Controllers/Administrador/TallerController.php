@@ -10,6 +10,7 @@ use App\Categoria;
 use App\Instructor;
 use App\Http\Requests\TallerRequest;
 use Image;
+use App\Horario;
 
 class TallerController extends Controller
 {
@@ -36,10 +37,11 @@ class TallerController extends Controller
      */
     public function create()
     {
+        $horarios =Horario::all();
         $espacios = Espacio::all();
         $categorias = Categoria::all();
         $instructores = Instructor::all();
-        return view('Administrador.talleres.create',compact('categorias','instructores','espacios'));
+        return view('Administrador.talleres.create',compact('categorias','instructores','espacios','horarios'));
     }
 
     /**
@@ -50,8 +52,7 @@ class TallerController extends Controller
      */
     public function store(TallerRequest $request)
     {
-        //return $request;
-         try{
+        try{
             $taller = Taller::create($request->all());
 
             if ($request->hasFile('tal_foto')) {

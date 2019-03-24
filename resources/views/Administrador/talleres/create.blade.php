@@ -49,6 +49,7 @@
                                             <div class="review-content-section">
                                                 <div id="dropzone1" class="pro-ad addcoursepro">
                                                         @include('layouts.messages')
+                                                        @include('Administrador.horarios.create')
                                                         {!! Form::open(['url' => 'admin-talleres','files' => 'true']) !!}
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -66,14 +67,16 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="input-group">
-                                                                        <span class="input-group-addon">Hora Inicio</span>
-                                                                    <input name="tal_horainicio" type="time" class="form-control"  value="{{old('tal_horainicio')}}">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <div class="input-group">
-                                                                            <span class="input-group-addon">Hora Fin</span>
-                                                                        <input name="tal_horafin" type="time" class="form-control"  value="{{old('tal_horafin')}}">
+                                                                        <span class="input-group-addon">Horario</span>
+                                                                        <select name="hor_id" class="form-control" style="width:91%;">
+                                                                            <option value="" selected="" disabled="">--Seleccionar--</option>
+                                                                            @foreach($horarios as $horario)
+                                                                            <option value="{{$horario->hor_id}}">{{$horario->horainicio.' - '.$horario->horafin }}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                        <a title="Crear Horario " data-toggle="modal" data-target="#modalCreate"
+                                                                        href="#" class="btn btn-primary "><i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">

@@ -166,19 +166,19 @@
                                 <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>
                                 <li><a title="Edit Departments" href="edit-department.html"><span class="mini-sub-pro">Edit Departments</span></a></li>
                             </ul> --}}
-                        </li>                       
+                        </li>
                     </ul>
                     @endrole
                     @role('usuario')
                     <ul class="metismenu" id="menu1">
                         <li>
                             <a title="Inscripción a Conferencias" href="{{url('asistente-conferencia/create')}}" aria-expanded="false">
-                                <span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> 
+                                <span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span>
                                 <span class="mini-click-non">Conferencias</span>
                             </a>
                         </li>
                         <li>
-                            <a class="" href="{{url('asistente-talleres')}}" aria-expanded="false">
+                            <a class="" href="{{url('asistente-mistalleres')}}" aria-expanded="false">
                                 <span class="educate-icon educate-course icon-wrap"></span>
                                 <span class="mini-click-non">Mis Talleres</span>
                             </a>
@@ -228,8 +228,11 @@
                                                     @endrole
                                                     @role('usuario')
                                                     <li class="nav-item">
-                                                            <a href="{{url('/')}}" class="nav-link">PORTADA</a>
-                                                        </li>
+                                                        <a href="{{url('/')}}" class="nav-link">PORTADA</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="{{url('asistente-talleres')}}" class="nav-link">TALLERES</a>
+                                                    </li>
                                                     @endrole
 
                                                 {{-- <li class="nav-item">
@@ -270,7 +273,7 @@
                                                         </li>
                                                         <li><a href="#"><span class="edu-icon edu-money author-log-ic"></span>User Billing</a>
                                                         </li>
-                                                        <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
+                                                        <li><a href="{{ url('admin-horarios')}}"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
                                                         </li>
                                                         <li>
                                                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -301,7 +304,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="mobile-menu">
-                                <nav id="dropdown">                                    
+                                <nav id="dropdown">
                                     @role(['administrador','root'])
                                     <ul class="mobile-menu-nav">
                                         <li>
@@ -363,14 +366,14 @@
                                                 <li><a title="Add Departments" href="add-department.html"><span class="mini-sub-pro">Add Departments</span></a></li>
                                                 <li><a title="Edit Departments" href="edit-department.html"><span class="mini-sub-pro">Edit Departments</span></a></li>
                                             </ul> --}}
-                                        </li>                       
+                                        </li>
                                     </ul>
                                     @endrole
                                     @role('usuario')
                                     <ul class="mobile-menu-nav">
                                         <li>
                                             <a title="Inscripción a Conferencias" href="{{url('asistente-conferencia/create')}}" aria-expanded="false">
-                                                <span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> 
+                                                <span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span>
                                                 <span class="mini-click-non">Conferencias</span>
                                             </a>
                                         </li>

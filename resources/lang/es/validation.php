@@ -92,11 +92,11 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
-        'tal_horainicio' => [
-            'hora' => 'La hora de inicio debe tener el formato hh:mm o hh:mm:ss ',
+        'horainicio' => [
+            'unique' => 'La hora de inicio ya está en uso',
         ],
-        'tal_horafin' => [
-            'hora' => 'La hora de fin debe tener el formato hh:mm o hh:mm:ss',
+        'horafin' => [
+            'unique' => 'La hora de fin ya está en uso',
         ],
     ],
     /*

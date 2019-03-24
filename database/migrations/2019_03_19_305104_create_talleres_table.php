@@ -19,8 +19,6 @@ class CreateTalleresTable extends Migration
             $table->string('tal_resumen',5000)->nullable()->default(NULL);
             $table->boolean('tal_estado',true|false)->default(true);
             $table->date('tal_fecha');
-            $table->time('tal_horainicio');
-            $table->time('tal_horafin');
             $table->string('tal_materiales',5000)->nullable()->default(NULL);
             $table->string('tal_cprevios',5000)->nullable()->default(NULL);
             $table->text('tal_foto')->nullable()->default(NULL);
@@ -28,11 +26,13 @@ class CreateTalleresTable extends Migration
             $table->integer('cat_id');
             $table->integer('esp_id')->nullable()->default(NULL);
             $table->integer('ins_id');
-            $table->timestamp('tal_created_at')->default(now());
-            $table->timestamp('tal_updated_at')->default(now());
+            $table->integer('hor_id');
+            $table->timestamp('tal_created_at');
+            $table->timestamp('tal_updated_at');
             $table->foreign('cat_id')->references('cat_id')->on('categorias');
             $table->foreign('esp_id')->references('esp_id')->on('espacios');
             $table->foreign('ins_id')->references('ins_id')->on('instructores');
+            $table->foreign('hor_id')->references('hor_id')->on('horarios');
         });
     }
 
