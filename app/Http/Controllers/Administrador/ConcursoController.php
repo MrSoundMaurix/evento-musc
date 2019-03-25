@@ -152,6 +152,13 @@ class ConcursoController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+            try {
+            $concurso = Concurso::destroy($id);
+           return redirect('admin-concursos')->with('success','Concurso eliminado exitosamente');
+
+        }catch(\Exception | QueryException $e){
+            return back()->withErrors(['exception'=>$e->getMessage()]);
+        }
     }
 }

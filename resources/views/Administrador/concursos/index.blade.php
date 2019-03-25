@@ -30,6 +30,11 @@
             </div>
         </div>
     </div>
+    <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    @include('includes.messages')
+            </div>
+    </div>
     <div class="product-status mg-b-15">
         <div class="container-fluid">
             <div class="row">
@@ -63,9 +68,11 @@
                                         </td>
 
                                         <td>
-                                                <a data-toggle="tooltip" type="button" class="button" title="Edit" class="pd-setting-ed" href="{{URL::action('Administrador\ConcursoController@edit',$css->css_id)}}"><i  class="fa fa-pencil-square-o" aria-hidden="true"></i> </a>
-                                            <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                            <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                            <a  href="{{URL::action('Administrador\ConcursoController@edit',$css->css_id)}}"><button data-toggle="tooltip" title="Editar" class="pd-setting-ed"><i  class="fa fa-pencil-square-o" aria-hidden="true"></i></button> </a>
+                                    {{--         <a  href="{{URL::action('Administrador\ConcursoController@destroy',$css->css_id)}}"><button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button> </a> --}}
+                                            <a href="{{url('admin-concursos-destroy/'.$css->css_id.'')}}"><button data-toggle="tooltip" title="Eliminar" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                            {{-- <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> --}}
+                                          {{-- <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button> --}}
                                         </td>
                                     </tr>
                                     @endforeach

@@ -67,7 +67,7 @@ Route::group(['middleware' => ['auth']], function ()
         Route::resource('admin-espacios', 'Administrador\EspacioController');
         Route::resource('admin-horarios', 'Administrador\Configuración\HorarioController');
         Route::resource('admin-concursos', 'Administrador\ConcursoController');
-
+        Route::get('admin-concursos-destroy/{id}', 'Administrador\ConcursoController@destroy');
 
 
     });
